@@ -11,6 +11,7 @@ import { loadArtManifest, createArtSlot, artUrl, artVersion } from './art.js';
 import { billTitle } from './types.js';
 import { createWarMap, createGhosts } from './hud.js';
 import { renderAnswer } from './types.js';
+import { HOW, showCue, watchIdle } from './howto.js';
 import { renderResults } from './results.js';
 import { newSeed } from './rng.js';
 import { loadShareConfig } from './share.js';
@@ -213,8 +214,8 @@ function chapterCard(chapter, stage) {
     card.append(
       candlesRow,
       h('div', 'chapter-num', `Chapter ${ROMAN[n] || ''}`),
-      h('h2', 'chapter-title', CHAPTER_TITLE[chapter] || chapter),
-      h('p', 'chapter-line', CHAPTER_LINE[chapter] || ''),
+      h('h2', 'chapter-title'),
+      h('p', 'chapter-line'),
       h('div', 'chapter-tap', 'Tap to skip'),
     );
     const inner = h('div', 'chapter-inner panel');
@@ -225,6 +226,10 @@ function chapterCard(chapter, stage) {
     if (art) card.style.setProperty('--chapter-art', `url("${new URL(art, document.baseURI).href}")`);
     stage.appendChild(card);
     haptic('light');
+    (async () => {
+      await typewriter(card.querySelector('.chapter-title'), CHAPTER_TITLE[chapter] || chapter, { maxMs: 700 }).done;
+      typewriter(card.querySelector('.chapter-line'), CHAPTER_LINE[chapter] || '', { maxMs: 1000 });
+    })();
     let done = false;
     const go = () => {
       if (done) return;
@@ -268,11 +273,9 @@ async function askQuestion(q, { body, stage, banner }) {
   // The hint under a hold says how; Hold to commit. in a prompt (at either end) adds nothing.
   promptText = promptText.replace(/^\s*hold to commit\.?\s*/i, '').replace(/\s*hold to commit\.?\s*$/i, '').trim();
   if (!promptText && q.context) { promptText = q.context; ctxEl.hidden = true; }
-  if (q.fx.includes('typewriter') || q.type === 'envelope') {
-    await typewriter(prompt, promptText).done;
-  } else {
-    prompt.textContent = promptText;
-  }
+  // Context, then prompt, type on; the controls arrive when the prompt has finished (a tap finishes it).
+  if (!ctxEl.hidden && q.context) await typewriter(ctxEl, q.context, { maxMs: 1200 }).done;
+  await typewriter(prompt, promptText, { maxMs: 1800 }).done;
   await intro;
   S.run.current = { q, el: wrap };
   // Input guard: nothing counts for 500 ms after the question is ready, and a tap only counts if its
@@ -291,7 +294,18 @@ async function askQuestion(q, { body, stage, banner }) {
   S.run.seenTypes = S.run.seenTypes || new Set();
   const firstOfType = !S.run.seenTypes.has(q.type);
   S.run.seenTypes.add(q.type);
-  const res = await renderAnswer(q, { el: answer, artHost, cands: S.cands, stage, chapter: q.chapter, firstOfType });
+  // How to answer, always shown by the control; a demo the first time a type appears; a nudge when idle.
+  const how = h('p', 'how');
+  how.setAttribute('role', 'note');
+  answer.appendChild(how);
+  typewriter(how, HOW[q.type] || 'Tap your answer.', { maxMs: 900 });
+  const pending = renderAnswer(q, { el: answer, artHost, cands: S.cands, stage, chapter: q.chapter, firstOfType, how });
+  let stopCue = () => {};
+  if (firstOfType) setTimeout(() => { if (!wrap.classList.contains('leaving')) stopCue = showCue(q.type, wrap); }, 300);
+  const stopIdle = watchIdle(q.type, wrap, how);
+  const res = await pending;
+  stopIdle();
+  stopCue();
   wrap.classList.add('leaving');
   await sleep(reducedMotion() ? 0 : 140);
   return res;

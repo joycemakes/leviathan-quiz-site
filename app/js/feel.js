@@ -103,8 +103,8 @@ export function runFx(q, { stage, banner }) {
     // No filler: with no headline, or one that just repeats the prompt, the banner is the tag alone.
     const text = raw && norm(raw) !== norm(q.prompt || '') ? raw.charAt(0).toUpperCase() + raw.slice(1) : '';
     const el = banner.querySelector('.breaking-text');
-    el.textContent = text;
     el.hidden = !text;
+    typewriter(el, text, { maxMs: 1400 });
     banner.classList.remove('in');
     void banner.offsetWidth;
     banner.classList.add('in');
@@ -120,23 +120,49 @@ export function runFx(q, { stage, banner }) {
 }
 
 // ---- typewriter ----------------------------------------------------------------------
-// Types text into el. Tap anywhere on el (or call skip) to finish at once.
-export function typewriter(el, text, { cps = 48 } = {}) {
+// Text appears letter by letter with a soft typewriter tick (spaces silent) and a small carriage-return
+// ding at the end. About 40 characters a second, faster for long text (never much over two seconds).
+// Progress follows the clock, not the timer count, so a throttled tab still finishes on time.
+// A tap on the text or anywhere on the screen finishes every line being typed at once.
+const typing = new Set();
+export function finishTyping() { for (const f of [...typing]) f(); }
+if (typeof window !== 'undefined') window.addEventListener('pointerdown', () => finishTyping(), true);
+
+export function typewriter(el, text, { cps = 40, maxMs = 2200, sound = true } = {}) {
   el.textContent = '';
-  if (reducedMotion() || !text) { el.textContent = text || ''; return { done: Promise.resolve(), skip() {} }; }
-  let i = 0, timer = null, resolve;
+  if (!text) return { done: Promise.resolve(), skip() {} };
+  if (reducedMotion()) { el.textContent = text; if (sound) sfx('type'); return { done: Promise.resolve(), skip() {} }; }
+  const rate = Math.max(cps, (text.length * 1000) / maxMs);
+  let shown = 0, timer = null, resolve, over = false;
   const done = new Promise(r => (resolve = r));
   const caret = document.createElement('span');
   caret.className = 'caret';
   const node = document.createTextNode('');
   el.append(node, caret);
-  const finish = () => { clearInterval(timer); node.data = text; caret.remove(); el.removeEventListener('pointerdown', finish); resolve(); };
-  timer = setInterval(() => {
-    i = Math.min(text.length, i + 2);
-    node.data = text.slice(0, i);
-    if (text[i - 1] && text[i - 1] !== ' ') sfx('type');
-    if (i >= text.length) finish();
-  }, 2000 / cps);
+  const t0 = performance.now();
+  const finish = () => {
+    if (over) return;
+    over = true;
+    clearInterval(timer);
+    typing.delete(finish);
+    node.data = text;
+    caret.remove();
+    el.removeEventListener('pointerdown', finish);
+    if (sound) sfx('ding');
+    resolve();
+  };
+  const step = () => {
+    const n = Math.min(text.length, Math.floor(((performance.now() - t0) * rate) / 1000));
+    if (n > shown) {
+      const added = text.slice(shown, n);
+      shown = n;
+      node.data = text.slice(0, n);
+      if (sound && /\S/.test(added)) sfx('type');
+    }
+    if (shown >= text.length) finish();
+  };
+  timer = setInterval(step, Math.max(16, Math.floor(1000 / rate)));
+  typing.add(finish);
   el.addEventListener('pointerdown', finish);
   return { done, skip: finish };
 }

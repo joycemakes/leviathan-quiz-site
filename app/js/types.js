@@ -5,6 +5,7 @@
 
 import { haptic, shake, sleep, reducedMotion } from './feel.js';
 import { holdStart, holdLevel, holdStop, sfx } from './sound.js';
+import { HOLD_TAP } from './howto.js';
 import { createArtSlot, portraitEl, hasArt } from './art.js';
 import { HOLD_FULL_MS } from './scoring.js';
 
@@ -147,7 +148,7 @@ function renderEnvelope(q, ctx) {
 function renderHold(q, ctx) {
   return new Promise(resolve => {
     const ms = clock();
-    const hint = h('p', 'hint', 'Press and hold your answer. The longer you hold, the harder you mean it.');
+    const hint = ctx.how || h('p', 'hint');
     const list = h('div', 'opts');
     const meterLbl = h('div', 'hold-meter-label', 'Conviction');
     const meter = h('div', 'hold-meter');
@@ -156,12 +157,18 @@ function renderHold(q, ctx) {
     for (const o of q.options) {
       const b = btn(o.label || o.id, 'opt hold');
       b.dataset.opt = o.id;
+      // The button says what it wants: a HOLD tag and its own fill bar.
+      const tag = h('span', 'hold-tag', 'Hold');
+      const bar = h('span', 'hold-bar');
+      bar.appendChild(h('span', 'hold-bar-fill'));
+      b.append(tag, bar);
       b.style.setProperty('--press-dur', `${HOLD_FULL_MS}ms`);
       let t0 = 0, raf = 0, ticked = false;
       const fill = meter.querySelector('.hold-meter-fill');
       const loop = () => {
         const p = Math.min(1, (performance.now() - t0) / HOLD_FULL_MS);
         fill.style.width = `${p * 100}%`;
+        bar.firstChild.style.width = `${p * 100}%`;
         holdLevel(p);
         if (p >= 1 && !ticked) { ticked = true; haptic('heavy'); b.classList.add('full'); }
         raf = requestAnimationFrame(loop);
@@ -173,15 +180,15 @@ function renderHold(q, ctx) {
         holdStart();
         raf = requestAnimationFrame(loop);
       };
-      const cancel = () => { cancelAnimationFrame(raf); holdStop(); t0 = 0; fill.style.width = '0%'; b.classList.remove('full'); };
+      const cancel = () => { cancelAnimationFrame(raf); holdStop(); t0 = 0; fill.style.width = '0%'; bar.firstChild.style.width = '0%'; b.classList.remove('full'); };
       const end = async () => {
         if (done || !t0) return;
         cancelAnimationFrame(raf);
         holdStop();
         const held = performance.now() - t0;
         if (held < HOLD_MIN_MS) { // a plain tap is not an answer here
-          t0 = 0; fill.style.width = '0%';
-          hint.textContent = 'Hold longer to mean it.';
+          t0 = 0; fill.style.width = '0%'; bar.firstChild.style.width = '0%';
+          hint.textContent = HOLD_TAP;
           hint.classList.remove('flash'); void hint.offsetWidth; hint.classList.add('flash');
           haptic('error');
           return;
@@ -203,7 +210,8 @@ function renderHold(q, ctx) {
       b.addEventListener('contextmenu', e => e.preventDefault());
       list.appendChild(b);
     }
-    ctx.el.append(hint, list, meterLbl, meter);
+    if (!ctx.how) ctx.el.append(hint);
+    ctx.el.append(list, meterLbl, meter);
   });
 }
 
@@ -229,7 +237,7 @@ function renderSlider(q, ctx) {
       track.appendChild(n);
     }
     const handle = h('div', 'lever-handle');
-    handle.innerHTML = '<span class="lever-knob"></span><span class="lever-shaft"></span>';
+    handle.innerHTML = '<span class="lever-arrow l" aria-hidden="true"></span><span class="lever-knob"><span class="lever-grip"></span></span><span class="lever-arrow r" aria-hidden="true"></span><span class="lever-shaft"></span>';
     track.appendChild(handle);
     const readout = h('div', 'lever-readout');
     const commit = btn('Pull the lever', 'primary commit');
@@ -308,18 +316,18 @@ function renderPin(q, ctx) {
     };
 
     const firstHint = 'Tap a spot on the picture to choose. Each spot is a different answer.';
-    const hint = h('p', 'hint pin-hint', ctx.firstOfType ? firstHint : 'Tap a spot or a number, then confirm.');
+    const hint = ctx.how || h('p', 'hint pin-hint', firstHint);
     const withArt = hasArt(q.art, 'wide') || hasArt(q.art, 'tall');
     const slot = withArt
       ? createArtSlot(q.art, {
         kind: 'pin', regions: q.regions, onRegion: r => select(r), chapter: ctx.chapter,
-        onTraced: t => { if (t === '0') hint.textContent = 'Pick a number from the list, then confirm.'; },
+        onTraced: t => { if (t === '0') hint.textContent = 'Pick a number from the list under the picture, then confirm.'; },
         onMiss: () => { hint.classList.remove('flash'); void hint.offsetWidth; hint.classList.add('flash'); haptic('error'); },
       })
       : { frame: document.createElement('div'), el: null };
     if (slot.el) ctx.artHost.appendChild(slot.el);
     else { ctx.artHost.hidden = true; ctx.artHost.closest('.q')?.classList.remove('has-art'); hint.textContent = 'Pick one, then confirm.'; }
-    if (slot.el && slot.el.dataset.traced === '0') hint.textContent = 'Pick a number from the list, then confirm.';
+    if (slot.el && slot.el.dataset.traced === '0') hint.textContent = 'Pick a number from the list under the picture, then confirm.';
 
     q.regions.forEach((r, i) => {
       const b = h('button', 'pin-opt');
@@ -349,7 +357,8 @@ function renderPin(q, ctx) {
 
     // The legend sits right under the picture and the whole question fits the screen: the picture gives
     // up height until hint, legend and Confirm are all visible without scrolling.
-    ctx.el.append(hint, legend, confirm);
+    if (!ctx.how) ctx.el.append(hint);
+    ctx.el.append(legend, confirm);
     if (slot.el) {
       const fit = () => {
         if (!slot.el.isConnected || done) { window.removeEventListener('resize', fit); return; }
@@ -433,7 +442,7 @@ function renderRank(q, ctx) {
   return new Promise(resolve => {
     const ms = clock();
     const wrap = h('div', 'rank');
-    const hint = h('p', 'hint', 'Drag to order, most to least. Top is first.');
+    const hint = ctx.how ? null : h('p', 'hint', 'Drag to order, most to least. Top is first.');
     const list = h('ol', 'rank-list');
     const moved = {};
     const renumber = () => list.querySelectorAll('.rank-item').forEach((li, i) => { li.querySelector('.rank-n').textContent = String(i + 1); });
@@ -509,7 +518,8 @@ function renderRank(q, ctx) {
       list.querySelectorAll('.rank-item').forEach(li => li.classList.add('locked'));
       resolve({ order, revisions: Object.values(moved).filter(n => n > 1).length, ms: t });
     });
-    wrap.append(hint, list, commit);
+    if (hint) wrap.append(hint);
+    wrap.append(list, commit);
     ctx.el.appendChild(wrap);
     renumber();
   });
@@ -539,7 +549,7 @@ function renderSwipe(q, ctx) {
       count.textContent = `${i + 1} / ${q.cards.length}`;
       card = h('div', 'swipe-card');
       card.dataset.card = c.id;
-      card.append(h('div', 'swipe-text', c.text || c.id), h('div', 'swipe-timer'));
+      card.append(h('span', 'swipe-edge no', 'No'), h('div', 'swipe-text', c.text || c.id), h('span', 'swipe-edge yes', 'Yes'), h('div', 'swipe-timer'));
       card.querySelector('.swipe-timer').style.animationDuration = `${CARD_MS}ms`;
       deck.innerHTML = '';
       deck.appendChild(card);
@@ -701,7 +711,7 @@ function renderSign(q, ctx) {
     const pen = h('button', 'pen');
     pen.type = 'button';
     pen.setAttribute('aria-label', 'Drag the pen across the line to sign. Enter signs.');
-    line.append(svg, h('span', 'sig-x', 'x'), pen);
+    line.append(h('span', 'sig-guide'), svg, h('span', 'sig-x', 'x'), pen);
     const sigCap = h('div', 'sig-cap', `Drag the pen along the line to sign \u2014 ${signO?.label || 'Sign'}`);
     bill.append(line, sigCap);
     const veto = btn('Veto', 'veto-stamp');

@@ -7,7 +7,7 @@ import { zoneLabel } from './leviathan.js';
 import { encodeLVQ1 } from './export.js';
 import { portraitEl } from './art.js';
 import { silhouetteEl } from './hud.js';
-import { haptic, sleep, reducedMotion } from './feel.js';
+import { haptic, sleep, reducedMotion, typewriter } from './feel.js';
 import { sfx } from './sound.js';
 import { renderShareSheet, copyText } from './sharesheet.js';
 import { normalizeShareConfig } from './share.js';
@@ -94,7 +94,10 @@ export function renderResults(root, R) {
     const tags = h('div', 'top5-tags');
     tags.append(h('span', `tag party-${c.party}`, partyName(c.party)));
     if (c.lane) tags.append(h('span', 'tag lane', laneShort(c.lane) || c.lane));
-    meta.append(name, h('div', 'top5-title', c.title || ''), tags, h('p', 'top5-reason', reasonFor(scores, c, m.picks, usedPhrases)));
+    const reason = h('p', 'top5-reason');
+    const reasonText = reasonFor(scores, c, m.picks, usedPhrases);
+    reason.dataset.text = reasonText;
+    meta.append(name, h('div', 'top5-title', c.title || ''), tags, reason);
     const pct = h('div', 'top5-pct');
     // Below 25 the number means only far away, so say that instead of printing 8%.
     if (m.pct < 25) { pct.classList.add('low'); pct.append(h('span', 'pct-low', 'under 25%')); }
@@ -104,6 +107,11 @@ export function renderResults(root, R) {
   });
   top.appendChild(ol);
   screen.appendChild(top);
+  // The verdicts type on, one after another, after the reveal.
+  (async () => {
+    await sleep(reducedMotion() ? 0 : 1400);
+    for (const r of ol.querySelectorAll('.top5-reason')) await typewriter(r, r.dataset.text, { maxMs: 900 }).done;
+  })();
 
   // ---- lane + Leviathan zones ----
   if (profile.lane) {

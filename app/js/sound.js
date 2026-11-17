@@ -75,7 +75,12 @@ const SOUNDS = {
   tick: t => noise(t, 0.025, 0.12, 'highpass', 3800, 3800, 0.7),                                  // button press
   clunk: t => { tone('sine', 150, 70, t, 0.004, 0.14, 0.5); noise(t, 0.05, 0.12, 'lowpass', 900); }, // commit
   thunk: t => { tone('sine', 110, 50, t, 0.004, 0.22, 0.65); noise(t, 0.08, 0.2, 'lowpass', 600); }, // full hold, heavy commit
-  type: t => noise(t, 0.012, 0.07, 'bandpass', 2800, 2800, 3),                                    // typewriter key
+  type: t => {                                                                                     // typewriter key, varied
+    const f = 2300 + Math.random() * 1400;
+    noise(t, 0.014, 0.075, 'bandpass', f, f * 0.9, 3.5);
+    tone('square', 900 + Math.random() * 300, 600, t, 0.001, 0.012, 0.012, { type: 'bandpass', f: 1200, q: 2 });
+  },
+  ding: t => { tone('sine', 2093, 2093, t, 0.002, 0.28, 0.035); tone('sine', 3136, 3136, t, 0.002, 0.18, 0.015); }, // carriage return
   ratchet: t => { tone('square', 1700, 1200, t, 0.001, 0.018, 0.06, { type: 'bandpass', f: 1500, q: 4 }); noise(t, 0.015, 0.08, 'highpass', 2500); },
   chip: t => { tone('triangle', 3100, 2600, t, 0.001, 0.035, 0.09); tone('triangle', 3900, 3400, t + 0.028, 0.001, 0.03, 0.06); },
   paper: t => noise(t, 0.18, 0.16, 'lowpass', 2200, 450, 0.8, 0.02),                              // rank drop
@@ -102,15 +107,18 @@ const SOUNDS = {
     }
   },
 };
-const THROTTLE = { type: 45, pen: 70, ratchet: 30, tick: 25, chip: 40 };
+const THROTTLE = { type: 38, ding: 120, pen: 70, ratchet: 30, tick: 25, chip: 40 };
+// Scheduled sounds by name, for tests and debugging (window.__lvqSound).
+export const stats = { scheduled: {}, skipped: 0 };
+if (typeof window !== 'undefined') window.__lvqSound = { stats, state: () => (ctx ? ctx.state : 'none'), on: () => on };
 
 export function sfx(name) {
   if (!on || !SOUNDS[name]) return;
-  if (!ensure() || ctx.state !== 'running') return;
+  if (!ensure() || ctx.state !== 'running') { stats.skipped++; return; }
   const now = performance.now();
   if (THROTTLE[name] && now - (last[name] || 0) < THROTTLE[name]) return;
   last[name] = now;
-  try { SOUNDS[name](ctx.currentTime + 0.002); } catch { /* never let sound break a tap */ }
+  try { SOUNDS[name](ctx.currentTime + 0.002); stats.scheduled[name] = (stats.scheduled[name] || 0) + 1; } catch { /* never let sound break a tap */ }
 }
 
 // ---- the brass hum while a hold answer is pressed -----------------------------------------------------
