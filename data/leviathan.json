@@ -1,0 +1,63 @@
+{
+  "_note": "Leviathan's own belief model, read from leviathan.monster on 17 Nov 2026 (research/LEVIATHAN_PLAYTEST.md). beliefs12 stores +1 at the FIRST pole. The quiz scores its 19 axes, then maps them to beliefs12 with `map` (b = clamp(sum(weight * quizAxis) / 2, -1, 1)).",
+  "axes12": [
+    { "i": 0, "id": "federal", "pos": "Federal", "neg": "Unitary", "zones": ["Confederal", "Federational", "Federal", "Centrist", "Unitary", "Centralized", "Extremely Centralized"] },
+    { "i": 1, "id": "democratic", "pos": "Democratic", "neg": "Autocratic", "zones": ["Liquid Democracy", "Direct Democracy", "Representative Democracy", "Centrist", "Bicameral", "Oligarchy", "Autocracy"] },
+    { "i": 2, "id": "internationalist", "pos": "Internationalist", "neg": "Nationalist", "zones": ["World Government", "Internationalist", "Cooperative", "Non-Interventionist", "Anti-Interventionist", "Nationalist", "Ultranationalist"] },
+    { "i": 3, "id": "militarist", "pos": "Militarist", "neg": "Pacifist", "zones": ["Expansionist", "Militarist", "Military-Focused", "Neutral", "Non-Aggressive", "Pacifist", "Anti-War"] },
+    { "i": 4, "id": "security", "pos": "Security", "neg": "Freedom", "zones": ["Totalitarian", "Authoritarian", "Statist", "Centrist", "Liberal", "Libertarian", "Anarchist"] },
+    { "i": 5, "id": "equality", "pos": "Equality", "neg": "Markets", "zones": ["Communist", "Socialist", "Social Democratic", "Mixed Economy", "Economic Liberal", "Capitalist", "Extreme Capitalist"] },
+    { "i": 6, "id": "irreligious", "pos": "Irreligious", "neg": "Religious", "zones": ["Antitheist", "Atheist", "Agnostic", "Moderate", "Spiritual", "Religious", "Ultra-religious"] },
+    { "i": 7, "id": "progressive", "pos": "Progressive", "neg": "Traditional", "zones": ["Revolutionary", "Culturally Left", "Progressive", "Moderate", "Conservative", "Traditionalist", "Reactionary"] },
+    { "i": 8, "id": "assimilationist", "pos": "Assimilationist", "neg": "Multiculturalist", "zones": ["Ethnonationalist", "Monoculturalist", "Assimilationist", "Centrist", "Polyculturalist", "Multiculturalist", "Colorblind"] },
+    { "i": 9, "id": "planned", "pos": "Planned", "neg": "Laissez-faire", "zones": ["Planned Economy", "Interventionist", "Regulationist", "Balanced", "Market", "Free Market", "Laissez-Faire"] },
+    { "i": 10, "id": "isolationist", "pos": "Isolationist", "neg": "Globalist", "zones": ["Isolationist", "Protectionist", "Limited Trade", "Moderate", "Free Trade", "Globalist", "Global Economy"] },
+    { "i": 11, "id": "acceleration", "pos": "Acceleration", "neg": "Bioconservative", "zones": ["Transhumanist", "Accelerationist", "Technological", "Neutral", "Bioconservative", "Decelerationist", "Primitivist"] }
+  ],
+  "map": {
+    "federal": { "federal": 1.0 },
+    "democratic": { "democracy": 0.85, "loyalty": -0.15 },
+    "internationalist": { "world": 0.6, "border": 0.4 },
+    "militarist": { "world": 0.7, "psych": 0.3 },
+    "security": { "liberty": -0.7, "border": -0.3 },
+    "equality": { "econ": -1.0 },
+    "irreligious": { "faith": -1.0 },
+    "progressive": { "social": 1.0 },
+    "assimilationist": { "border": -0.6, "social": -0.4 },
+    "planned": { "econ": -0.8, "trade": -0.2 },
+    "isolationist": { "trade": -0.7, "world": -0.3 },
+    "acceleration": { "tech": 0.8, "social": 0.2 }
+  },
+  "zoneRule": "value +1..-1 split into 7 equal bands; band 0 is the + pole's extreme",
+  "lanes": [
+    { "id": "gop-moderate", "party": "gop", "short": "Moderates", "name": "Suburban moderates", "centroid": [0.1,0.5,0.3,0.2,-0.1,-0.4,0.2,0.2,0,-0.4,-0.4,0.3] },
+    { "id": "gop-business", "party": "gop", "short": "Chamber", "name": "Business Republicans", "centroid": [0.2,0.4,0.3,0.2,0,-0.7,-0.1,-0.1,0.1,-0.8,-0.7,0.4] },
+    { "id": "gop-establishment", "party": "gop", "short": "Establishment", "name": "Governing conservatives", "centroid": [0.3,0.4,0.1,0.5,0.3,-0.5,-0.4,-0.4,0.3,-0.5,-0.3,0] },
+    { "id": "gop-liberty", "party": "gop", "short": "Liberty", "name": "Liberty conservatives", "centroid": [0.8,0.5,-0.4,-0.3,-0.8,-0.8,-0.1,-0.2,0,-0.9,-0.2,0.2] },
+    { "id": "gop-hawk", "party": "gop", "short": "Hawks", "name": "National-security hawks", "centroid": [0.2,0.3,0.2,0.9,0.6,-0.5,-0.3,-0.4,0.4,-0.4,-0.3,0.3] },
+    { "id": "gop-law-and-order", "party": "gop", "short": "Sheriffs", "name": "Law-and-order conservatives", "centroid": [0.2,0.2,-0.3,0.5,0.8,-0.4,-0.4,-0.6,0.5,-0.3,0.1,-0.1] },
+    { "id": "gop-faith", "party": "gop", "short": "Faith", "name": "Christian conservatives", "centroid": [0.3,0.3,-0.2,0.3,0.3,-0.2,-0.9,-0.9,0.3,-0.2,0,-0.5] },
+    { "id": "gop-maga", "party": "gop", "short": "MAGA", "name": "America First populists", "centroid": [0.3,0.2,-0.7,0.4,0.4,-0.2,-0.6,-0.7,0.6,-0.1,0.6,-0.2] },
+    { "id": "gop-insurgent", "party": "gop", "short": "Hardliners", "name": "Freedom Caucus", "centroid": [0.7,0.3,-0.5,0.2,0.2,-0.7,-0.5,-0.7,0.5,-0.8,0.3,-0.1] },
+    { "id": "gop-online", "party": "gop", "short": "Online Right", "name": "Extremely Online Right", "centroid": [0.4,-0.2,-0.9,-0.2,0.3,-0.3,-0.2,-0.6,0.8,-0.4,0.9,0.6] },
+    { "id": "dem-socialist", "party": "dem", "short": "DSA", "name": "Democratic socialists", "centroid": [-0.2,0.8,0.7,-0.8,-0.4,1,0.5,0.9,-0.8,0.9,0,0.1] },
+    { "id": "dem-online", "party": "dem", "short": "Online Left", "name": "Extremely Online Left", "centroid": [-0.6,0.6,0.2,-0.8,-0.7,0.9,0.7,0.9,-0.8,0.8,0.2,0.3] },
+    { "id": "dem-progressive", "party": "dem", "short": "Progressive", "name": "Progressives", "centroid": [-0.1,0.7,0.6,-0.6,-0.3,0.8,0.3,0.9,-0.7,0.6,-0.1,0.2] },
+    { "id": "dem-new-south", "party": "dem", "short": "New majority", "name": "New-majority organizers", "centroid": [-0.2,0.9,0.5,-0.3,-0.2,0.6,0.1,0.7,-0.8,0.4,-0.2,0.3] },
+    { "id": "dem-faith-justice", "party": "dem", "short": "Church", "name": "Faith-and-justice Democrats", "centroid": [-0.2,0.7,0.4,-0.2,0.1,0.6,-0.8,0.1,-0.6,0.4,-0.1,-0.3] },
+    { "id": "dem-mainstream", "party": "dem", "short": "Mainstream", "name": "Mainstream liberals", "centroid": [-0.2,0.6,0.5,0,0,0.4,0,0.5,-0.4,0.3,-0.3,0.3] },
+    { "id": "dem-labor", "party": "dem", "short": "Labor", "name": "Labor Democrats", "centroid": [0,0.6,0,0,0,0.7,-0.2,0.2,-0.2,0.5,0.4,-0.1] },
+    { "id": "dem-suburban", "party": "dem", "short": "Suburban", "name": "Suburban metro Democrats", "centroid": [-0.1,0.6,0.5,0.2,0,0.3,0.2,0.5,-0.3,0.2,-0.3,0.5] },
+    { "id": "dem-moderate", "party": "dem", "short": "Blue Dog", "name": "Moderate Democrats", "centroid": [0.1,0.5,0.2,0.3,0.2,0.1,-0.4,0,-0.1,0,-0.2,0.1] },
+    { "id": "dem-rural", "party": "dem", "short": "Rural", "name": "Rural populist Democrats", "centroid": [0.2,0.5,-0.1,0.1,0.1,0.5,-0.6,-0.3,0.1,0.4,0.5,-0.4] }
+  ],
+  "laneMatch": "RMS distance between beliefs12 and centroid over 12 axes; nearest lane in the player's party wins; report % = round(100 * (1 - rms / 2))",
+  "traits": {
+    "Drive and temperament": ["Ambitious", "Patient", "Impulsive", "Stubborn", "Adaptable", "Competitive", "Cautious", "Courageous", "Restless", "Composed"],
+    "Social": ["Gregarious", "Aloof", "Affable", "Domineering", "Diplomatic", "Suspicious", "Loyal", "Vindictive", "Trusting", "Protective"],
+    "Work style": ["Meticulous", "Workaholic", "Disciplined", "Delegator", "Micromanager", "Creative", "Conventional", "Decisive", "Indecisive", "Resilient"],
+    "Ethics, secrecy and use of power": ["Honest", "Deceptive", "Ruthless", "Scrupulous", "Opportunistic", "Principled", "Corruptible", "Transactional", "Secretive", "Public-Spirited"],
+    "Political orientation": ["Pragmatist", "Ideologue", "Partisan", "Independent-Minded", "Institutionalist", "Populist", "Technocrat", "Machine-Minded", "Consensus-Seeker", "Maverick"]
+  },
+  "characterSubset": "Leviathan stores characters in localStorage leviathan.mp.characters as { partyId, personal:{wealth:'dynasty'|...}, traits:[3], beliefs12:[12], declaredFactionId:'faction:<lane id>', bio:{religion:{professed, private}, orientation:{orientation, open}, looks:{attractiveness, sexAppeal}} ... }. The quiz code carries the subset it can infer."
+}
