@@ -14,6 +14,7 @@ import { renderAnswer } from './types.js';
 import { renderResults } from './results.js';
 import { newSeed } from './rng.js';
 import { loadShareConfig } from './share.js';
+import { getSound, setSound, sfx } from './sound.js';
 
 const app = document.getElementById('app');
 const h = (tag, cls, text) => {
@@ -108,13 +109,24 @@ function title() {
   hap.querySelector('.switch-track').appendChild(h('span', 'switch-knob'));
   hap.addEventListener('click', () => { setHaptics(!getHaptics()); syncHap(); });
   syncHap();
+  const snd = h('button', 'btn switch-row');
+  snd.type = 'button';
+  snd.setAttribute('role', 'switch');
+  snd.setAttribute('aria-label', 'Sound');
+  const syncSnd = () => { snd.setAttribute('aria-checked', String(getSound())); snd.querySelector('.switch-state').textContent = getSound() ? 'On' : 'Off'; };
+  snd.append(h('span', 'switch-label', 'Sound'), h('span', 'switch-track'), h('span', 'switch-state', ''));
+  snd.querySelector('.switch-track').appendChild(h('span', 'switch-knob'));
+  snd.addEventListener('click', () => { setSound(!getSound()); syncSnd(); });
+  syncSnd();
+  const toggles = h('div', 'toggle-row');
+  toggles.append(hap, snd);
 
   const begin = h('button', 'btn primary begin');
   begin.type = 'button';
   begin.appendChild(h('span', 'btn-label', 'Open the file'));
   begin.addEventListener('click', () => { haptic('commit'); startRun(); });
   const panel = h('div', 'title-panel');
-  panel.append(route, length, hap, begin);
+  panel.append(route, length, toggles, begin);
   t.append(hero, panel);
   app.appendChild(t);
 }
@@ -145,7 +157,12 @@ async function startRun() {
   const chapterLbl = h('div', 'hud-chapter');
   const qLbl = h('div', 'hud-q');
   mid.append(chapterLbl, qLbl);
-  hud.append(map.el, mid, ghosts.el);
+  const speaker = h('button', 'hud-sound');
+  speaker.type = 'button';
+  const syncSpeaker = () => { speaker.setAttribute('aria-pressed', String(!getSound())); speaker.setAttribute('aria-label', getSound() ? 'Sound on. Tap to mute.' : 'Sound off. Tap to turn on.'); speaker.dataset.on = getSound() ? '1' : '0'; };
+  speaker.addEventListener('click', () => { setSound(!getSound()); syncSpeaker(); });
+  syncSpeaker();
+  hud.append(map.el, mid, speaker, ghosts.el);
   const banner = h('div', 'breaking');
   banner.hidden = true;
   banner.append(h('span', 'breaking-tag', 'Breaking'), h('span', 'breaking-text'));
@@ -271,7 +288,10 @@ async function askQuestion(q, { body, stage, banner }) {
     }, true);
   }
   wrap.classList.add('ready');
-  const res = await renderAnswer(q, { el: answer, artHost, cands: S.cands, stage, chapter: q.chapter });
+  S.run.seenTypes = S.run.seenTypes || new Set();
+  const firstOfType = !S.run.seenTypes.has(q.type);
+  S.run.seenTypes.add(q.type);
+  const res = await renderAnswer(q, { el: answer, artHost, cands: S.cands, stage, chapter: q.chapter, firstOfType });
   wrap.classList.add('leaving');
   await sleep(reducedMotion() ? 0 : 140);
   return res;

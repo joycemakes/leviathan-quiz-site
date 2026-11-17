@@ -4,6 +4,7 @@
 // ctx: { el, artHost, cands (Map id -> candidate), stage }
 
 import { haptic, shake, sleep, reducedMotion } from './feel.js';
+import { holdStart, holdLevel, holdStop, sfx } from './sound.js';
 import { createArtSlot, portraitEl, hasArt } from './art.js';
 import { HOLD_FULL_MS } from './scoring.js';
 
@@ -126,6 +127,7 @@ function renderEnvelope(q, ctx) {
         b.classList.add('chosen');
         lockAll(list);
         haptic('commit');
+        haptic('rustle');
         const scene = ctx.artHost.querySelector('.art-slot') || ctx.artHost;
         scene.dataset.grade = ['warm', 'cold', 'smoke', 'warm', 'cold'][i] || 'warm';
         const cap = h('div', 'scene-caption', o.label || '');
@@ -160,19 +162,22 @@ function renderHold(q, ctx) {
       const loop = () => {
         const p = Math.min(1, (performance.now() - t0) / HOLD_FULL_MS);
         fill.style.width = `${p * 100}%`;
-        if (p >= 1 && !ticked) { ticked = true; haptic('select'); b.classList.add('full'); }
+        holdLevel(p);
+        if (p >= 1 && !ticked) { ticked = true; haptic('heavy'); b.classList.add('full'); }
         raf = requestAnimationFrame(loop);
       };
       const start = e => {
         if (done || t0) return;
         if (e.pointerId != null) capture(b, e);
         t0 = performance.now(); ticked = false;
+        holdStart();
         raf = requestAnimationFrame(loop);
       };
-      const cancel = () => { cancelAnimationFrame(raf); t0 = 0; fill.style.width = '0%'; b.classList.remove('full'); };
+      const cancel = () => { cancelAnimationFrame(raf); holdStop(); t0 = 0; fill.style.width = '0%'; b.classList.remove('full'); };
       const end = async () => {
         if (done || !t0) return;
         cancelAnimationFrame(raf);
+        holdStop();
         const held = performance.now() - t0;
         if (held < HOLD_MIN_MS) { // a plain tap is not an answer here
           t0 = 0; fill.style.width = '0%';
@@ -243,7 +248,7 @@ function renderSlider(q, ctx) {
       const r = track.getBoundingClientRect();
       const p = Math.max(0, Math.min(1, (x - r.left) / r.width));
       const ni = Math.round(p * (steps - 1));
-      if (ni !== idx) { idx = ni; haptic('tap'); place(); }
+      if (ni !== idx) { idx = ni; haptic('ratchet'); place(); }
     };
     const release = () => { if (idx !== lastRelease) { moves++; lastRelease = idx; } };
     let dragging = false;
@@ -253,8 +258,8 @@ function renderSlider(q, ctx) {
     track.addEventListener('pointerup', up);
     track.addEventListener('pointercancel', up);
     track.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft' && idx > 0) { idx--; place(); release(); haptic('tap'); }
-      if (e.key === 'ArrowRight' && idx < steps - 1) { idx++; place(); release(); haptic('tap'); }
+      if (e.key === 'ArrowLeft' && idx > 0) { idx--; place(); release(); haptic('ratchet'); }
+      if (e.key === 'ArrowRight' && idx < steps - 1) { idx++; place(); release(); haptic('ratchet'); }
     });
     commit.addEventListener('click', async () => {
       const t = ms();
@@ -271,47 +276,92 @@ function renderSlider(q, ctx) {
 function renderPin(q, ctx) {
   return new Promise(resolve => {
     const ms = clock();
-    let done = false;
+    let done = false, current = null, changes = 0;
+    const esc = id => CSS.escape(id);
     const legend = h('div', 'pin-legend');
-    const pick = async (r, hitEl) => {
-      if (done) return;
-      done = true;
-      const t = ms();
-      slot.frame.querySelectorAll(`[data-region="${CSS.escape(r.id)}"]`).forEach(x => x.classList.add('chosen'));
-      slot.frame.appendChild(h('div', 'scene-caption', r.label || r.id));
-      const lb = legend.querySelector(`[data-region="${CSS.escape(r.id)}"]`);
-      if (lb) lb.classList.add('chosen');
-      lockAll(legend);
-      haptic('commit');
-      await sleep(reducedMotion() ? 150 : 700);
-      resolve({ regionId: r.id, ms: t });
+    legend.setAttribute('role', 'radiogroup');
+    legend.setAttribute('aria-label', 'Spots on the picture');
+    const confirm = btn('Confirm', 'primary commit pin-confirm');
+    confirm.disabled = true;
+    confirm.setAttribute('aria-disabled', 'true');
+    let caption = null;
+
+    // A tap (on the picture, a marker or a legend row) selects; Confirm commits.
+    const select = r => {
+      if (done || !r) return;
+      if (current && current.id !== r.id) changes++;
+      current = r;
+      slot.frame.querySelectorAll('[data-region]').forEach(x => x.classList.toggle('sel', x.dataset.region === r.id));
+      legend.querySelectorAll('.pin-opt').forEach(x => {
+        const on = x.dataset.region === r.id;
+        x.classList.toggle('sel', on);
+        x.setAttribute('aria-checked', String(on));
+      });
+      if (slot.el) {
+        if (!caption) { caption = h('div', 'scene-caption pin-caption'); slot.frame.appendChild(caption); }
+        const n = q.regions.indexOf(r) + 1;
+        caption.textContent = `${n}. ${r.label || r.id}`;
+      }
+      confirm.disabled = false;
+      confirm.setAttribute('aria-disabled', 'false');
+      haptic('select');
     };
-    const hint = h('p', 'hint', 'Tap a place on the picture, or pick from the list.');
+
+    const firstHint = 'Tap a spot on the picture to choose. Each spot is a different answer.';
+    const hint = h('p', 'hint pin-hint', ctx.firstOfType ? firstHint : 'Tap a spot or a number, then confirm.');
     const withArt = hasArt(q.art, 'wide') || hasArt(q.art, 'tall');
     const slot = withArt
       ? createArtSlot(q.art, {
-        kind: 'pin', regions: q.regions, onRegion: pick, chapter: ctx.chapter,
-        onTraced: t => { hint.textContent = t === '0' ? 'Pick from the list.' : 'Tap a place on the picture, or pick from the list.'; },
+        kind: 'pin', regions: q.regions, onRegion: r => select(r), chapter: ctx.chapter,
+        onTraced: t => { if (t === '0') hint.textContent = 'Pick a number from the list, then confirm.'; },
         onMiss: () => { hint.classList.remove('flash'); void hint.offsetWidth; hint.classList.add('flash'); haptic('error'); },
       })
       : { frame: document.createElement('div'), el: null };
     if (slot.el) ctx.artHost.appendChild(slot.el);
-    else { ctx.artHost.hidden = true; ctx.artHost.closest('.q')?.classList.remove('has-art'); hint.textContent = 'Pick one.'; }
-    if (slot.el) hint.textContent = slot.el.dataset.traced === '0' ? 'Pick from the list.' : 'Tap a place on the picture, or pick from the list.';
-    ctx.el.appendChild(hint);
+    else { ctx.artHost.hidden = true; ctx.artHost.closest('.q')?.classList.remove('has-art'); hint.textContent = 'Pick one, then confirm.'; }
+    if (slot.el && slot.el.dataset.traced === '0') hint.textContent = 'Pick a number from the list, then confirm.';
+
     q.regions.forEach((r, i) => {
-      const b = btn(r.label || r.id, 'opt pin-opt');
+      const b = h('button', 'pin-opt');
+      b.type = 'button';
       b.dataset.region = r.id;
-      b.prepend(h('span', 'pin-num', String(i + 1)));
-      b.addEventListener('click', () => pick(r, b));
-      const hl = on => slot.frame.querySelectorAll(`[data-region="${CSS.escape(r.id)}"]`).forEach(x => x.classList.toggle('hot', on));
+      b.setAttribute('role', 'radio');
+      b.setAttribute('aria-checked', 'false');
+      b.append(h('span', 'pin-num', String(i + 1)), h('span', 'pin-label', r.label || r.id));
+      b.addEventListener('click', () => select(r));
+      const hl = on => slot.frame.querySelectorAll(`[data-region="${esc(r.id)}"]`).forEach(x => x.classList.toggle('hot', on));
       b.addEventListener('pointerenter', () => hl(true));
       b.addEventListener('pointerleave', () => hl(false));
       b.addEventListener('focus', () => hl(true));
       b.addEventListener('blur', () => hl(false));
       legend.appendChild(b);
     });
-    ctx.el.appendChild(legend);
+
+    confirm.addEventListener('click', async () => {
+      if (done || !current) return;
+      done = true;
+      const t = ms();
+      slot.frame.querySelectorAll(`[data-region="${esc(current.id)}"]`).forEach(x => x.classList.add('chosen'));
+      lockAll(legend);
+      await chosen(ctx.el, confirm);
+      resolve({ regionId: current.id, revisions: changes, ms: t });
+    });
+
+    // The legend sits right under the picture and the whole question fits the screen: the picture gives
+    // up height until hint, legend and Confirm are all visible without scrolling.
+    ctx.el.append(hint, legend, confirm);
+    if (slot.el) {
+      const fit = () => {
+        if (!slot.el.isConnected || done) { window.removeEventListener('resize', fit); return; }
+        slot.el.style.removeProperty('--pin-h');
+        const over = document.documentElement.scrollHeight - window.innerHeight;
+        const fh = slot.frame.getBoundingClientRect().height;
+        if (over > 0 && fh > 0) slot.el.style.setProperty('--pin-h', `${Math.max(180, Math.floor(fh - over - 4))}px`);
+      };
+      requestAnimationFrame(fit);
+      setTimeout(fit, 120);
+      window.addEventListener('resize', fit);
+    }
   });
 }
 
@@ -352,8 +402,8 @@ function renderBudget(q, ctx) {
       minus.setAttribute('aria-label', `Take a chip from ${o.label}`);
       plus.setAttribute('aria-label', `Put a chip on ${o.label}`);
       const amt = h('span', 'budget-amt', '0');
-      const sub = () => { if (alloc[o.id] > 0) { alloc[o.id] -= CHIP; if (reachedFull) revisions++; haptic('tap'); refresh(); return true; } return false; };
-      const add = (n = CHIP) => { const k = Math.min(n, left()); if (k > 0) { alloc[o.id] += k; haptic('select'); refresh(); return true; } return false; };
+      const sub = () => { if (alloc[o.id] > 0) { alloc[o.id] -= CHIP; if (reachedFull) revisions++; haptic('chip'); refresh(); return true; } return false; };
+      const add = (n = CHIP) => { const k = Math.min(n, left()); if (k > 0) { alloc[o.id] += k; haptic('chip'); refresh(); return true; } return false; };
       repeatOn(minus, sub);
       repeatOn(plus, () => add());
       // Tapping the row itself drops a stack of three chips.
@@ -431,7 +481,7 @@ function renderRank(q, ctx) {
       li.style.transform = '';
       li.classList.remove('dragging');
       const to = [...list.children].indexOf(li);
-      if (to !== from) { moved[li.dataset.opt] = (moved[li.dataset.opt] || 0) + 1; haptic('select'); }
+      if (to !== from) { moved[li.dataset.opt] = (moved[li.dataset.opt] || 0) + 1; haptic('paper'); }
       li.classList.remove('is-pressed');
       drag = null;
       renumber();
@@ -505,7 +555,7 @@ function renderSwipe(q, ctx) {
       const c = q.cards[i];
       res[c.id] = { v, ms: Math.round(performance.now() - shownAt) };
       card.classList.add(v === 'yes' ? 'out-right' : v === 'no' ? 'out-left' : 'out-down');
-      haptic(v ? 'select' : 'error');
+      haptic(v ? 'whoosh' : 'error');
       if (!v) card.appendChild(h('div', 'swipe-stamp', 'Too slow'));
       i++;
       await sleep(reducedMotion() ? 60 : v ? 220 : 420);
@@ -695,7 +745,7 @@ function renderSign(q, ctx) {
       if (!pts.length || x > pts[pts.length - 1][0] + 3) {
         pts.push(scribble(pts.length, x));
         path.setAttribute('points', pts.map(q2 => q2.join(',')).join(' '));
-        if (pts.length % 6 === 0) haptic('tap');
+        haptic('pen');
       }
       if (p > 0.8) { x0 = null; pen.classList.remove('writing'); finish('sign', 'commit'); }
     });

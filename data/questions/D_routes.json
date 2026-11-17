@@ -6,8 +6,8 @@
     "type": "choice",
     "tier": "core",
     "topic": "shutdown",
-    "context": "A spending bill written by the other side is on the floor. Your Senate leader is about to wave it through.",
-    "prompt": "You are the name the base keeps refreshing its feed for. What goes out under it?",
+    "context": "A Republican spending bill is on the Senate floor. Block it and the government shuts down. Your own party's Senate leader is about to wave it through.",
+    "prompt": "The base is refreshing your feed to see what you do. How do you vote, and what do you say?",
     "options": [
       {
         "id": "a",
@@ -70,11 +70,11 @@
     "tier": "core",
     "topic": "shutdown",
     "context": "Day 40 of the shutdown. Eight of your colleagues are ready to reopen the government without the health-care subsidies you shut it down for.",
-    "prompt": "Hold to commit. The longer you hold, the more you mean it.",
+    "prompt": "Do you keep the government shut, or take the deal?",
     "options": [
       {
         "id": "a",
-        "label": "Hold out. No subsidies, no votes.",
+        "label": "Stay shut. No subsidies, no votes.",
         "effects": {
           "style": 1,
           "econ": -0.8
@@ -95,7 +95,7 @@
       },
       {
         "id": "c",
-        "label": "Hold out, and find primary challengers for the eight.",
+        "label": "Stay shut, and find primary challengers for the eight.",
         "effects": {
           "system": 1.2,
           "psych": 0.8,
@@ -119,11 +119,11 @@
     "type": "slider",
     "tier": "core",
     "topic": "age-question",
-    "context": "The age question, asked out loud at last.",
+    "context": "The last Democratic President quit the race at 81, weeks after one debate. Now the age question gets asked out loud.",
     "prompt": "Should the party refuse to nominate anyone over 70?",
     "slider": {
-      "left": "Experience is the point",
-      "right": "Hard cap. Pass the torch.",
+      "left": "No. Experience is the point",
+      "right": "Yes. Hard cap at 70. Pass the torch.",
       "centre": "No cap. Let the primary voters do it",
       "effects": {
         "system": 1,
@@ -156,8 +156,8 @@
     "excludes": [
       "C-078"
     ],
-    "context": "A new book says aides hid the last President's decline from the public. You were in those rooms.",
-    "prompt": "The microphones are already in the driveway.",
+    "context": "A new book says aides hid the last Democratic President's decline from the public. You were in those rooms.",
+    "prompt": "Reporters are waiting in your driveway. What do you tell them?",
     "options": [
       {
         "id": "a",
@@ -206,7 +206,7 @@
     "excludes": [
       "F-013"
     ],
-    "context": "The autopsy nobody will publish. You are asked to write the first page.",
+    "context": "The party's report on why it lost in 2024 will never be published. You are asked to write the first page.",
     "prompt": "Rank the causes of the 2024 defeat, most to blame at the top.",
     "options": [
       {
@@ -278,8 +278,8 @@
     "excludes": [
       "A-011"
     ],
-    "context": "Two books, two tours, one party. One side wants to build faster. The other wants to name who is stopping you.",
-    "prompt": "Where is the party's future?",
+    "context": "Two camps are fighting over the party. One says build more, faster: housing, power, transit. The other says name the billionaires who are stopping you.",
+    "prompt": "Which way should the party go?",
     "slider": {
       "left": "Fight the oligarchs",
       "right": "Build, build, build",
@@ -312,13 +312,13 @@
     "tier": "core",
     "topic": "oligarchy-vs-abundance",
     "context": "A union hall in Iowa, the night before the caucus. The room is empty for another ten minutes.",
-    "prompt": "Tap where you will be standing when the doors open.",
+    "prompt": "Where are you standing when the voters walk in? Each spot is a different pitch. Tap one.",
     "art": "D-UNION-HALL-IOWA",
     "artNote": "Empty union hall at night, snow against the windows, folding chairs in rows. No people. Left wall: a stack of hand-painted picket signs. Center: a trestle table with rolled blueprints and a hard hat. Right foreground: a steel coffee urn and paper cups. Back right: a press riser with two tripods. Far back: a side door with a green exit sign.",
     "regions": [
       {
         "id": "signs",
-        "label": "The picket signs (name the villains)",
+        "label": "The picket signs — name the villains",
         "where": "left wall, the leaning stack of picket signs",
         "effects": {
           "econ": -1.2,
@@ -333,7 +333,7 @@
       },
       {
         "id": "blueprints",
-        "label": "The blueprint table (show what you will build)",
+        "label": "The blueprint table — show what you will build",
         "where": "center, the trestle table with blueprints and hard hat",
         "effects": {
           "tech": 1,
@@ -347,7 +347,7 @@
       },
       {
         "id": "urn",
-        "label": "The coffee urn (shake every hand)",
+        "label": "The coffee urn — shake every hand",
         "where": "right foreground, the coffee urn and paper cups",
         "effects": {
           "style": -1,
@@ -361,7 +361,7 @@
       },
       {
         "id": "riser",
-        "label": "The press riser (the room is a backdrop)",
+        "label": "The press riser — play to the cameras, not the room",
         "where": "back right, the riser with tripods",
         "effects": {
           "online": 1,
@@ -375,7 +375,7 @@
       },
       {
         "id": "door",
-        "label": "The side door (work the phones outside)",
+        "label": "The side door — step out and work the phones",
         "where": "far back, the door under the green exit lamp",
         "effects": {
           "mach": 1.2,
@@ -435,7 +435,7 @@
       },
       {
         "id": "d",
-        "label": "Pivot to rent. Every time, pivot to rent.",
+        "label": "Dodge it. Pivot to rent, every time.",
         "effects": {
           "mach": 1,
           "style": -0.6
@@ -452,8 +452,8 @@
     "type": "swipe",
     "tier": "core",
     "topic": "media-bookings",
-    "context": "The booker has seven invitations and no patience.",
-    "prompt": "Say yes or no to each booking. Four seconds apiece.",
+    "context": "Your media booker has seven interview invitations and no patience.",
+    "prompt": "Do you take each booking? Yes or no, four seconds apiece.",
     "cards": [
       {
         "id": "s1",
@@ -565,8 +565,8 @@
     "excludes": [
       "A-017"
     ],
-    "context": "Your own podcast. A conservative guest asks whether trans girls competing in girls' sports is fair. The clip gets cut either way.",
-    "prompt": "Three seconds of dead air. Then:",
+    "context": "You host your own podcast. A conservative guest asks whether trans girls competing in girls' sports is fair. Either answer gets clipped.",
+    "prompt": "Three seconds of dead air. What do you say?",
     "options": [
       {
         "id": "a",
@@ -610,7 +610,7 @@
       "B-062"
     ],
     "context": "You govern a state your party lost by 26 points. A bill restricting medical care for trans minors reaches your desk. Your election is eight months out, and they have the votes to override you anyway.",
-    "prompt": "Sign it or veto it.",
+    "prompt": "Do you sign the bill restricting medical care for trans minors, or veto it?",
     "options": [
       {
         "id": "sign",
@@ -646,8 +646,8 @@
     "type": "hold",
     "tier": "core",
     "topic": "trans-athletes",
-    "context": "The ad is coming back in October: one clip of you, one line about they and them, every ad break of every game.",
-    "prompt": "Hold to commit to an answer.",
+    "context": "The other side's attack ad is coming back in October: one old clip of you on trans rights, one line about they and them, in every ad break of every game.",
+    "prompt": "How do you answer the ad?",
     "options": [
       {
         "id": "a",
@@ -674,7 +674,7 @@
       },
       {
         "id": "c",
-        "label": "Move on sports, hold firm on health care.",
+        "label": "Give ground on trans athletes, hold firm on health care.",
         "effects": {
           "social": -0.8,
           "mach": 0.8
@@ -703,8 +703,8 @@
       "B-013",
       "E-019"
     ],
-    "context": "Texas redrew its map mid-decade to take five seats. You have 100 points of political capital for the reply.",
-    "prompt": "Split it.",
+    "context": "Texas Republicans redrew their congressional map mid-decade to take five more House seats. You have 100 points of political capital for the reply.",
+    "prompt": "How do Democrats hit back? Split your 100 points.",
     "options": [
       {
         "id": "a",
@@ -760,8 +760,8 @@
     "type": "choice",
     "tier": "core",
     "topic": "party-rules",
-    "context": "No one has a majority. On a second ballot the party insiders get their votes back.",
-    "prompt": "What do you say about the superdelegates?",
+    "context": "The convention opens with no candidate holding a majority. On a second ballot the superdelegates, the party insiders, get to vote.",
+    "prompt": "What should happen to the superdelegates?",
     "options": [
       {
         "id": "a",
@@ -884,12 +884,12 @@
     "type": "choice",
     "tier": "core",
     "topic": "age-question",
-    "context": "The caucus picks its lead on the Oversight Committee: a 74-year-old veteran over a 35-year-old with the biggest audience in the party. 131 to 84.",
-    "prompt": "Your read on the vote?",
+    "context": "House Democrats pick their lead on the Oversight Committee. A 74-year-old veteran beats a 35-year-old with the biggest audience in the party, 131 to 84.",
+    "prompt": "What do you make of the vote?",
     "options": [
       {
         "id": "a",
-        "label": "This is how you end up with 2024.",
+        "label": "Seniority over talent. This is how you end up with 2024.",
         "effects": {
           "system": 1.2,
           "loyalty": -0.5
@@ -941,7 +941,7 @@
     "tier": "core",
     "topic": "primary-challengers",
     "context": "A party officer wants to spend millions on primary challenges to safe-seat incumbents who have stopped trying.",
-    "prompt": "How far do you go?",
+    "prompt": "Should the party fund challengers against its own coasting incumbents?",
     "slider": {
       "left": "Protect every incumbent",
       "right": "Primary the sleepers",
@@ -1095,7 +1095,7 @@
       "A-004"
     ],
     "context": "A 34-year-old democratic socialist has just won the mayoralty of the country's biggest city on a rent freeze and free buses.",
-    "prompt": "What is the lesson?",
+    "prompt": "What should the party learn from his win?",
     "options": [
       {
         "id": "a",
@@ -1221,13 +1221,13 @@
     "tier": "core",
     "topic": "age-question",
     "context": "A New Hampshire town hall. The first question will be about age, yours or someone else's.",
-    "prompt": "Tap where you take it from.",
+    "prompt": "How do you answer the age question? Tap the spot you answer it from.",
     "art": "D-NH-TOWNHALL-AGE",
     "artNote": "Empty white clapboard town hall interior, winter light, wooden floor. No people. Center back: a plain lectern with one microphone. Front left: a single folding chair pulled into the audience rows. Right: a trestle table with a birthday cake crowded with far too many candles. Back wall: a row of framed portraits shown only as dark silhouettes in gilt frames. Far right: a door standing ajar with snow light behind it.",
     "regions": [
       {
         "id": "lectern",
-        "label": "The lectern (answer with a full speech)",
+        "label": "The lectern — answer with a full speech",
         "where": "center back, the lectern",
         "effects": {
           "system": -0.8,
@@ -1240,7 +1240,7 @@
       },
       {
         "id": "chair",
-        "label": "The folding chair (sit down among them)",
+        "label": "The folding chair — sit down among them and talk",
         "where": "front left, the lone folding chair in the rows",
         "effects": {
           "style": -1,
@@ -1254,7 +1254,7 @@
       },
       {
         "id": "cake",
-        "label": "The cake (say it: your rivals are too old)",
+        "label": "The cake — say it: your rivals are too old",
         "where": "right, the cake with too many candles",
         "effects": {
           "style": 1.2,
@@ -1269,7 +1269,7 @@
       },
       {
         "id": "portraits",
-        "label": "The portraits (experience built this)",
+        "label": "The portraits — defend age: experience built this",
         "where": "back wall, the row of gilt frames",
         "effects": {
           "system": -1.2,
@@ -1279,7 +1279,7 @@
       },
       {
         "id": "door",
-        "label": "The open door (promise one term, then go)",
+        "label": "The open door — promise one term, then go",
         "where": "far right, the door ajar",
         "effects": {
           "narc": -1.2,
@@ -1301,8 +1301,8 @@
       "B-054",
       "E-001"
     ],
-    "context": "Federal agents and National Guard troops are ordered into your largest city over your objection.",
-    "prompt": "You are the governor. Hold to commit.",
+    "context": "The President orders federal agents and National Guard troops into your largest city over your objection.",
+    "prompt": "You are the governor. How do you respond?",
     "options": [
       {
         "id": "a",
@@ -1367,7 +1367,7 @@
       "E-026"
     ],
     "context": "You are a veteran in Congress. You record a video reminding troops they may refuse illegal orders. The President calls it seditious. The Pentagon opens a review of you.",
-    "prompt": "Next move.",
+    "prompt": "What is your next move?",
     "options": [
       {
         "id": "a",
@@ -1432,7 +1432,7 @@
       "B-039"
     ],
     "context": "A senator from a swing state tells the party to stop saying oligarchy, because nobody outside a seminar knows what it means.",
-    "prompt": "Whose vocabulary wins?",
+    "prompt": "Which word should Democrats campaign on?",
     "slider": {
       "left": "Say oligarchy, louder",
       "right": "Say kings. Say prices.",
@@ -1469,8 +1469,8 @@
       "B-055",
       "C-091"
     ],
-    "context": "Your budget needs one more vote from the other party. Their price: public money for private-school scholarships. The teachers' union is in the lobby.",
-    "prompt": "Two doors.",
+    "context": "You are a governor. Your budget needs one more vote from the other party. Their price: public money for private-school scholarships. The teachers' union is in the lobby.",
+    "prompt": "Do you take the deal?",
     "options": [
       {
         "id": "a",
@@ -1514,7 +1514,7 @@
       "B-025"
     ],
     "context": "The last nominee's memoir says you were passed over for running mate partly because you seemed to want the top job a little too much.",
-    "prompt": "A reporter reads you the page.",
+    "prompt": "A reporter reads you the page. How do you respond?",
     "options": [
       {
         "id": "a",
@@ -1551,7 +1551,7 @@
       },
       {
         "id": "d",
-        "label": "Ask why anyone is still relitigating 107 days.",
+        "label": "Ask why anyone is still relitigating a 107-day campaign.",
         "effects": {
           "system": 0.6,
           "loyalty": -0.5
@@ -1640,8 +1640,8 @@
     "excludes": [
       "B-027"
     ],
-    "context": "A libertarian Republican offers you a joint petition to force out the Epstein files. Some on your side say never share a stage with him.",
-    "prompt": "He is waiting by the elevator.",
+    "context": "A libertarian Republican asks you to co-lead a petition forcing a House vote to release the Epstein files. Some on your side say never share a stage with him.",
+    "prompt": "He is waiting by the elevator. Do you join him?",
     "options": [
       {
         "id": "a",
@@ -1700,7 +1700,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "big-tech",
-    "context": "The donors in the Valley who left in 2024 would like a meeting.",
+    "context": "The Silicon Valley donors who left the party in 2024 would like a meeting.",
     "prompt": "What is the party's posture toward Big Tech?",
     "slider": {
       "left": "Break them up",
@@ -1736,8 +1736,8 @@
       "B-061",
       "C-098"
     ],
-    "context": "Your bill would ban members of Congress from trading stocks. Several portfolios in your own leadership are inside the blast radius.",
-    "prompt": "Hold to commit.",
+    "context": "Your bill would ban members of Congress from trading stocks. Several of your own party leaders' portfolios would be caught by it.",
+    "prompt": "What do you do with your bill?",
     "options": [
       {
         "id": "a",
@@ -1784,8 +1784,8 @@
     "type": "swipe",
     "tier": "core",
     "topic": "platform",
-    "context": "The platform committee has a red pen and a deadline.",
-    "prompt": "Keep it in the platform? Yes or no, four seconds each.",
+    "context": "You chair the committee writing the party platform. It has a red pen and a deadline.",
+    "prompt": "Does each plank stay in the platform? Yes keeps it, no cuts it. Four seconds each.",
     "cards": [
       {
         "id": "s1",
@@ -1871,8 +1871,8 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "last-nominee-returns",
-    "context": "The last nominee calls. She says she is not done, and she would like your endorsement before the field forms.",
-    "prompt": "She is still on the line.",
+    "context": "The party's losing 2024 nominee calls. She says she is not done, and she would like your endorsement before the field forms.",
+    "prompt": "She is still on the line. Do you endorse her?",
     "options": [
       {
         "id": "a",
@@ -1915,8 +1915,8 @@
       "B-019",
       "C-085"
     ],
-    "context": "You accept an interview on the other side's network. The host opens with the worst week you ever had in office.",
-    "prompt": "Camera two is live.",
+    "context": "You accept an interview on the other side's cable network. The host opens with the worst week you ever had in office.",
+    "prompt": "You are live. How do you handle it?",
     "options": [
       {
         "id": "a",
@@ -1974,8 +1974,8 @@
     "type": "budget",
     "tier": "core",
     "topic": "coalition-targets",
-    "context": "One hundred field organizers left to place. Every placement is an insult to the four groups who do not get it, and the state directors are reading over your shoulder.",
-    "prompt": "Place them. Whoever gets the fewest will read about it in the morning.",
+    "context": "You have one hundred field organizers left to place among five groups of voters. Every state director is reading over your shoulder.",
+    "prompt": "Split the organizers. The group that gets the fewest will read about it in the morning.",
     "options": [
       {
         "id": "a",
@@ -2042,8 +2042,8 @@
     "type": "sign",
     "tier": "core",
     "topic": "permitting",
-    "context": "A permitting bill: it fast-tracks housing and power lines, and pipelines with them. Environmental groups call it a betrayal. Builders call it overdue.",
-    "prompt": "Sign it or veto it.",
+    "context": "A permitting bill reaches your desk. It fast-tracks housing and power lines, and pipelines with them. Environmental groups call it a betrayal. Builders call it overdue.",
+    "prompt": "Do you sign the fast-track permitting bill, or veto it?",
     "options": [
       {
         "id": "sign",
@@ -2227,7 +2227,7 @@
     "type": "rank",
     "tier": "core",
     "topic": "who-you-owe",
-    "context": "You clinched an hour ago. The phone has 212 missed calls.",
+    "context": "You clinched the nomination an hour ago. The phone has 212 missed calls.",
     "prompt": "Rank who you call back first.",
     "options": [
       {
@@ -2286,11 +2286,11 @@
       "D-041"
     ],
     "context": "The President says it is too early to name an heir. Months later he says the Vice President is most likely.",
-    "prompt": "What is the movement once he is gone?",
+    "prompt": "Who should his movement belong to once he is gone?",
     "options": [
       {
         "id": "a",
-        "label": "The Vice President's. Succession should be orderly.",
+        "label": "The Vice President. Succession should be orderly.",
         "effects": {
           "loyalty": 1.2,
           "system": -0.3
@@ -2301,7 +2301,7 @@
       },
       {
         "id": "b",
-        "label": "A bloodline. The name is the brand.",
+        "label": "His family. The name is the brand.",
         "effects": {
           "dynasty": 1.5,
           "loyalty": 1
@@ -2312,7 +2312,7 @@
       },
       {
         "id": "c",
-        "label": "An open primary. Nobody is owed it.",
+        "label": "Whoever wins an open primary. Nobody is owed it.",
         "effects": {
           "loyalty": -1,
           "dynasty": -1
@@ -2324,7 +2324,7 @@
       },
       {
         "id": "d",
-        "label": "Over. Time to rebuild the party that came before.",
+        "label": "Nobody. It is over; rebuild the party that came before.",
         "effects": {
           "loyalty": -1.5,
           "system": -1
@@ -2350,7 +2350,7 @@
     "tier": "core",
     "topic": "heir-apparent",
     "context": "The President has mused aloud about a ticket made of his Vice President and his Secretary of State. He did not say in which order.",
-    "prompt": "Who goes on top?",
+    "prompt": "Who should lead that ticket?",
     "options": [
       {
         "id": "a",
@@ -2366,7 +2366,7 @@
       },
       {
         "id": "b",
-        "label": "The diplomat with all the jobs. He can win suburbs.",
+        "label": "The Secretary of State, diplomat with all the jobs. Wins suburbs.",
         "effects": {
           "world": 1,
           "system": -0.5,
@@ -2396,12 +2396,12 @@
       "C-047",
       "D-039"
     ],
-    "context": "The President's eldest son says maybe one day. A draft committee wants your signature tonight.",
-    "prompt": "Hold to commit.",
+    "context": "The President's eldest son is asked whether he will run for President and says maybe one day. A committee set up to draft him into the 2028 race wants your name on its letter tonight.",
+    "prompt": "Do you sign the letter urging the President's son to run in 2028?",
     "options": [
       {
         "id": "a",
-        "label": "Sign. The voters want the name.",
+        "label": "Sign it. The voters want the name.",
         "effects": {
           "dynasty": 1.5,
           "loyalty": 1
@@ -2424,7 +2424,7 @@
       },
       {
         "id": "c",
-        "label": "Sign nothing. Tell both camps you are with them.",
+        "label": "Sign nothing. Tell his camp and his rivals you are with them.",
         "effects": {
           "mach": 1.5
         },
@@ -2457,10 +2457,10 @@
     "excludes": [
       "A-037"
     ],
-    "context": "Liberation Day: tariffs on nearly every country on earth, announced with a chart in the Rose Garden.",
+    "context": "Liberation Day: the President's name for the day he put tariffs on nearly every country on earth, with a chart in the Rose Garden.",
     "prompt": "Where should the party stand on trade?",
     "slider": {
-      "left": "Tariff wall",
+      "left": "Tariffs on everyone",
       "right": "Free trade",
       "centre": "Tariffs on China, trade with friends",
       "effects": {
@@ -2486,7 +2486,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "tariff-power",
-    "context": "Two days after the tariffs, the markets have lost a tenth of their value. You are a senator with a microphone.",
+    "context": "Two days after the President's worldwide tariffs, the stock market has lost a tenth of its value. You are a Republican senator with a microphone.",
     "prompt": "What do you do with it?",
     "options": [
       {
@@ -2550,13 +2550,13 @@
     "tier": "core",
     "topic": "tech-right",
     "context": "A Nevada casino floor at 4 a.m., an hour before your rally in the ballroom. The tech money and the nationalists are both in the building.",
-    "prompt": "Tap where you spend the hour.",
+    "prompt": "You have one free hour. Who gets it? Tap where you spend it.",
     "art": "D-NEVADA-CASINO-FLOOR",
     "artNote": "Casino floor before dawn, carpet patterned, lights on, nobody there. No people. Left: a roped-off high-limit table with stacked chips and a velvet rope. Center: a long row of slot machines glowing. Right: a wall of sportsbook screens showing only numbers and tickers. Back: a low stage with flag bunting and a lone microphone stand. Far left corner: a plain service door propped open with a cleaning cart.",
     "regions": [
       {
         "id": "highroller",
-        "label": "The high-limit table (the tech donors)",
+        "label": "The high-limit table — court the tech donors",
         "where": "left, the roped-off table with chip stacks",
         "effects": {
           "tech": 1.2,
@@ -2569,7 +2569,7 @@
       },
       {
         "id": "slots",
-        "label": "The slot machines (the regulars)",
+        "label": "The slot machines — talk to the regulars",
         "where": "center, the row of slot machines",
         "effects": {
           "econ": -0.8,
@@ -2583,7 +2583,7 @@
       },
       {
         "id": "sportsbook",
-        "label": "The sportsbook screens (the very online)",
+        "label": "The sportsbook screens — post for the very online",
         "where": "right, the wall of screens and tickers",
         "effects": {
           "online": 1.2,
@@ -2596,7 +2596,7 @@
       },
       {
         "id": "stage",
-        "label": "The stage (rehearse the speech again)",
+        "label": "The stage — rehearse the speech again",
         "where": "back, the stage with bunting and microphone",
         "effects": {
           "narc": 1,
@@ -2609,7 +2609,7 @@
       },
       {
         "id": "service",
-        "label": "The service door (the night-shift workers)",
+        "label": "The service door — meet the night-shift workers",
         "where": "far left corner, the propped service door and cart",
         "effects": {
           "narc": -1,
@@ -2635,9 +2635,9 @@
       "A-025"
     ],
     "context": "Ukraine, year four. The party has two answers and they cannot both be the platform.",
-    "prompt": "Where do you put it?",
+    "prompt": "Where should the party stand on arming Ukraine?",
     "slider": {
-      "left": "Not our war",
+      "left": "Not our war. Cut them off.",
       "right": "Arm them until Russia leaves",
       "centre": "Arm them just enough to get a deal",
       "effects": {
@@ -2666,7 +2666,7 @@
     "excludes": [
       "B-001"
     ],
-    "context": "A wartime ally is in the Oval Office and the meeting is coming apart on live television. You are sitting four feet away.",
+    "context": "The leader of an ally at war is in the Oval Office, and the meeting is coming apart on live television. You are sitting four feet away.",
     "prompt": "What do you do?",
     "options": [
       {
@@ -2736,7 +2736,7 @@
     "type": "rank",
     "tier": "core",
     "topic": "threat-ranking",
-    "context": "One foreign-policy speech, one headline. The hawks and the restrainers have each sent a draft.",
+    "context": "You get one foreign-policy speech and one headline. The hawks and the bring-them-home wing have each sent a draft.",
     "prompt": "Rank where America's attention should go.",
     "options": [
       {
@@ -2807,8 +2807,8 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "iran",
-    "context": "The bombers are already in the air toward a nuclear site. The online right calls it a betrayal of America First. The hawks say finish the job.",
-    "prompt": "You have to say something before they land.",
+    "context": "On the President's order, American bombers are in the air toward Iran's nuclear sites. The online right calls it a betrayal of America First. The hawks say finish the job.",
+    "prompt": "You have to say something before they land. Do you back the strike?",
     "options": [
       {
         "id": "a",
@@ -2848,7 +2848,7 @@
       "B-063"
     ],
     "context": "A host with a vast audience asks you the population of the country you want to bomb. You do not know it.",
-    "prompt": "The pause is being clipped as you sit there.",
+    "prompt": "Your blank face is being clipped as you sit there. What do you do?",
     "options": [
       {
         "id": "a",
@@ -2912,8 +2912,8 @@
     "excludes": [
       "A-087"
     ],
-    "context": "Your own Justice Department says there is no client list and nothing more to release. The base is not buying it.",
-    "prompt": "Hold to commit.",
+    "context": "Your own party's Justice Department says there is no Epstein client list and nothing more to release. The base is not buying it.",
+    "prompt": "What do you say about the Epstein files?",
     "options": [
       {
         "id": "a",
@@ -2966,8 +2966,8 @@
     "type": "swipe",
     "tier": "core",
     "topic": "loyalty-test",
-    "context": "The loyalty test. A man with a clipboard reads the statements. You nod or you do not.",
-    "prompt": "Yes or no. Four seconds each.",
+    "context": "The loyalty test. A man from the President's movement reads statements off a clipboard. You nod or you do not.",
+    "prompt": "Do you agree with each statement? Yes or no, four seconds each.",
     "cards": [
       {
         "id": "s1",
@@ -3011,7 +3011,7 @@
       },
       {
         "id": "s4",
-        "text": "The Vice President was right to certify",
+        "text": "The Vice President was right to certify the 2020 result",
         "yes": {
           "system": -1.2,
           "loyalty": -1,
@@ -3071,8 +3071,8 @@
       "C-076",
       "E-015"
     ],
-    "context": "You are a governor. The President is on the phone. He wants a special session of your legislature to find a way to change your state's result.",
-    "prompt": "He is waiting for an answer.",
+    "context": "You are a governor. The President lost your state, and he is on the phone. He wants a special session of your legislature to find a way to change the result.",
+    "prompt": "He is waiting. Do you call the session?",
     "options": [
       {
         "id": "a",
@@ -3116,12 +3116,12 @@
     "excludes": [
       "B-033"
     ],
-    "context": "Debate night. The moderator rolls two clips from the same afternoon: you saluting the crowd outside, and you leaving the building at speed.",
-    "prompt": "Thirty seconds to respond.",
+    "context": "Debate night. The moderator rolls two clips of you from January 6: saluting the crowd outside the Capitol, then leaving the building at speed.",
+    "prompt": "You have thirty seconds. What do you say?",
     "options": [
       {
         "id": "a",
-        "label": "I objected lawfully, and I would again.",
+        "label": "I objected to the count lawfully, and I would again.",
         "effects": {
           "loyalty": 1,
           "system": 0.8
@@ -3173,7 +3173,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "pardons",
-    "context": "About 1,500 pardons, signed on the first day back.",
+    "context": "On his first day back, the President pardoned about 1,500 people charged over the January 6 attack on the Capitol.",
     "prompt": "Were the January 6 pardons right?",
     "slider": {
       "left": "All of them, yes",
@@ -3207,7 +3207,7 @@
       "A-057"
     ],
     "context": "One prime-time slot left on the convention's final night, and five factions who think it is theirs.",
-    "prompt": "Rank who gets it.",
+    "prompt": "Rank who gets the speaking slot, first choice at the top.",
     "options": [
       {
         "id": "a",
@@ -3277,8 +3277,8 @@
     "type": "choice",
     "tier": "core",
     "topic": "big-tent",
-    "context": "A famous host gives a friendly interview to an open antisemite. The head of the movement's biggest think tank defends the host. Donors want your statement by noon.",
-    "prompt": "What goes out?",
+    "context": "A famous conservative host gives a friendly interview to an open antisemite. The head of the movement's biggest think tank defends the host. Donors want your statement by noon.",
+    "prompt": "What does your statement say?",
     "options": [
       {
         "id": "a",
@@ -3318,7 +3318,7 @@
       },
       {
         "id": "d",
-        "label": "Call on the board to replace him.",
+        "label": "Call on the think tank's board to replace its head.",
         "effects": {
           "system": -1,
           "faith": 0.5
@@ -3344,8 +3344,8 @@
     "excludes": [
       "A-063"
     ],
-    "context": "The visa fight: the tech right wants engineers, the nationalists want the door shut.",
-    "prompt": "Split 100 points of policy between them.",
+    "context": "The fight over visas for skilled foreign workers: the tech right wants the engineers, the nationalists want the door shut.",
+    "prompt": "What should the policy be? Split 100 points between the options.",
     "options": [
       {
         "id": "a",
@@ -3407,8 +3407,8 @@
       "A-102",
       "B-006"
     ],
-    "context": "At midnight you post that the culture has prized the prom queen over the math champion. By dawn the nationalist wing wants your head.",
-    "prompt": "The replies are at 40,000 and climbing.",
+    "context": "At midnight you defend hiring foreign engineers by posting that the culture has prized the prom queen over the math champion. By dawn the nationalist wing wants your head.",
+    "prompt": "The replies are at 40,000 and climbing. Do you stand by the post?",
     "options": [
       {
         "id": "a",
@@ -3450,7 +3450,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "big-tech",
-    "context": "The tech right paid for the last campaign. The populists say it is now buying the next one.",
+    "context": "Silicon Valley's right wing paid for the last campaign. The populists say it is now buying the next one.",
     "prompt": "What should the party do with Silicon Valley?",
     "slider": {
       "left": "Break it up. Guard the kids.",
@@ -3481,8 +3481,8 @@
       "B-042",
       "B-073"
     ],
-    "context": "The Big Beautiful Bill: the tax cuts, the border money, the Medicaid cuts and trillions in new debt, all in one binding. The Senate passed it 51 to 50, on the Vice President's vote.",
-    "prompt": "The pen is yours. Sign or veto.",
+    "context": "The Big Beautiful Bill is the President's whole agenda in one binding: tax cuts, border money, Medicaid cuts and trillions in new debt. The Senate passed it 51 to 50, on the Vice President's vote.",
+    "prompt": "The pen is yours. Do you sign the whole package into law, or veto it?",
     "options": [
       {
         "id": "sign",
@@ -3523,7 +3523,7 @@
     "tier": "core",
     "topic": "deficit",
     "context": "The deficit is among the largest ever run outside a war or a crisis. Somebody has to carry 100 points of pain.",
-    "prompt": "Assign it.",
+    "prompt": "Who pays to close the deficit? Split the 100 points of pain.",
     "options": [
       {
         "id": "a",
@@ -3589,8 +3589,8 @@
     "type": "swipe",
     "tier": "core",
     "topic": "big-tent",
-    "context": "Big tent or burn list. The party chair wants to know who is still invited.",
-    "prompt": "Keep them in the tent? Yes or no.",
+    "context": "Big tent or burn list. The party chair wants to know who is still welcome in the Republican Party.",
+    "prompt": "Is each one still welcome? Yes keeps them in, no throws them out.",
     "cards": [
       {
         "id": "s1",
@@ -3606,7 +3606,7 @@
       },
       {
         "id": "s2",
-        "text": "The governor who certified 2020",
+        "text": "The governor who certified the 2020 result",
         "yes": {
           "system": -0.8,
           "loyalty": -0.8
@@ -3640,7 +3640,7 @@
       },
       {
         "id": "s5",
-        "text": "The congresswoman who quit over the files",
+        "text": "The congresswoman who quit over the Epstein files",
         "yes": {
           "system": 0.8,
           "loyalty": -0.5
@@ -3676,7 +3676,7 @@
     "tier": "core",
     "topic": "loyalty-to-the-leader",
     "context": "You are a term-limited governor. The President endorses someone else to succeed you, in your own state, without calling first.",
-    "prompt": "Hold to commit.",
+    "prompt": "Do you fight the President's pick for your job?",
     "options": [
       {
         "id": "a",
@@ -3729,8 +3729,8 @@
     "excludes": [
       "B-036"
     ],
-    "context": "The biggest employer in your state publicly attacks your schools law.",
-    "prompt": "How do you answer a corporation?",
+    "context": "You are a governor. The biggest employer in your state publicly attacks your schools law.",
+    "prompt": "How do you answer the company?",
     "options": [
       {
         "id": "a",
@@ -3806,7 +3806,7 @@
     "regions": [
       {
         "id": "pulpit",
-        "label": "The pulpit (give your testimony)",
+        "label": "The pulpit — give your testimony",
         "where": "front center, the pulpit and open Bible",
         "effects": {
           "faith": 1.5,
@@ -3819,7 +3819,7 @@
       },
       {
         "id": "pew",
-        "label": "The back pew (worship, say nothing)",
+        "label": "The back pew — worship, say nothing",
         "where": "middle, the back pew with the program",
         "effects": {
           "faith": 0.8,
@@ -3833,7 +3833,7 @@
       },
       {
         "id": "tripod",
-        "label": "The phone on the tripod (go live)",
+        "label": "The phone on the tripod — go live",
         "where": "left aisle, the tripod and ring light",
         "effects": {
           "online": 1.5,
@@ -3847,7 +3847,7 @@
       },
       {
         "id": "plate",
-        "label": "The collection plate (meet the donors after)",
+        "label": "The collection plate — meet the donors after",
         "where": "front right, the brass plate on its table",
         "effects": {
           "mach": 1,
@@ -3860,7 +3860,7 @@
       },
       {
         "id": "carpark",
-        "label": "The parking lot (talk to those who did not come in)",
+        "label": "The parking lot — talk to those who did not come in",
         "where": "rear, through the open doors to the trucks",
         "effects": {
           "faith": -0.8,
@@ -3882,8 +3882,8 @@
     "type": "rank",
     "tier": "core",
     "topic": "closing-message",
-    "context": "A purple state, an off-year, and a suburban electorate that does not want to be shouted at.",
-    "prompt": "Rank your closing ads.",
+    "context": "You are running for governor of a purple state in an off-year. The suburban voters who decide it do not want to be shouted at.",
+    "prompt": "Rank your closing ads, the one you air most at the top.",
     "options": [
       {
         "id": "a",
@@ -3931,7 +3931,7 @@
       },
       {
         "id": "e",
-        "label": "The fleece-vest biography spot",
+        "label": "Your life story, told in a fleece vest",
         "effects": {
           "narc": 0.5,
           "online": -0.8
@@ -4076,8 +4076,8 @@
     "excludes": [
       "B-084"
     ],
-    "context": "Your Attorney General pick has just withdrawn. The Senate will take one of its own, or a former prosecutor, by morning.",
-    "prompt": "Draft the country's top lawyer.",
+    "context": "Your pick for Attorney General has just withdrawn. The Senate will confirm one of its own, or a former prosecutor, by morning.",
+    "prompt": "Draft a new Attorney General, the country's top lawyer.",
     "pool": [
       "cruz",
       "hawley",
@@ -4169,8 +4169,8 @@
     "type": "choice",
     "tier": "core",
     "topic": "certifying-2020",
-    "context": "An offer, relayed through a friend: the movement will have you back if you say that certifying the election was a mistake.",
-    "prompt": "Your reply.",
+    "context": "You certified the 2020 election and the President's movement cast you out for it. An offer arrives through a friend: say certifying was a mistake and you can come back.",
+    "prompt": "What is your reply?",
     "options": [
       {
         "id": "a",
@@ -4231,8 +4231,8 @@
     "type": "swipe",
     "tier": "core",
     "topic": "party-lightning-round",
-    "context": "The populists keep filing bills that sound like the other party wrote them.",
-    "prompt": "Is it conservative? Yes or no, four seconds each.",
+    "context": "The party's populists keep filing bills that sound like Democrats wrote them.",
+    "prompt": "Would you call each idea conservative? Yes or no, four seconds each.",
     "cards": [
       {
         "id": "s1",
@@ -4337,7 +4337,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "extremely-online",
-    "context": "The party has two congregations now: one meets on Sunday morning, the other at 3 a.m. in a group chat.",
+    "context": "The party has two congregations now: churchgoers on Sunday morning, and the very online in a group chat at 3 a.m.",
     "prompt": "Which one do you write the speech for?",
     "slider": {
       "left": "The pews",
@@ -4371,7 +4371,7 @@
       "B-053"
     ],
     "context": "New Hampshire, debate night. The rising star beside you has just delivered the same memorized 25 seconds for the second time.",
-    "prompt": "You have the floor.",
+    "prompt": "You have the floor. What do you do with it?",
     "options": [
       {
         "id": "a",
@@ -4432,8 +4432,8 @@
     "type": "hold",
     "tier": "core",
     "topic": "dropping-out",
-    "context": "You are the only candidate saying out loud that the front-runner is unfit. You cannot win. New Hampshire votes in thirteen days.",
-    "prompt": "Hold to commit.",
+    "context": "You are the only candidate in the primary saying out loud that the front-runner is unfit. You cannot win. New Hampshire votes in thirteen days.",
+    "prompt": "Do you stay in the race?",
     "options": [
       {
         "id": "a",
@@ -4484,8 +4484,8 @@
     "type": "sign",
     "tier": "core",
     "topic": "abortion",
-    "context": "A national limit on abortion at fifteen weeks reaches your desk. The pastors are praying outside. The pollster is praying inside.",
-    "prompt": "Sign or veto.",
+    "context": "You are President. A national limit on abortion at fifteen weeks reaches your desk. The pastors are praying outside. The pollster is praying inside.",
+    "prompt": "Do you sign the national fifteen-week abortion limit, or veto it?",
     "options": [
       {
         "id": "sign",
@@ -4524,7 +4524,7 @@
     "tier": "core",
     "topic": "platform",
     "context": "The platform has 100 lines. Every faction has sent a lobbyist and a list.",
-    "prompt": "Split the platform between them.",
+    "prompt": "How much of the platform does each faction get? Split the 100 lines.",
     "options": [
       {
         "id": "a",
@@ -4596,8 +4596,8 @@
     "excludes": [
       "B-049"
     ],
-    "context": "You once called him a con artist on a debate stage. You now hold several of his most important jobs at once. A reporter reads your old quotes back to you.",
-    "prompt": "Answer.",
+    "context": "You once called the President a con artist on a debate stage. You now hold several of his most important jobs at once. A reporter reads your old quotes back to you.",
+    "prompt": "What do you say?",
     "options": [
       {
         "id": "a",
@@ -5117,7 +5117,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "acceptance-speech",
-    "context": "The acceptance speech. Two drafts are on the lectern in the empty arena, and somebody has left you a pair of scissors.",
+    "context": "You have the nomination. Two drafts of your acceptance speech are on the lectern in the empty arena, and somebody has left you a pair of scissors.",
     "prompt": "You get one speech. How much of each draft goes into it?",
     "slider": {
       "left": "Heal the country",
@@ -5146,8 +5146,8 @@
     "type": "budget",
     "tier": "core",
     "topic": "convention-lineup",
-    "context": "Four nights of prime time, 100 minutes that anyone will actually watch.",
-    "prompt": "Split the minutes.",
+    "context": "Your convention has four nights of prime time and about 100 minutes that anyone will actually watch.",
+    "prompt": "What fills the 100 minutes? Split them.",
     "options": [
       {
         "id": "a",
@@ -5202,14 +5202,14 @@
     "excludes": [
       "E-024"
     ],
-    "context": "2 a.m. in the war room. One state is left, and in it one county, and in that county a warehouse of uncounted ballots.",
-    "prompt": "Tap what you reach for.",
+    "context": "Election night, 2 a.m. in your war room. The race is down to one state, one county and a warehouse of uncounted ballots.",
+    "prompt": "What do you do while the count hangs? Tap what you reach for.",
     "art": "D-WARROOM-2AM",
     "artNote": "The war room at night, empty, lit by screens. No people. Back wall: a huge electoral map with one state blinking amber. Left: a bank of desk phones with one receiver off the hook, legal pads beside them. Right: a row of muted televisions showing only tickers and percentages. Front right: a cot with a folded suit jacket. Center back: a door edged in bright light and the sound of a ballroom crowd beyond it. Front left: a paper shredder with a full bin.",
     "regions": [
       {
         "id": "map",
-        "label": "The map (wait for the last county)",
+        "label": "The map — wait for the last county",
         "where": "back wall, the blinking amber state",
         "effects": {
           "system": -1,
@@ -5223,7 +5223,7 @@
       },
       {
         "id": "phones",
-        "label": "The phones (wake up the lawyers)",
+        "label": "The phones — wake up the lawyers",
         "where": "left, the phone bank and legal pads",
         "effects": {
           "mach": 1.2,
@@ -5237,7 +5237,7 @@
       },
       {
         "id": "tvs",
-        "label": "The televisions (call a network and spin it)",
+        "label": "The televisions — call a network and spin it",
         "where": "right, the row of muted televisions",
         "effects": {
           "online": 0.8,
@@ -5252,7 +5252,7 @@
       },
       {
         "id": "bed",
-        "label": "The cot (sleep; it will be the same at 7)",
+        "label": "The cot — sleep; it will be the same at 7",
         "where": "front right, the cot and jacket",
         "effects": {
           "narc": -1,
@@ -5266,7 +5266,7 @@
       },
       {
         "id": "door",
-        "label": "The ballroom door (declare victory now)",
+        "label": "The ballroom door — walk out and declare victory now",
         "where": "center back, the bright-edged door",
         "effects": {
           "system": 1.5,
@@ -5280,7 +5280,7 @@
       },
       {
         "id": "shredder",
-        "label": "The shredder (some memos never existed)",
+        "label": "The shredder — destroy the awkward memos",
         "where": "front left, the shredder and full bin",
         "effects": {
           "mach": 1.5,
@@ -5311,8 +5311,8 @@
       "C-015",
       "C-080"
     ],
-    "context": "The networks call it against you. The decisive state went by under 12,000 votes.",
-    "prompt": "Hold to commit. The country is watching the podium.",
+    "context": "Election night. The networks call it against you. The decisive state went by under 12,000 votes.",
+    "prompt": "The country is watching the podium. Do you concede?",
     "options": [
       {
         "id": "a",
@@ -5373,8 +5373,8 @@
     "type": "swipe",
     "tier": "core",
     "topic": "election-night-count",
-    "context": "The margin is 537 votes. The recount lawyers need answers faster than you can think.",
-    "prompt": "Yes or no. Four seconds each.",
+    "context": "The deciding state is split by 537 votes and headed for a recount. Your lawyers need answers faster than you can think.",
+    "prompt": "Do you approve each move? Yes or no, four seconds each.",
     "cards": [
       {
         "id": "s1",
@@ -5462,14 +5462,14 @@
     "type": "pin",
     "tier": "core",
     "topic": "convention-lineup",
-    "context": "The convention hall, an hour before the doors. Thousands of balloons hang in a net over an empty floor, and everything in here is a lever.",
-    "prompt": "Tap the one you want your hand on.",
+    "context": "Your convention hall, an hour before the doors. Thousands of balloons hang in a net over an empty floor, and everything in here is a lever.",
+    "prompt": "What kind of night do you run? Tap the thing you take charge of.",
     "art": "D-CONVENTION-FLOOR-EMPTY",
     "artNote": "Vast empty convention arena, house lights half up, balloons netted in the rafters. No people. Center: the podium with two glass teleprompter panels. Stage left wing: a heavy curtain with a strip of light under it. Upper right: a glass-fronted skybox with a bar cart. Floor, front left: a delegate microphone on a stand beside a blank state placard. Far right wall: a big red lever on a control box labeled DROP.",
     "regions": [
       {
         "id": "prompter",
-        "label": "The teleprompter (stick to the script)",
+        "label": "The teleprompter — stick to the script",
         "where": "center, the podium and glass panels",
         "effects": {
           "system": -0.8,
@@ -5484,7 +5484,7 @@
       },
       {
         "id": "curtain",
-        "label": "The curtain (bring the family on stage)",
+        "label": "The curtain — bring the family on stage",
         "where": "stage left wing, the heavy curtain",
         "effects": {
           "dynasty": 1.5,
@@ -5498,7 +5498,7 @@
       },
       {
         "id": "skybox",
-        "label": "The skybox (go and thank the money)",
+        "label": "The skybox — go up and thank the donors",
         "where": "upper right, the glass skybox and trolley",
         "effects": {
           "mach": 1,
@@ -5508,7 +5508,7 @@
       },
       {
         "id": "floormic",
-        "label": "The floor microphone (let delegates fight it out)",
+        "label": "The floor microphone — let delegates fight it out",
         "where": "floor front left, the delegate microphone and placard",
         "effects": {
           "system": 1.2,
@@ -5522,7 +5522,7 @@
       },
       {
         "id": "lever",
-        "label": "The balloon lever (drop them early, own the moment)",
+        "label": "The balloon lever — drop them early, own the moment",
         "where": "far right wall, the red lever marked DROP",
         "effects": {
           "narc": 1.2,
@@ -5549,7 +5549,7 @@
     "excludes": [
       "C-089"
     ],
-    "context": "You won. The speech is four minutes and the thank-yous are in no order yet.",
+    "context": "You won the election. The victory speech is four minutes and the thank-yous are in no order yet.",
     "prompt": "Rank who gets thanked first.",
     "options": [
       {
@@ -5602,7 +5602,7 @@
     "tier": "core",
     "topic": "victory-night",
     "context": "Victory night. Halfway through your speech the crowd starts a chant about locking up your opponent.",
-    "prompt": "Hold to commit. Every second you wait is an answer too.",
+    "prompt": "Every second you wait is an answer too. What do you do about the chant?",
     "options": [
       {
         "id": "a",
@@ -5664,8 +5664,8 @@
     "excludes": [
       "A-093"
     ],
-    "context": "Dawn. You have a mandate, give or take. It will be worth 100 points for about 100 days.",
-    "prompt": "Spend it.",
+    "context": "Dawn after your win. You have a mandate, give or take. It will be worth 100 points for about 100 days.",
+    "prompt": "What do you spend your mandate on? Split the 100 points.",
     "options": [
       {
         "id": "a",
@@ -5720,11 +5720,11 @@
     "tier": "core",
     "topic": "principles-or-winning",
     "context": "The last question. The war room is empty, the map is dark and there is nobody left to perform for.",
-    "prompt": "One trade, offered to every candidate exactly once. Which life do you take?",
+    "prompt": "One trade, offered to every candidate exactly once: lose with clean hands, or win with dirty ones. Which do you take?",
     "slider": {
-      "left": "A concession speech you can read to your kids",
-      "right": "The oath of office and a list of people to avoid",
-      "centre": "Win, and lose only the ones nobody checks",
+      "left": "Lose clean: a concession speech you can read to your kids",
+      "right": "Win dirty: the oath of office and a list of people to avoid",
+      "centre": "Win, and bend only the rules nobody checks",
       "effects": {
         "mach": 2,
         "psych": 0.6

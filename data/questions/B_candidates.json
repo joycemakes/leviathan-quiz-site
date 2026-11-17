@@ -9,12 +9,12 @@
     "excludes": [
       "D-046"
     ],
-    "context": "28 February 2025. The Oval Office has emptied after the meeting that went wrong on live television.",
-    "prompt": "The room is still warm. Tap the thing you think it was really about.",
+    "context": "28 February 2025. Ukraine's president came to the Oval Office for help and got an argument on live television. The room has emptied.",
+    "prompt": "What went wrong in that meeting? Tap the object that fits your view.",
     "regions": [
       {
         "id": "suit",
-        "label": "The empty suit on the hanger (dress for the room you're in)",
+        "label": "The suit on the hanger — he should have dressed for the room",
         "where": "left third, a coat stand holding a dark suit on a hanger",
         "effects": {
           "social": -0.5,
@@ -29,7 +29,7 @@
       },
       {
         "id": "card",
-        "label": "The blank thank-you card (gratitude was owed, out loud)",
+        "label": "The blank thank-you card — he owed thanks, out loud",
         "where": "center, lying on the big desk",
         "effects": {
           "world": -1,
@@ -42,7 +42,7 @@
       },
       {
         "id": "sofa",
-        "label": "The sunken sofa cushion (someone should have spoken up)",
+        "label": "The sofa cushion — someone in the room should have spoken up",
         "where": "right third, a deep dent in the cream sofa",
         "effects": {
           "loyalty": -1,
@@ -57,7 +57,7 @@
       },
       {
         "id": "map",
-        "label": "The rolled map by the door (an ally was ambushed on camera)",
+        "label": "The rolled map — an ally was ambushed on camera",
         "where": "far right, a rolled map of eastern Europe leaning by the door",
         "effects": {
           "world": 1.5,
@@ -72,7 +72,7 @@
       },
       {
         "id": "cameras",
-        "label": "The press cameras (none of this should happen in public)",
+        "label": "The press cameras — none of it should happen in public",
         "where": "foreground, a row of abandoned tripods and cameras",
         "effects": {
           "style": -1,
@@ -106,7 +106,7 @@
     "tier": "core",
     "topic": "extremely-online",
     "context": "August 2025. A Democratic governor's press office starts posting in all capitals, signed off in the President's own style.",
-    "prompt": "Your communications director wants to copy the method. Your call.",
+    "prompt": "Your communications director wants your account to mock the President the same way. Do you allow it?",
     "options": [
       {
         "id": "a",
@@ -221,11 +221,11 @@
     "tier": "bombshell",
     "topic": "hypocrisy-scandals",
     "context": "February 2021. The Texas grid fails in a deep freeze. Millions have no heat. A senator is photographed at the airport, bound for Cancun.",
-    "prompt": "He flew home the next day. Tap what bothers you most, or least.",
+    "prompt": "He flew home the next day. What is your verdict on the trip? Tap the detail that sums it up.",
     "regions": [
       {
         "id": "suitcase",
-        "label": "The suitcase (leaving at all was the offense)",
+        "label": "The suitcase — leaving at all was the offense",
         "where": "left, a large rolling suitcase with a lone-star luggage tag",
         "effects": {
           "psych": -1,
@@ -235,7 +235,7 @@
       },
       {
         "id": "board",
-        "label": "The return flight on the board (back in a day: enough)",
+        "label": "The return flight — back in a day: that is enough",
         "where": "top center, the departures board",
         "effects": {
           "libertine": 1,
@@ -248,7 +248,7 @@
       },
       {
         "id": "phone",
-        "label": "The leaked group chat (who hands a neighbor's texts to the press?)",
+        "label": "The leaked group chat — shame on whoever leaked the texts",
         "where": "center, a phone face-up on a seat showing blurred chat bubbles",
         "effects": {
           "mach": 1,
@@ -261,7 +261,7 @@
       },
       {
         "id": "backpacks",
-        "label": "The two small backpacks (blaming the kids was the worst part)",
+        "label": "The two small backpacks — blaming his kids was the worst part",
         "where": "right, two children's backpacks on a bench",
         "effects": {
           "mach": -1,
@@ -274,7 +274,7 @@
       },
       {
         "id": "dog",
-        "label": "The dog at the frosted window (he left the dog)",
+        "label": "The dog at the window — he left the dog behind",
         "where": "far right, through the terminal glass, a small white dog at a dark house window",
         "effects": {
           "psych": -1,
@@ -284,7 +284,7 @@
       },
       {
         "id": "water",
-        "label": "The pallet of bottled water (stay, hand it out, fix nothing, be seen)",
+        "label": "The bottled water — stay, hand it out, be seen, fix nothing",
         "where": "foreground, a shrink-wrapped pallet of water by the gate door",
         "effects": {
           "style": -0.5,
@@ -326,8 +326,8 @@
       "holdStrength",
       "hesitation"
     ],
-    "context": "December 2020. You are a governor. Your own President wants a special session to throw out your state's result.",
-    "prompt": "The pen is yours. Hold to commit: the longer you hold, the more you mean it.",
+    "context": "December 2020. You are a governor. Your own President wants a special session of your legislature to throw out your state's election result.",
+    "prompt": "The pen is yours. Do you call the special session?",
     "options": [
       {
         "id": "a",
@@ -386,8 +386,8 @@
       "A-102",
       "D-058"
     ],
-    "context": "26 December 2024. A long post defends skilled-worker visas: American culture has venerated mediocrity over excellence for too long. More math olympiads, fewer prom queens.",
-    "prompt": "The right tears itself in half over it. Where do you land?",
+    "context": "26 December 2024. A Republican's long post defends skilled-worker visas: American culture has venerated mediocrity over excellence for too long. More math olympiads, fewer prom queens.",
+    "prompt": "The right tears itself in half over it. Is he right?",
     "slider": {
       "left": "Insulting. The problem is cheap visas, not Americans.",
       "right": "He's right. Excellence first, wherever it's born.",
@@ -425,11 +425,11 @@
     "tier": "bombshell",
     "topic": "hypocrisy-scandals",
     "context": "November 2020. A governor who has told his state to stay home attends a lobbyist's birthday dinner at one of the most expensive restaurants in America.",
-    "prompt": "The guests have gone. Tap what you'd hold against him, or wouldn't.",
+    "prompt": "The guests have gone. How do you judge him for that dinner? Tap the detail that decides it.",
     "regions": [
       {
         "id": "mask",
-        "label": "The mask under the napkin (rules for thee)",
+        "label": "The mask under the napkin — one rule for him, one for you",
         "where": "left, a cloth mask half-hidden under a folded napkin",
         "effects": {
           "libertine": -1,
@@ -442,7 +442,7 @@
       },
       {
         "id": "bill",
-        "label": "The bill in its leather folder (the price stung more than the virus)",
+        "label": "The bill — the luxury is the insult, not the virus",
         "where": "center, on the table edge",
         "effects": {
           "econ": -1,
@@ -455,7 +455,7 @@
       },
       {
         "id": "placecard",
-        "label": "The lobbyist's place card (the company he keeps is the story)",
+        "label": "The lobbyist's place card — the company he keeps is the story",
         "where": "head of the table, a place card beside a birthday candle",
         "effects": {
           "mach": -1,
@@ -469,7 +469,7 @@
       },
       {
         "id": "door",
-        "label": "The half-open glass door (it was nearly outdoors. Move on.)",
+        "label": "The half-open door — it was nearly outdoors. Move on.",
         "where": "right, sliding glass doors half open to a garden",
         "effects": {
           "libertine": 1,
@@ -482,7 +482,7 @@
       },
       {
         "id": "note",
-        "label": "The apology note (he said sorry; that's all anyone can do)",
+        "label": "The apology note — he said sorry; that's all anyone can do",
         "where": "foreground, a handwritten card propped against a wine glass",
         "effects": {
           "libertine": 0.5,
@@ -523,7 +523,7 @@
       "hesitation"
     ],
     "context": "2016. A rival mocks your wife's looks and ties your father to an assassination. Then he wins the nomination.",
-    "prompt": "The party wants your endorsement by the fall.",
+    "prompt": "The party wants your endorsement by the fall. Do you give it?",
     "options": [
       {
         "id": "a",
@@ -570,11 +570,11 @@
     "tier": "core",
     "topic": "hypocrisy-scandals",
     "context": "A billionaire buys the mansion next door to his own, has its toilets disconnected, and the house is assessed as uninhabitable. The tax bill falls by about $330,000.",
-    "prompt": "He later repaid it. Tap your verdict.",
+    "prompt": "He later repaid it. What is your verdict on the tax dodge? Tap the detail that says it.",
     "regions": [
       {
         "id": "pipes",
-        "label": "The capped pipes (clever. The code is the code.)",
+        "label": "The capped pipes — clever. The tax code is the tax code.",
         "where": "center, bare bathroom floor with capped pipes",
         "effects": {
           "mach": 1,
@@ -588,7 +588,7 @@
       },
       {
         "id": "check",
-        "label": "The repayment check on the sill (paid back: case closed)",
+        "label": "The repayment check — he paid it back: case closed",
         "where": "right, a check on the windowsill",
         "effects": {
           "libertine": 1,
@@ -601,7 +601,7 @@
       },
       {
         "id": "mailbox",
-        "label": "The neighbor's tax bill (everyone else paid in full)",
+        "label": "The neighbor's tax bill — everyone else paid in full",
         "where": "through the window, a mailbox across the street stuffed with a bill",
         "effects": {
           "econ": -1,
@@ -615,7 +615,7 @@
       },
       {
         "id": "chandelier",
-        "label": "The chandelier (the scandal is owning two mansions)",
+        "label": "The chandelier — the scandal is owning two mansions",
         "where": "top, a chandelier under a drop cloth",
         "effects": {
           "econ": -1.5,
@@ -628,7 +628,7 @@
       },
       {
         "id": "lawn",
-        "label": "The toilets on the lawn (it's just funny. Let him live.)",
+        "label": "The toilets on the lawn — it's just funny. Let him live.",
         "where": "left, through the doorway, five toilets lined up on the grass",
         "effects": {
           "libertine": 1,
@@ -653,7 +653,7 @@
     "tier": "bombshell",
     "topic": "signal-chat",
     "context": "March 2025. A journalist is added by mistake to a group chat where senior officials discuss a military strike.",
-    "prompt": "Who typed it?",
+    "prompt": "A leaked group chat of senior officials planning a military strike. Who typed it?",
     "quote": "I just hate bailing Europe out again.",
     "answer": "vance",
     "options": [
@@ -720,7 +720,7 @@
       "holdStrength"
     ],
     "context": "November 2025. Six lawmakers who served in uniform or in intelligence post a video telling troops they can refuse illegal orders. The President calls it seditious.",
-    "prompt": "You are asked to appear in the next one. Hold to commit.",
+    "prompt": "You are asked to appear in the next video. Do you?",
     "options": [
       {
         "id": "a",
@@ -776,7 +776,7 @@
     "tier": "core",
     "topic": "campaign-launch",
     "context": "24 May 2023. A presidential campaign launches on a live audio stream hosted by a tech billionaire. The servers buckle for twenty minutes.",
-    "prompt": "Your own launch. Where?",
+    "prompt": "Where do you launch your own campaign?",
     "options": [
       {
         "id": "a",
@@ -848,8 +848,8 @@
       "D-013",
       "E-019"
     ],
-    "context": "2025. Texas redraws its map mid-decade to add Republican seats. California answers with Proposition 50, setting aside its independent commission's map. Voters approve it.",
-    "prompt": "They rig theirs, so...",
+    "context": "2025. Texas redraws its map mid-decade to add Republican seats. California answers with Proposition 50, a ballot measure setting aside its independent commission's map. Voters approve it.",
+    "prompt": "They rigged their map. Should your side rig its own?",
     "options": [
       {
         "id": "a",
@@ -896,11 +896,11 @@
     "tier": "bombshell",
     "topic": "petty-revenge",
     "context": "September 2013. Two of the three lanes one town uses to reach the busiest bridge in America are coned off for four days. The town at its foot had a mayor who would not endorse the governor.",
-    "prompt": "Tap where the blame lands.",
+    "prompt": "Who or what do you blame for the four-day traffic jam? Tap it.",
     "regions": [
       {
         "id": "cones",
-        "label": "The cones (aides did it; the boss owns it)",
+        "label": "The cones — aides did it, but the boss owns it",
         "where": "center, orange cones closing two toll lanes",
         "effects": {
           "mach": -1,
@@ -913,7 +913,7 @@
       },
       {
         "id": "phone",
-        "label": "The phone on the dashboard (the crime was putting it in writing)",
+        "label": "The phone — the only mistake was putting it in writing",
         "where": "left foreground, a phone on a car dashboard, blurred message",
         "effects": {
           "mach": 1.5,
@@ -926,7 +926,7 @@
       },
       {
         "id": "window",
-        "label": "The dark office window (he says he didn't know. Believe him.)",
+        "label": "The dark office window — he says he didn't know. Believe him.",
         "where": "top right, an unlit window in the authority building",
         "effects": {
           "libertine": 1,
@@ -939,7 +939,7 @@
       },
       {
         "id": "bus",
-        "label": "The stuck school bus (petty revenge on a small town: disqualifying)",
+        "label": "The stuck school bus — petty revenge on a town: disqualifying",
         "where": "right, a yellow school bus in the line of traffic",
         "effects": {
           "psych": -1,
@@ -952,7 +952,7 @@
       },
       {
         "id": "podium",
-        "label": "The podium (a two-hour apology is how you survive)",
+        "label": "The podium — a two-hour apology is how you survive it",
         "where": "bottom right inset, an empty press podium with microphones",
         "effects": {
           "style": 1,
@@ -1037,7 +1037,7 @@
     "tier": "core",
     "topic": "extremely-online",
     "context": "October 2020. A congresswoman plays a video game live to more than 400,000 viewers and tells them to vote.",
-    "prompt": "Politicians on stream:",
+    "prompt": "Should politicians go on livestreams?",
     "slider": {
       "left": "Embarrassing. Govern, don't perform.",
       "right": "That's where the voters are. Go.",
@@ -1069,11 +1069,11 @@
     "tier": "core",
     "topic": "four-jobs",
     "context": "2025. One man is Secretary of State, National Security Adviser, and for a while acting head of the aid agency and acting national archivist as well.",
-    "prompt": "His desk. Tap the thing you'd keep, or the thing that worries you.",
+    "prompt": "His desk. What do you make of one man holding four jobs? Tap the object that fits your view.",
     "regions": [
       {
         "id": "globe",
-        "label": "The globe (keep State; hand back the rest)",
+        "label": "The globe — keep him at State; hand back the rest",
         "where": "left, a brass globe beside the first nameplate",
         "effects": {
           "world": 1,
@@ -1086,7 +1086,7 @@
       },
       {
         "id": "redphone",
-        "label": "The red phone (one trusted voice in the President's ear works)",
+        "label": "The red phone — one trusted voice in the President's ear works",
         "where": "center, a red telephone",
         "effects": {
           "loyalty": 1,
@@ -1099,7 +1099,7 @@
       },
       {
         "id": "crate",
-        "label": "The empty aid crate (closing the agency is the real story)",
+        "label": "The empty aid crate — closing the aid agency is the real story",
         "where": "right, an empty wooden crate with a faded handshake stencil",
         "effects": {
           "world": 1,
@@ -1113,7 +1113,7 @@
       },
       {
         "id": "box",
-        "label": "The archive box (four jobs is a court, not a cabinet)",
+        "label": "The archive box — four jobs is a royal court, not a cabinet",
         "where": "far right, a gray archive box with a fourth nameplate on top",
         "effects": {
           "system": -1,
@@ -1127,7 +1127,7 @@
       },
       {
         "id": "cot",
-        "label": "The folding cot (competence gets piled on. Respect.)",
+        "label": "The folding cot — competence gets piled on. Respect.",
         "where": "back corner, a folded camp bed",
         "effects": {
           "psych": 0.5,
@@ -1168,8 +1168,8 @@
       "holdStrength",
       "hesitation"
     ],
-    "context": "6 January 2021. The Vice President's task is to open the envelopes and count. The President wants something else.",
-    "prompt": "You are in the chair. Hold to commit.",
+    "context": "6 January 2021. The Vice President's task is to open the envelopes and count the electoral votes. The President, who lost, wants something else.",
+    "prompt": "You are the Vice President, in the chair. What do you do?",
     "options": [
       {
         "id": "a",
@@ -1224,7 +1224,7 @@
       "D-033"
     ],
     "context": "One Democrat keeps walking onto the other side's network, and in 2025 onto a three-hour comedy podcast.",
-    "prompt": "You are offered a hostile hour on the opposition's biggest show.",
+    "prompt": "You are offered a hostile hour on the opposition's biggest show. Do you take it?",
     "options": [
       {
         "id": "a",
@@ -1305,7 +1305,7 @@
         "label": "Brian Kemp"
       }
     ],
-    "followup": "As a governing program?",
+    "followup": "Is that a good way to govern a state?",
     "agree": {
       "label": "Agree. Fight the culture war and win it.",
       "effects": {
@@ -1342,7 +1342,7 @@
       "buzz_light"
     ],
     "context": "Washington is a small town. One woman was married to the Democratic governor of California and later engaged to the President's eldest son.",
-    "prompt": "A long dinner. You must sit beside one of the two men for three hours.",
+    "prompt": "A long dinner. You must sit beside one of the two men for three hours. Which one?",
     "options": [
       {
         "id": "a",
@@ -1387,7 +1387,7 @@
       "hesitation"
     ],
     "context": "October 2024. Asked on daytime television what she'd have done differently from the President she served, the nominee says nothing comes to mind.",
-    "prompt": "You are the loyal deputy of an unpopular boss. Now it's your name on the ballot.",
+    "prompt": "You are the loyal deputy of an unpopular boss. Now it's your name on the ballot. Do you break with him?",
     "options": [
       {
         "id": "a",
@@ -1427,11 +1427,11 @@
     "tier": "core",
     "topic": "hypocrisy-scandals",
     "context": "July 2017. A budget fight shuts the state's parks and beaches over a holiday weekend. A news plane photographs the governor on one of them with his family.",
-    "prompt": "Tap your reaction.",
+    "prompt": "How do you judge the governor? Tap the detail that decides it.",
     "regions": [
       {
         "id": "chair",
-        "label": "The lone beach chair (perk of the office. He's the governor.)",
+        "label": "The beach chair — a perk of the office. He's the governor.",
         "where": "center, one beach chair and sandals at the waterline",
         "effects": {
           "narc": 1.5,
@@ -1444,7 +1444,7 @@
       },
       {
         "id": "sign",
-        "label": "The CLOSED sign (shut for them means shut for you)",
+        "label": "The CLOSED sign — shut for them means shut for you",
         "where": "left, a chain across the entrance with a closed sign",
         "effects": {
           "narc": -1,
@@ -1459,7 +1459,7 @@
       },
       {
         "id": "plane",
-        "label": "The plane with the long lens (the press should get a life)",
+        "label": "The plane with the long lens — the press should get a life",
         "where": "top, a small aircraft with a glinting lens",
         "effects": {
           "style": 1,
@@ -1473,7 +1473,7 @@
       },
       {
         "id": "house",
-        "label": "The house on the dune (why does a state own a beach house?)",
+        "label": "The house on the dune — why does a state own a beach house?",
         "where": "right, a shingled official residence on the dune",
         "effects": {
           "econ": 1,
@@ -1504,7 +1504,7 @@
       "C-061"
     ],
     "context": "A former Vice President has said he never dines alone with a woman who isn't his wife: a practice widely known as the Billy Graham rule.",
-    "prompt": "The rule is...",
+    "prompt": "What do you make of the rule?",
     "slider": {
       "left": "A locked door. Careers are made at those dinners.",
       "right": "Wise. No temptation, no rumor.",
@@ -1541,7 +1541,7 @@
       "D-026"
     ],
     "context": "August 2024. The nominee's running-mate shortlist includes a swing-state governor, a red-state governor and an astronaut. She picks a Midwestern governor instead.",
-    "prompt": "You are one of the ones passed over.",
+    "prompt": "You are one of the ones passed over. What do you do?",
     "options": [
       {
         "id": "a",
@@ -1604,7 +1604,7 @@
     "tier": "core",
     "topic": "hecklers",
     "context": "A heckler interrupts a storm-recovery event. The man at the microphone has had enough.",
-    "prompt": "Who said it?",
+    "prompt": "A heckler interrupts a storm-recovery event. Who told him this?",
     "quote": "Sit down and shut up.",
     "answer": "christie",
     "options": [
@@ -1625,7 +1625,7 @@
         "label": "JB Pritzker"
       }
     ],
-    "followup": "Hecklers get what they ask for?",
+    "followup": "Is that how to treat a heckler?",
     "agree": {
       "label": "Yes. Voters like someone who bites back.",
       "effects": {
@@ -1664,7 +1664,7 @@
       "hesitation"
     ],
     "context": "2025. A progressive Democrat and a libertarian Republican force a House vote to release the Epstein files, over the Speaker's objections. It passes 427 to 1.",
-    "prompt": "Before the vote, your leadership asks you to take your name off the petition. Hold to commit.",
+    "prompt": "Before the vote, your leadership asks you to take your name off the petition. Do you?",
     "options": [
       {
         "id": "a",
@@ -1717,7 +1717,7 @@
       "B-081"
     ],
     "context": "2023. A senator publishes a book arguing that American men are adrift and should trade screens for duty, marriage and work.",
-    "prompt": "The trouble with young men is...",
+    "prompt": "Are young men in trouble, and what fixes it?",
     "options": [
       {
         "id": "a",
@@ -1784,7 +1784,7 @@
     "measure": [
       "speed"
     ],
-    "prompt": "Forgivable or fatal? Swipe right to forgive. Four seconds each.",
+    "prompt": "Each card is something a politician really did. Swipe right to forgive it, left if it should end a career.",
     "cards": [
       {
         "id": "cancun",
@@ -1909,7 +1909,7 @@
     "tier": "core",
     "topic": "allies",
     "context": "Munich, February 2025. The Vice President tells Europe's leaders the threat he fears most is not Russia or China but their own retreat from free speech.",
-    "prompt": "The speech was...",
+    "prompt": "Was he right to say it?",
     "slider": {
       "left": "A lecture to allies, staged for the folks back home.",
       "right": "Overdue. Somebody said it to their faces.",
@@ -1942,7 +1942,7 @@
     "tier": "core",
     "topic": "winning-hostile-ground",
     "context": "November 2023. A Democrat is re-elected governor of a state the Republican presidential ticket carried by 26 points.",
-    "prompt": "Your theory of how he did it is your own strategy.",
+    "prompt": "How did he do it? Your answer is the strategy you would copy.",
     "options": [
       {
         "id": "a",
@@ -2019,7 +2019,7 @@
         "label": "Josh Hawley"
       }
     ],
-    "followup": "And is it?",
+    "followup": "Is it immoral?",
     "agree": {
       "label": "Agree. No one earns a billion.",
       "effects": {
@@ -2053,11 +2053,11 @@
       "D-053"
     ],
     "context": "6 January 2021. A senator raises a fist to the crowd outside the Capitol. Footage shown eighteen months later has him jogging down a corridor to get out.",
-    "prompt": "Tap what the two pictures add up to.",
+    "prompt": "What do the fist and the run tell you about him? Tap your reading.",
     "regions": [
       {
         "id": "photo",
-        "label": "The framed fist photo (he backed a protest, not what came after)",
+        "label": "The fist photo — he backed a protest, not what came after",
         "where": "left wall, a framed newspaper front page, its photo blurred to shapes",
         "effects": {
           "system": 1,
@@ -2070,7 +2070,7 @@
       },
       {
         "id": "monitor",
-        "label": "The security monitor (everyone ran. Mocking it is cheap.)",
+        "label": "The security monitor — everyone ran. Mocking it is cheap.",
         "where": "right, a CCTV monitor showing an empty corridor",
         "effects": {
           "psych": -0.5,
@@ -2083,7 +2083,7 @@
       },
       {
         "id": "gap",
-        "label": "The corridor between (pose, then sprint: that's the whole man)",
+        "label": "The corridor — pose, then sprint: that's the whole man",
         "where": "center, the long marble corridor itself",
         "effects": {
           "mach": -1,
@@ -2096,7 +2096,7 @@
       },
       {
         "id": "mug",
-        "label": "The souvenir mug with the fist (he sold it. That's the tell.)",
+        "label": "The fist mug — he sold the pose on a mug. That's the tell.",
         "where": "foreground, a mug with a cartoon fist icon on a bench",
         "effects": {
           "narc": -1,
@@ -2109,7 +2109,7 @@
       },
       {
         "id": "papers",
-        "label": "The objection papers (objecting is procedure, not a crime)",
+        "label": "The objection papers — objecting is procedure, not a crime",
         "where": "on the bench beside the mug, a sheaf of papers",
         "effects": {
           "system": 0.5,
@@ -2138,11 +2138,11 @@
     "tier": "core",
     "topic": "billionaire-feud",
     "context": "March 2025. The richest man in the world calls a senator, a former combat pilot and astronaut, a traitor for visiting Ukraine. The senator owns one of his cars.",
-    "prompt": "The senator's garage. Tap your move.",
+    "prompt": "You are the senator, in your garage. How do you answer him? Tap your move.",
     "regions": [
       {
         "id": "sedan",
-        "label": "The electric car, For Sale sign (don't be his rolling billboard)",
+        "label": "The electric car — sell it; don't be his rolling billboard",
         "where": "center, a sleek electric sedan with a sign in the window",
         "effects": {
           "style": 1,
@@ -2156,7 +2156,7 @@
       },
       {
         "id": "phone",
-        "label": "The phone on the workbench (answer him, loudly, tonight)",
+        "label": "The phone — answer him, loudly, tonight",
         "where": "left, a phone lit up on the workbench",
         "effects": {
           "style": 1.5,
@@ -2170,7 +2170,7 @@
       },
       {
         "id": "helmet",
-        "label": "The flight helmet on the shelf (stay above it. The record speaks.)",
+        "label": "The flight helmet — stay above it. The record speaks.",
         "where": "top right shelf, a flight helmet and a model shuttle",
         "effects": {
           "style": -1.5,
@@ -2183,7 +2183,7 @@
       },
       {
         "id": "charger",
-        "label": "The wall charger (good car. Politics doesn't pick my driveway.)",
+        "label": "The wall charger — keep the car. Politics doesn't pick it.",
         "where": "right wall, a charging unit with a coiled cable",
         "effects": {
           "tech": 1,
@@ -2212,11 +2212,11 @@
     "tier": "core",
     "topic": "state-fair",
     "context": "August 2023. A long-shot candidate grabs the microphone at the Iowa State Fair and raps a famous hip-hop track. The rapper asks him to stop.",
-    "prompt": "It's your turn on the fair stage. Tap.",
+    "prompt": "It's your turn on the fair stage. What do you do with it? Tap.",
     "regions": [
       {
         "id": "mic",
-        "label": "The microphone (do the rap. Joy is a strategy.)",
+        "label": "The microphone — do the rap. Joy is a strategy.",
         "where": "center, a microphone on a stand",
         "effects": {
           "online": 1,
@@ -2229,7 +2229,7 @@
       },
       {
         "id": "letter",
-        "label": "The licensing letter (the artist said stop, so stop)",
+        "label": "The licensing letter — the artist said stop, so no music",
         "where": "left, a letter taped to a speaker",
         "effects": {
           "system": -0.5,
@@ -2239,7 +2239,7 @@
       },
       {
         "id": "hay",
-        "label": "The hay bale (sit down, take questions for an hour)",
+        "label": "The hay bale — sit down and take questions for an hour",
         "where": "right, a hay bale at the stage edge",
         "effects": {
           "style": -0.5,
@@ -2253,7 +2253,7 @@
       },
       {
         "id": "stand",
-        "label": "The corn dog stand (eat, shake hands, leave no clip behind)",
+        "label": "The corn dog stand — eat, shake hands, leave no clip",
         "where": "background right, a striped food stand",
         "effects": {
           "mach": 0.5,
@@ -2285,7 +2285,7 @@
       "D-064"
     ],
     "context": "2022. The state's biggest employer criticizes a new schools law. The governor strips the company of its self-governing district.",
-    "prompt": "A giant corporation attacks your signature law.",
+    "prompt": "A giant corporation attacks your signature law. Do you punish it?",
     "options": [
       {
         "id": "a",
@@ -2348,7 +2348,7 @@
         "label": "Jon Ossoff"
       }
     ],
-    "followup": "As a creed for office?",
+    "followup": "Is that a good creed for someone in office?",
     "agree": {
       "label": "Agree. Do your stretch of the road.",
       "effects": {
@@ -2385,7 +2385,7 @@
       "holdStrength"
     ],
     "context": "September 2022. A governor charters two planes and flies about fifty migrants from Texas to a wealthy vacation island in Massachusetts.",
-    "prompt": "The stunt. Hold to commit.",
+    "prompt": "What do you call the stunt?",
     "options": [
       {
         "id": "a",
@@ -2443,7 +2443,7 @@
       "D-024"
     ],
     "context": "Spring 2025. One wing of the party fills arenas with a Fighting Oligarchy tour. A swing-state senator says drop the word: it doesn't land outside the coasts. Say kings.",
-    "prompt": "Your stump speech names the enemy as...",
+    "prompt": "What does your stump speech call the enemy?",
     "options": [
       {
         "id": "a",
@@ -2721,8 +2721,8 @@
       "B-073",
       "D-060"
     ],
-    "context": "July 2025. The party's giant tax-and-spending bill reaches the Senate. One Republican says he'd vote yes if they removed the $5 trillion rise in the debt ceiling. They don't.",
-    "prompt": "Your vote.",
+    "context": "July 2025. The Republicans' giant tax-and-spending bill reaches the Senate. One of their own says he'd vote yes if they removed the $5 trillion rise in the debt ceiling. They don't.",
+    "prompt": "You are a senator in his party. How do you vote?",
     "options": [
       {
         "id": "a",
@@ -2785,7 +2785,7 @@
     "tier": "core",
     "topic": "vp-debate-2020",
     "context": "A debate. The man at the next lectern has been Vice President, and he will not stop talking.",
-    "prompt": "Who said it?",
+    "prompt": "A debate. The man at the next lectern will not stop talking. Who said it?",
     "quote": "Mr. Vice President, I'm speaking.",
     "answer": "harris",
     "options": [
@@ -2841,11 +2841,11 @@
     "tier": "core",
     "topic": "vp-debate-2020",
     "context": "October 2020, the vice-presidential debate, plexiglass between the desks. For about two minutes a fly sits on the Vice President's white hair. He never moves.",
-    "prompt": "The stage after the lights go down. Tap what the night was about.",
+    "prompt": "The stage after the lights go down. What was that night really about? Tap it.",
     "regions": [
       {
         "id": "fly",
-        "label": "The fly (two minutes, no flinch: that's discipline)",
+        "label": "The fly — two minutes, no flinch: that's discipline",
         "where": "right desk, a fly on the microphone",
         "effects": {
           "style": -1,
@@ -2859,7 +2859,7 @@
       },
       {
         "id": "plexi",
-        "label": "The plexiglass (the pandemic was the debate; the rest was noise)",
+        "label": "The plexiglass — the pandemic was the debate; the rest, noise",
         "where": "center, the clear screen between the two desks",
         "effects": {
           "system": -0.5,
@@ -2873,7 +2873,7 @@
       },
       {
         "id": "phone",
-        "label": "The phone in row one (the internet picked the insect. Fine.)",
+        "label": "The phone in row one — the internet picked the insect. Fine.",
         "where": "foreground, a phone glowing on an empty seat",
         "effects": {
           "online": 1.5
@@ -2886,7 +2886,7 @@
       },
       {
         "id": "clock",
-        "label": "The moderator's clock (both ignored it; rules need teeth)",
+        "label": "The moderator's clock — both ignored it; rules need teeth",
         "where": "left, a countdown clock at the moderator's desk",
         "effects": {
           "system": -1,
@@ -2914,10 +2914,10 @@
     "tier": "core",
     "topic": "paternity-leave",
     "context": "Fall 2021. Ports are jammed, shelves are thin, and the Transportation Secretary is at home with newborn twins.",
-    "prompt": "Paternity leave for a cabinet officer:",
+    "prompt": "Should a cabinet officer take paternity leave in a crisis?",
     "slider": {
-      "left": "In a crisis, you go to work.",
-      "right": "Fathers take leave. That's the policy working.",
+      "left": "No. In a crisis, you go to work.",
+      "right": "Yes. Fathers take leave. That's the policy working.",
       "centre": "Take the leave, keep the phone on",
       "effects": {
         "social": 1.5,
@@ -2944,7 +2944,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "family-policy",
-    "context": "A 2021 clip resurfaces in 2024: the country is run by childless cat ladies with no stake in its future. He calls it sarcasm and stands by the point about families.",
+    "context": "A 2021 clip of a candidate resurfaces in 2024: he says the country is run by childless cat ladies with no stake in its future. He calls it sarcasm and stands by the point about families.",
     "prompt": "Should parents count for more than non-parents?",
     "options": [
       {
@@ -3009,7 +3009,7 @@
       "holdStrength"
     ],
     "context": "March 2013. A senator talks for nearly thirteen hours to demand an answer: may a president use a drone to kill an American on American soil?",
-    "prompt": "Hold for as long as you'd hold the floor.",
+    "prompt": "Would you hold the floor like that? Hold for as long as you'd keep talking.",
     "options": [
       {
         "id": "a",
@@ -3060,7 +3060,7 @@
     "tier": "core",
     "topic": "student-visas",
     "context": "March 2025. Hundreds of student visas are revoked, and the right lines up to defend it.",
-    "prompt": "Who made the argument? (paraphrased)",
+    "prompt": "Hundreds of student visas are revoked. Who defended it this way? (paraphrased)",
     "quote": "We gave you a visa to study and get a degree, not to tear up our campuses.",
     "answer": "rubio",
     "options": [
@@ -3117,7 +3117,7 @@
       "D-076"
     ],
     "context": "2016: he calls the front-runner a con artist and jokes about the size of his hands; the front-runner names him Little Marco. 2025: he is that man's Secretary of State.",
-    "prompt": "The journey is...",
+    "prompt": "What do you call that journey?",
     "options": [
       {
         "id": "a",
@@ -3180,7 +3180,7 @@
     "tier": "core",
     "topic": "parents-vs-schools",
     "context": "Virginia, 2021. In a debate the Democrat says he doesn't think parents should be telling schools what to teach. The Republican in the fleece vest builds his close on it, and wins.",
-    "prompt": "Who decides what's taught?",
+    "prompt": "Who should decide what schools teach?",
     "options": [
       {
         "id": "a",
@@ -3246,7 +3246,7 @@
     "measure": [
       "speed"
     ],
-    "prompt": "Cringe or charm? Swipe right for charm. Four seconds each.",
+    "prompt": "Each card is a real campaign moment. Swipe right if it charms you, left if it makes you cringe.",
     "cards": [
       {
         "id": "rap",
@@ -3367,11 +3367,11 @@
     "tier": "bombshell",
     "topic": "hypocrisy-scandals",
     "context": "September 2021. A socialist congresswoman attends New York's most exclusive party in a white gown with Tax the Rich painted down the back in red.",
-    "prompt": "The staircase, after midnight. Tap your verdict.",
+    "prompt": "The staircase, after midnight. What do you make of the dress? Tap your verdict.",
     "regions": [
       {
         "id": "gown",
-        "label": "The gown (message delivered, to exactly the right room)",
+        "label": "The gown — message delivered, to exactly the right room",
         "where": "center, the gown on a dressmaker's form seen from behind",
         "effects": {
           "econ": -1,
@@ -3385,7 +3385,7 @@
       },
       {
         "id": "ticket",
-        "label": "The $35,000 ticket (you can't storm a party you were invited to)",
+        "label": "The $35,000 ticket — you can't storm a party you're invited to",
         "where": "left, a gilt ticket on a velvet rope post",
         "effects": {
           "mach": -0.5,
@@ -3396,7 +3396,7 @@
       },
       {
         "id": "envelope",
-        "label": "The ethics envelope (borrowed couture has rules; she had to pay)",
+        "label": "The ethics envelope — borrowed couture has rules; she had to pay",
         "where": "right, a manila envelope on the steps",
         "effects": {
           "libertine": -1,
@@ -3409,7 +3409,7 @@
       },
       {
         "id": "camera",
-        "label": "The camera on the steps (attention is the currency. She's rich.)",
+        "label": "The camera — attention is the currency. She's rich.",
         "where": "foreground, a dropped press camera",
         "effects": {
           "online": 1,
@@ -3424,7 +3424,7 @@
       },
       {
         "id": "champagne",
-        "label": "The champagne tower (go, say nothing political, enjoy it)",
+        "label": "The champagne tower — go, say nothing political, enjoy it",
         "where": "top right, a tower of coupes",
         "effects": {
           "libertine": 1,
@@ -3457,7 +3457,7 @@
       "D-072"
     ],
     "context": "August 2023. A debate stage. An old hand has heard enough from a younger rival with a very polished answer for everything.",
-    "prompt": "Who said he'd had enough of...",
+    "prompt": "On a debate stage, an old hand turns on a polished younger rival. Who said he'd had enough of...",
     "quote": "a guy who sounds like ChatGPT",
     "answer": "christie",
     "options": [
@@ -3478,7 +3478,7 @@
         "label": "Ted Cruz"
       }
     ],
-    "followup": "Whose side are you on?",
+    "followup": "Do you side with the man who said it?",
     "agree": {
       "label": "The old hand's. Too slick is a tell.",
       "effects": {
@@ -3523,7 +3523,7 @@
       "holdStrength"
     ],
     "context": "Fall 2025. The President sends federal immigration agents into Chicago and moves to deploy the National Guard over the governor's objection.",
-    "prompt": "You are the governor. Hold to commit.",
+    "prompt": "You are the governor. What do you do?",
     "options": [
       {
         "id": "a",
@@ -3589,7 +3589,7 @@
       "D-025"
     ],
     "context": "2023. A Democratic governor backs $100 million in private-school scholarships for children in the worst public schools. His own party's House refuses; he strikes the money to get a budget.",
-    "prompt": "Public money following a child to a private school:",
+    "prompt": "Should public money follow a child to a private school?",
     "options": [
       {
         "id": "a",
@@ -3631,7 +3631,7 @@
     "tier": "core",
     "topic": "dynasty-family",
     "context": "A governor whose father was governor. A senator whose father ran for president three times. A hotel heir. A president's eldest son.",
-    "prompt": "A famous surname in politics is...",
+    "prompt": "How should voters treat a famous surname?",
     "slider": {
       "left": "An unearned head start. Mark them down.",
       "right": "An apprenticeship. They grew up in the trade.",
@@ -3672,7 +3672,7 @@
       "hesitation"
     ],
     "context": "June 2016. An email offers a campaign damaging material on its opponent, described as coming from a foreign government. The reply is brief.",
-    "prompt": "Who wrote back?",
+    "prompt": "A campaign is emailed an offer of dirt on its opponent from a foreign government. Who wrote back?",
     "quote": "If it's what you say I love it",
     "answer": "trumpjr",
     "options": [
@@ -3733,8 +3733,8 @@
     "type": "choice",
     "tier": "core",
     "topic": "donor-pressure",
-    "context": "He represents Silicon Valley, home to more billionaires than almost anywhere on earth, and backs a tax on their fortunes. Some of his donors are not amused.",
-    "prompt": "Your richest backers threaten to fund a challenger over one position.",
+    "context": "A congressman represents Silicon Valley, home to more billionaires than almost anywhere on earth, and backs a tax on their fortunes. Some of his donors are not amused.",
+    "prompt": "Your richest backers threaten to fund a challenger over one position. What do you do?",
     "options": [
       {
         "id": "a",
@@ -3796,11 +3796,11 @@
     "tier": "core",
     "topic": "guns",
     "context": "A 2018 campaign ad: the candidate sits in an armchair with a shotgun across his lap beside a teenage boy who wants to date his daughter. The boy recites the platform.",
-    "prompt": "The set, after the crew has gone. Tap.",
+    "prompt": "The set, after the crew has gone. What do you think of the ad? Tap your verdict.",
     "regions": [
       {
         "id": "shotgun",
-        "label": "The shotgun on the armchair (it's a dad joke. Lighten up.)",
+        "label": "The shotgun — it's a dad joke. Lighten up.",
         "where": "center, a shotgun laid across an empty armchair",
         "effects": {
           "social": -1,
@@ -3814,7 +3814,7 @@
       },
       {
         "id": "chair",
-        "label": "The boy's empty chair (you don't point one at a kid, even in fun)",
+        "label": "The boy's chair — you don't point a gun at a kid, even in fun",
         "where": "right, a smaller chair with a corsage box on it",
         "effects": {
           "social": 1,
@@ -3827,7 +3827,7 @@
       },
       {
         "id": "cards",
-        "label": "The cue cards (a teenager reciting the platform: the clever bit)",
+        "label": "The cue cards — a teen reciting the platform is the clever bit",
         "where": "foreground, cue cards fanned on a coffee table",
         "effects": {
           "mach": 1
@@ -3839,7 +3839,7 @@
       },
       {
         "id": "remote",
-        "label": "The TV remote (ads like this are why people hate politics)",
+        "label": "The TV remote — ads like this are why people hate politics",
         "where": "left, a remote on a side table",
         "effects": {
           "online": -0.5,
@@ -3868,7 +3868,7 @@
     "tier": "bombshell",
     "topic": "last-nominee-memoir",
     "context": "September 2025. The losing nominee's memoir says her first choice for running mate was the Transportation Secretary, but a gay man on a ticket led by a Black woman was too big a risk.",
-    "prompt": "Reading that, you think:",
+    "prompt": "What do you think of her reasoning?",
     "options": [
       {
         "id": "a",
@@ -3946,7 +3946,7 @@
       "hesitation"
     ],
     "context": "A Democrat from Georgia and a Republican from Missouri both push to ban members of Congress from trading stocks. Leaders in both parties keep finding reasons to wait.",
-    "prompt": "The bill would make you sell your own portfolio. Hold to commit.",
+    "prompt": "The bill would make you sell your own portfolio. Do you back the ban?",
     "options": [
       {
         "id": "a",
@@ -3999,7 +3999,7 @@
       "D-011"
     ],
     "context": "2023, an election year. A Democrat who needs Republican votes to survive sides with transgender minors anyway.",
-    "prompt": "Who explained it this way? (paraphrased)",
+    "prompt": "A Democrat who needs Republican votes sides with transgender minors anyway. Who explained it this way? (paraphrased)",
     "quote": "My faith teaches me that every child is a child of God.",
     "answer": "beshear",
     "options": [
@@ -4020,7 +4020,7 @@
         "label": "JB Pritzker"
       }
     ],
-    "followup": "Faith as the reason for a liberal veto?",
+    "followup": "Is faith a good reason for that veto?",
     "agree": {
       "label": "Agree. Faith belongs to both sides.",
       "effects": {
@@ -4120,7 +4120,7 @@
       "hesitation"
     ],
     "context": "August 2024. At a rally in your own state the nominee calls you disloyal and goes after your wife. Three weeks later he needs your machine to win it.",
-    "prompt": "He calls.",
+    "prompt": "He calls. Do you help him?",
     "options": [
       {
         "id": "a",
@@ -4164,7 +4164,7 @@
       "C-019"
     ],
     "context": "February 2023. A freight train carrying toxic chemicals derails in an Ohio village. The Transportation Secretary arrives twenty days later and says he could have spoken out sooner.",
-    "prompt": "Disaster in a town that didn't vote for you. First move?",
+    "prompt": "A disaster hits a town that didn't vote for you. What is your first move?",
     "options": [
       {
         "id": "a",
@@ -4286,7 +4286,7 @@
     "tier": "core",
     "topic": "candidate-resume",
     "context": "Before politics she was a CIA analyst with three tours in Iraq, then a Pentagon official under presidents of both parties.",
-    "prompt": "A former spy on the ballot is...",
+    "prompt": "How do you feel about a former spy on the ballot?",
     "options": [
       {
         "id": "a",
@@ -4341,11 +4341,11 @@
     "tier": "core",
     "topic": "winning-hostile-ground",
     "context": "2021. A former private-equity chief wins a blue-leaning state in a red fleece vest, keeping his party's biggest name at a polite distance.",
-    "prompt": "His wardrobe. Tap what you'd wear.",
+    "prompt": "His wardrobe. How would you dress to win a state like that? Tap what you'd wear.",
     "regions": [
       {
         "id": "vest",
-        "label": "The fleece vest (the costume worked. Wear what wins.)",
+        "label": "The fleece vest — the costume worked. Wear what wins.",
         "where": "center, a red fleece vest on a hanger",
         "effects": {
           "mach": 1,
@@ -4358,7 +4358,7 @@
       },
       {
         "id": "suits",
-        "label": "The boardroom suits (be what you are: a rich man who ran things)",
+        "label": "The suits — be what you are: a rich man who ran things",
         "where": "left, a rack of dark tailored suits",
         "effects": {
           "econ": 1,
@@ -4372,7 +4372,7 @@
       },
       {
         "id": "cap",
-        "label": "The red cap still in its box (put it on. Half-loyalty fools no one.)",
+        "label": "The red cap — wear his hat. Half-loyalty fools no one.",
         "where": "top shelf, a red cap in an open box",
         "effects": {
           "loyalty": 1.5,
@@ -4386,7 +4386,7 @@
       },
       {
         "id": "ball",
-        "label": "The basketball (people vote for the guy they'd shoot hoops with)",
+        "label": "The basketball — be the guy they'd shoot hoops with",
         "where": "floor right, a worn basketball",
         "effects": {
           "style": -1,
@@ -4415,7 +4415,7 @@
     "tier": "core",
     "topic": "pandemic",
     "context": "April 2020. One governor reopens gyms, barbers and bowling alleys weeks before most of the country. Even the President says it's too soon.",
-    "prompt": "The early reopening was...",
+    "prompt": "Was the early reopening right?",
     "slider": {
       "left": "Reckless. You wait for the science.",
       "right": "Right. People needed to work; he took the heat.",
@@ -4510,7 +4510,7 @@
       "E-034"
     ],
     "context": "September 2025. A late-night host is pulled off air after the broadcast regulator leans on his network. One conservative breaks ranks.",
-    "prompt": "Who compared it to a mob film? (paraphrased)",
+    "prompt": "A regulator leans on a network and a late-night host is pulled off air. Which conservative compared it to a mob film? (paraphrased)",
     "quote": "A regulator threatening a network is right out of a gangster picture: nice bar you have here.",
     "answer": "cruz",
     "options": [
@@ -4531,7 +4531,7 @@
         "label": "Mike Pence"
       }
     ],
-    "followup": "Even when the host is on the other side?",
+    "followup": "Is he right, even though the host is on the other side?",
     "agree": {
       "label": "Agree. The weapon gets used on us next.",
       "effects": {
@@ -4568,7 +4568,7 @@
       "holdStrength"
     ],
     "context": "June 2023. A tanker fire brings down a stretch of the East Coast's busiest highway. Experts say months. It reopens in twelve days, the work streamed live around the clock.",
-    "prompt": "To move that fast you must waive the usual permits and reviews. Hold to commit.",
+    "prompt": "To move that fast you must waive the usual permits and reviews. Do you?",
     "options": [
       {
         "id": "a",
@@ -4625,7 +4625,7 @@
       "hesitation"
     ],
     "context": "May 2025. A populist senator writes that cutting health care for the working poor to pay for tax cuts would be morally wrong and politically suicidal. In July the bill reaches the floor.",
-    "prompt": "You wrote the essay. Now vote.",
+    "prompt": "You wrote the essay. Do you vote for the bill?",
     "options": [
       {
         "id": "a",
@@ -4669,7 +4669,7 @@
       "F-010"
     ],
     "context": "2025. The President's eldest son hosts a podcast, joins a venture fund, sits on boards, and helps found a private Washington club with a reported fee of half a million dollars.",
-    "prompt": "The grown children of a sitting president should...",
+    "prompt": "What should the grown children of a sitting president be allowed to do?",
     "options": [
       {
         "id": "a",
@@ -4733,7 +4733,7 @@
       "speed",
       "hesitation"
     ],
-    "prompt": "Would you have done it? Swipe right for yes. Four seconds each.",
+    "prompt": "Each card is a choice a real politician made. Would you have done it? Swipe right for yes.",
     "cards": [
       {
         "id": "kemp",
@@ -4863,7 +4863,7 @@
     "tier": "core",
     "topic": "mass-protest",
     "context": "April 2025. A governor addresses a party dinner in New Hampshire, a state candidates visit for one reason.",
-    "prompt": "Who said it? (paraphrased)",
+    "prompt": "A governor addresses a party dinner in New Hampshire. Who said it? (paraphrased)",
     "quote": "I have never before called for mass protest and disruption. I am now.",
     "answer": "pritzker",
     "options": [
@@ -4916,7 +4916,7 @@
     "tier": "core",
     "topic": "age-question",
     "context": "January 2021. A 33-year-old former documentary producer wins a Senate runoff in Georgia after a campaign fought partly on TikTok: the youngest senator elected in forty years.",
-    "prompt": "Youth in a candidate is...",
+    "prompt": "What is youth worth in a candidate?",
     "options": [
       {
         "id": "a",
@@ -4978,7 +4978,7 @@
     "tier": "core",
     "topic": "border-security",
     "context": "A border-state Democrat and former combat pilot spent years telling his own party's White House that the border was a crisis it wasn't taking seriously.",
-    "prompt": "Saying so in public was...",
+    "prompt": "Was he right to say so in public?",
     "slider": {
       "left": "Disloyal. He wrote the other side's ads.",
       "right": "Honest. His voters live there.",
@@ -5013,7 +5013,7 @@
       "C-083"
     ],
     "context": "An anti-war progressive from California keeps teaming up with a libertarian Republican from Kentucky: on Yemen, on Iran, on the Epstein files. Both parties' leaders hate it.",
-    "prompt": "A member of the other side, wrong on nearly everything, offers to co-sponsor your best bill.",
+    "prompt": "A member of the other side, wrong on nearly everything, offers to co-sponsor your best bill. Do you take the deal?",
     "options": [
       {
         "id": "a",
@@ -5054,7 +5054,7 @@
     "tier": "core",
     "topic": "dropping-out",
     "context": "2017. A 30-year-old runs in a special election that becomes the most expensive House race in history. He loses by under four points. Under four years later he's a senator.",
-    "prompt": "You've just lost the most expensive race ever run.",
+    "prompt": "You've just lost the most expensive race ever run. What next?",
     "options": [
       {
         "id": "a",
@@ -5174,7 +5174,7 @@
       "holdStrength"
     ],
     "context": "June 2018. A 28-year-old who was tending bar a year earlier beats a ten-term incumbent tipped as a future Speaker.",
-    "prompt": "Your district's challenger has never held office and spent last year behind a bar. Hold to commit.",
+    "prompt": "Your district's challenger has never held office and spent last year behind a bar. Who do you back?",
     "options": [
       {
         "id": "a",
@@ -5218,7 +5218,7 @@
     "tier": "core",
     "topic": "response-speech",
     "context": "March 2025. Chosen to answer the President's address to Congress, a freshman senator invokes Reagan, says he'd be rolling in his grave, and is done in about eleven minutes.",
-    "prompt": "Eleven minutes to answer the most-watched speech of the year.",
+    "prompt": "You get eleven minutes to answer the President's most-watched speech of the year. How do you use them?",
     "options": [
       {
         "id": "a",
@@ -5280,7 +5280,7 @@
     "excludes": [
       "D-068"
     ],
-    "prompt": "Your Attorney General. Everyone on this list has run a prosecutor's office or argued for a state.",
+    "prompt": "Pick your Attorney General. Everyone on this list has run a prosecutor's office or argued for a state.",
     "pool": [
       "shapiro",
       "harris",
@@ -5381,7 +5381,7 @@
       "F-004"
     ],
     "context": "The President's family launches a crypto venture and a branded coin while he sets the rules for the industry. His eldest son calls it the future of finance.",
-    "prompt": "That is...",
+    "prompt": "What do you call that?",
     "slider": {
       "left": "A conflict of interest with a logo.",
       "right": "Their money, their risk. Envy isn't ethics.",
@@ -5414,7 +5414,7 @@
     "tier": "core",
     "topic": "media-bookings",
     "context": "March 2025. A Democratic governor starts a podcast and gives friendly hours to the other side's loudest strategists. A fellow Democratic governor says one of them shouldn't be given oxygen.",
-    "prompt": "Booking the enemy:",
+    "prompt": "Was he right to book the enemy?",
     "options": [
       {
         "id": "a",
@@ -5533,7 +5533,7 @@
       "holdStrength"
     ],
     "context": "January 2022. In his first weeks a new governor opens an email address where parents can report teachers for divisive lessons. It is quietly closed within the year.",
-    "prompt": "A tip line on what teachers say in class. Hold to commit.",
+    "prompt": "A tip line on what teachers say in class. Would you open one?",
     "options": [
       {
         "id": "a",
@@ -5585,7 +5585,7 @@
     "tier": "core",
     "topic": "last-nominee-returns",
     "context": "July 2025. A former Vice President could walk into the governorship of the biggest state in the union. She declines, and leaves a bigger door ajar.",
-    "prompt": "A safe throne, or one more go at the big one?",
+    "prompt": "In her place, do you take the safe governorship or hold out for one more run at the presidency?",
     "options": [
       {
         "id": "a",
@@ -5647,7 +5647,7 @@
     "measure": [
       "speed"
     ],
-    "prompt": "Party meeting, lightning round. Swipe right for yes. Four seconds each.",
+    "prompt": "Democratic Party meeting, lightning round. Should the party do each of these? Swipe right for yes.",
     "cards": [
       {
         "id": "oligarchy",
@@ -5790,7 +5790,7 @@
     "measure": [
       "speed"
     ],
-    "prompt": "Party meeting, lightning round. Swipe right for yes. Four seconds each.",
+    "prompt": "Republican Party meeting, lightning round. Do you back each of these? Swipe right for yes.",
     "cards": [
       {
         "id": "tariffs",
@@ -5856,7 +5856,7 @@
       },
       {
         "id": "son",
-        "text": "The President's son on the next ticket.",
+        "text": "Put the President's son on the next ticket.",
         "yes": {
           "dynasty": 0.5,
           "loyalty": 0.5
@@ -5939,7 +5939,7 @@
       "C-086"
     ],
     "context": "2021. A Republican runs in a state the former President lost by ten. He accepts the endorsement, never appears beside him, and wins.",
-    "prompt": "The most powerful man in your party is poison with the voters you need.",
+    "prompt": "The most powerful man in your party is poison with the voters you need. Do you campaign beside him?",
     "options": [
       {
         "id": "a",
@@ -5982,7 +5982,7 @@
     "tier": "core",
     "topic": "big-promises",
     "context": "February 2019. A first-term congresswoman unveils a plan to remake the whole economy around climate in ten years. Critics call it a wish list. It resets her party's ambitions anyway.",
-    "prompt": "Big plans that can't pass are...",
+    "prompt": "What are big plans that can't pass good for?",
     "options": [
       {
         "id": "a",
@@ -6048,7 +6048,7 @@
       "C-049"
     ],
     "context": "A hotel heir spends more than $170 million of his own money to become governor, then bankrolls his party across the Midwest.",
-    "prompt": "Self-funded politics:",
+    "prompt": "Should the rich be allowed to pay for their own campaigns?",
     "slider": {
       "left": "Buying office. Nobody should be able to.",
       "right": "At least nobody owns him.",
@@ -6089,7 +6089,7 @@
       "D-067",
       "D-077"
     ],
-    "prompt": "A national emergency. The convention demands a unity ticket: a running mate both halves of the country could live with.",
+    "prompt": "A national emergency. The convention demands a unity ticket. Pick a running mate both halves of the country could live with.",
     "pool": [
       "pence",
       "kemp",
@@ -6184,8 +6184,8 @@
     "type": "choice",
     "tier": "core",
     "topic": "candidate-resume",
-    "context": "He flew four shuttle missions. His identical twin spent a year on the space station while he stayed on Earth as the control in a NASA study.",
-    "prompt": "Astronauts in politics:",
+    "context": "A senator flew four shuttle missions. His identical twin spent a year on the space station while he stayed on Earth as the control in a NASA study.",
+    "prompt": "Do astronauts belong in politics?",
     "options": [
       {
         "id": "a",
@@ -6243,7 +6243,7 @@
     "tier": "core",
     "topic": "texas-map",
     "context": "August 2025. Texas Democrats leave the state to deny a quorum on a new map. A billionaire governor puts them up in Illinois and dares Texas to come and fetch them.",
-    "prompt": "Legislators walking out to stop a vote:",
+    "prompt": "Is it right for legislators to walk out to stop a vote?",
     "options": [
       {
         "id": "a",
@@ -6301,7 +6301,7 @@
     "type": "draft",
     "tier": "core",
     "topic": "drafts-debate-prep",
-    "prompt": "Debate prep. You need someone to play your opponent and draw blood for a week.",
+    "prompt": "Debate prep. You need someone to play your opponent and draw blood for a week. Who?",
     "pool": [
       "christie",
       "cruz",
@@ -6397,7 +6397,7 @@
     "tier": "core",
     "topic": "cross-party-deals",
     "context": "May 2019. A socialist congresswoman posts that former members of Congress shouldn't become lobbyists. A Texas conservative replies that, for once, he agrees. Polite posts follow. No law does.",
-    "prompt": "An enemy agrees with you in public.",
+    "prompt": "An enemy agrees with you in public. What do you do?",
     "options": [
       {
         "id": "a",
@@ -6458,8 +6458,8 @@
     "type": "choice",
     "tier": "core",
     "topic": "big-tech",
-    "context": "He co-chaired a socialist's presidential campaign and represents the richest tech district in America. He says the two fit: build the future, then share it.",
-    "prompt": "A technology boom makes a few people unimaginably rich. You:",
+    "context": "A congressman co-chaired a socialist's presidential campaign and represents the richest tech district in America. He says the two fit: build the future, then share it.",
+    "prompt": "A technology boom makes a few people unimaginably rich. What do you do about it?",
     "options": [
       {
         "id": "a",

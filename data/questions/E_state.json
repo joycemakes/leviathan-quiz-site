@@ -11,7 +11,7 @@
       "D-022"
     ],
     "context": "The President federalizes a state's National Guard and sends it into that state's biggest city. The governor says: not in my name.",
-    "prompt": "Whose call is it?",
+    "prompt": "Who should decide whether troops go into that city?",
     "options": [
       {
         "id": "a",
@@ -79,13 +79,13 @@
     "tier": "core",
     "topic": "guard-in-cities",
     "context": "You are the governor. Another state's Guard convoy, sent on the President's orders, has just reached your state line.",
-    "prompt": "Tap your first move.",
+    "prompt": "What is your first move against the convoy? Tap it.",
     "art": "E-PIN-STATELINE",
     "artNote": "A two-lane highway at dusk at a state line, no people anywhere. Center: a line of plain olive trucks with headlights on, stopped at a big wooden WELCOME TO sign (state name left blank). Left foreground: an empty state trooper cruiser parked sideways across one lane, light bar lit. Right lane: open road, empty, running off to the horizon. Top right, on a hill: a small domed courthouse with one lit window. Bottom right: a TV satellite van with its dish raised and a camera on a tripod pointing at the road. Bottom left: a roadside payphone with the receiver hanging off the hook.",
     "regions": [
       {
         "id": "cruiser",
-        "label": "The cruiser (block the road with state police)",
+        "label": "The cruiser — block the road with state police",
         "where": "left foreground, the cruiser parked across the lane",
         "effects": {
           "federal": 1.5,
@@ -96,7 +96,7 @@
       },
       {
         "id": "courthouse",
-        "label": "The courthouse (sue before breakfast)",
+        "label": "The courthouse — sue before breakfast",
         "where": "top right, the domed building on the hill",
         "effects": {
           "federal": 1,
@@ -110,7 +110,7 @@
       },
       {
         "id": "openlane",
-        "label": "The open lane (wave them through)",
+        "label": "The open lane — wave them through",
         "where": "right lane, the empty road past the sign",
         "effects": {
           "federal": -1.5,
@@ -121,7 +121,7 @@
       },
       {
         "id": "tvvan",
-        "label": "The TV van (go live and make it a show)",
+        "label": "The TV van — go live and make it a show",
         "where": "bottom right, the satellite van and tripod camera",
         "effects": {
           "online": 1,
@@ -136,7 +136,7 @@
       },
       {
         "id": "payphone",
-        "label": "The payphone (call the White House, cut a deal)",
+        "label": "The payphone — call the White House, cut a deal",
         "where": "bottom left, the payphone with the receiver off the hook",
         "effects": {
           "mach": 1.5,
@@ -156,7 +156,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "states-rights",
-    "prompt": "Fifty states, fifty opinions. On the big questions the country should have:",
+    "prompt": "Fifty states, fifty opinions. On the big questions, who should make the rules?",
     "slider": {
       "left": "One rule, coast to coast",
       "right": "Fifty rules, pick your state",
@@ -290,7 +290,7 @@
       "A-075"
     ],
     "context": "Washington wants to wipe every state AI law off the books and write one of its own. The tech donors are in the lobby.",
-    "prompt": "Your line?",
+    "prompt": "Who should write the rules for AI?",
     "options": [
       {
         "id": "a",
@@ -351,7 +351,7 @@
     "tier": "core",
     "topic": "state-defiance",
     "context": "You are governor. Washington's offer: open your jails to immigration agents, or lose the highway money.",
-    "prompt": "No middle. Pick.",
+    "prompt": "No middle. Do you open the jails?",
     "options": [
       {
         "id": "a",
@@ -390,7 +390,7 @@
     "tier": "core",
     "topic": "state-defiance",
     "context": "A President you cannot stand sends federal agents to enforce, in your state, a law your state voted against.",
-    "prompt": "Hold to choose how hard your state pushes back.",
+    "prompt": "How hard does your state push back?",
     "options": [
       {
         "id": "a",
@@ -440,7 +440,7 @@
     "tier": "core",
     "topic": "education-department",
     "context": "The moderator holds up a photo of the Department of Education building.",
-    "prompt": "What happens to it?",
+    "prompt": "What should happen to the Department of Education?",
     "slider": {
       "left": "Keep it and fund it properly",
       "right": "Close it, send schools home",
@@ -572,8 +572,8 @@
     "type": "sign",
     "tier": "core",
     "topic": "disaster-response",
-    "context": "On your desk: the Disaster Relief Devolution Act. FEMA is wound down; the money goes to the states as lump sums and they are on their own.",
-    "prompt": "Sign it or veto it.",
+    "context": "On your desk: the Disaster Relief Devolution Act. FEMA, the federal disaster agency, is wound down; the money goes to the states as lump sums and they are on their own.",
+    "prompt": "Do you sign the bill closing FEMA, or veto it?",
     "options": [
       {
         "id": "sign",
@@ -654,7 +654,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "election-rules",
-    "context": "The map on the wall is doing that thing again: you are ahead in votes and behind in states. Or the other way around.",
+    "context": "Election night. The map on the wall is doing that thing again: you are ahead in votes and behind in states. Or the other way around.",
     "prompt": "How should a President be chosen?",
     "options": [
       {
@@ -684,8 +684,8 @@
     "type": "choice",
     "tier": "core",
     "topic": "executive-power",
-    "context": "The merchandise table is selling hats for an election the Constitution says cannot happen.",
-    "prompt": "A third term. Your answer on stage?",
+    "context": "The Constitution limits a President to two terms. His merchandise table is selling hats for a third run anyway.",
+    "prompt": "Should a President get a third term? Your answer on stage.",
     "options": [
       {
         "id": "a",
@@ -746,7 +746,7 @@
       "D-052"
     ],
     "context": "You are the official whose signature makes the result real. Your party's leader lost your state by under twelve thousand votes. He is on line one.",
-    "prompt": "The pen is in your hand.",
+    "prompt": "The pen is in your hand. Do you certify the result?",
     "options": [
       {
         "id": "a",
@@ -792,8 +792,8 @@
     "type": "hold",
     "tier": "core",
     "topic": "executive-power",
-    "context": "A federal judge orders your deportation flight turned around. The plane is already over the Gulf.",
-    "prompt": "Hold for your order to the pilot.",
+    "context": "You are President. A federal judge orders your deportation flight turned around. The plane is already over the Gulf.",
+    "prompt": "What is your order to the pilot?",
     "options": [
       {
         "id": "a",
@@ -850,7 +850,7 @@
       "A-089"
     ],
     "context": "Both parties have defended the Senate's 60-vote rule in opposition and cursed it in power. Now it is your majority.",
-    "prompt": "The filibuster:",
+    "prompt": "Do you keep the filibuster?",
     "slider": {
       "left": "Keep it. Slow is the point.",
       "right": "Nuke it. Majorities govern.",
@@ -1087,7 +1087,7 @@
     "tier": "core",
     "topic": "term-limits",
     "context": "On your desk: a constitutional amendment for the states. Two terms in the Senate, three in the House, then out. Half the people who would have to pass it have been here since the fax machine.",
-    "prompt": "Back it or kill it.",
+    "prompt": "Do you back term limits for Congress, or kill them?",
     "options": [
       {
         "id": "sign",
@@ -1123,7 +1123,7 @@
     "tier": "core",
     "topic": "pardons",
     "context": "Your last morning in office. The pardon pen, a stack of blank warrants and nobody left to tell you no.",
-    "prompt": "Who walks?",
+    "prompt": "Who do you pardon?",
     "options": [
       {
         "id": "a",
@@ -1171,7 +1171,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "executive-power",
-    "prompt": "What this country needs is:",
+    "prompt": "What does this country need?",
     "slider": {
       "left": "One strong hand that gets it done",
       "right": "Slow, maddening, accountable rules",
@@ -1203,14 +1203,14 @@
     "excludes": [
       "D-083"
     ],
-    "context": "3:10 am. You are behind by three tenths of a point with six counties still counting. The ballroom is waiting.",
-    "prompt": "Tap where you go.",
+    "context": "3:10 am on election night. You are behind by three tenths of a point with six counties still counting. The ballroom is waiting.",
+    "prompt": "What do you do now? Tap where you go.",
     "art": "E-PIN-HOTEL-SUITE",
     "artNote": "A campaign hotel suite at 3 am, no people. Center back: a doorway onto a ballroom stage with an empty podium and a wall of flags, lit bright. Left: a TV news camera on a tripod with its red light on, pointed at an empty chair. Right: a desk with a landline phone and a printed list of county phone numbers. Bottom left: a lawyer's open briefcase spilling filing papers. Bottom right: a couch with a folded blanket and a muted television showing a map with no names.",
     "regions": [
       {
         "id": "podium",
-        "label": "The podium (concede, and mean it)",
+        "label": "The podium — concede, and mean it",
         "where": "center back, the empty podium through the doorway",
         "effects": {
           "democracy": 1.5,
@@ -1221,7 +1221,7 @@
       },
       {
         "id": "camera",
-        "label": "The camera (declare victory now)",
+        "label": "The camera — declare victory now",
         "where": "left, the tripod camera with the red light",
         "effects": {
           "democracy": -2,
@@ -1232,7 +1232,7 @@
       },
       {
         "id": "phone",
-        "label": "The phone (call the county officials yourself)",
+        "label": "The phone — call the county officials yourself",
         "where": "right, the desk phone beside the list of numbers",
         "effects": {
           "democracy": -1.5,
@@ -1243,7 +1243,7 @@
       },
       {
         "id": "briefcase",
-        "label": "The briefcase (file for every recount you can)",
+        "label": "The briefcase — file for every recount you can",
         "where": "bottom left, the open briefcase of papers",
         "effects": {
           "democracy": 0.5,
@@ -1254,7 +1254,7 @@
       },
       {
         "id": "sofa",
-        "label": "The couch (say nothing until it's counted)",
+        "label": "The couch — say nothing until it's counted",
         "where": "bottom right, the couch and blanket",
         "effects": {
           "democracy": 1,
@@ -1276,8 +1276,8 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "supreme-court",
-    "context": "Your party holds the White House and both chambers. Nine judges keep striking down what you pass. Your base wants four more chairs on that bench.",
-    "prompt": "No middle. Pick.",
+    "context": "Your party holds the White House and both chambers. The Supreme Court's nine justices keep striking down what you pass. Your base wants four more chairs on that bench.",
+    "prompt": "No middle. Do you add the seats?",
     "options": [
       {
         "id": "a",
@@ -1312,7 +1312,7 @@
       "D-023"
     ],
     "context": "Six lawmakers who served in uniform post a video telling troops: you can refuse illegal orders. The President calls it sedition.",
-    "prompt": "The moderator wants one sentence.",
+    "prompt": "The moderator wants one sentence. Were the six right?",
     "options": [
       {
         "id": "a",
@@ -1371,7 +1371,7 @@
       "A-064"
     ],
     "context": "Federal immigration agents are making arrests in masks, plain clothes and unmarked cars. One state passes a law: show your face.",
-    "prompt": "Masks on federal agents?",
+    "prompt": "Should federal agents be allowed to wear masks?",
     "options": [
       {
         "id": "a",
@@ -1421,7 +1421,7 @@
     "tier": "core",
     "topic": "surveillance",
     "context": "A camera on every corner that can put a name to every face in under a second.",
-    "prompt": "Switch it on?",
+    "prompt": "Do you switch it on?",
     "slider": {
       "left": "On. The innocent have nothing to hide.",
       "right": "Off. A free people walk unnamed.",
@@ -1445,7 +1445,7 @@
     "tier": "core",
     "topic": "surveillance",
     "context": "On your desk: renewal of the law that lets intelligence agencies collect foreigners' messages without a warrant, and search what they sweep up from Americans along the way.",
-    "prompt": "Sign it or veto it.",
+    "prompt": "Do you renew warrantless surveillance, or veto it?",
     "options": [
       {
         "id": "sign",
@@ -1634,7 +1634,7 @@
     "tier": "core",
     "topic": "pandemic",
     "context": "A new virus. The modelers give you a graph and an hour. There is no vaccine yet.",
-    "prompt": "No middle. Pick.",
+    "prompt": "No middle. Do you lock down?",
     "options": [
       {
         "id": "a",
@@ -1671,7 +1671,7 @@
     "tier": "core",
     "topic": "mass-protest",
     "context": "Forty thousand people who despise you fill the streets around your rally. So far it is drums and cardboard.",
-    "prompt": "Hold for your order.",
+    "prompt": "What is your order?",
     "options": [
       {
         "id": "a",
@@ -1724,7 +1724,7 @@
       "B-071"
     ],
     "context": "A regulator you appointed hints on a podcast that a network could lose its license over a comedian who mocks you nightly. The network pulls him.",
-    "prompt": "Your move, off the record.",
+    "prompt": "Off the record, what do you do about it?",
     "options": [
       {
         "id": "a",
@@ -1855,13 +1855,13 @@
     "tier": "core",
     "topic": "surveillance",
     "context": "One city block, after dark. You get one ban.",
-    "prompt": "Tap what goes first.",
+    "prompt": "Which one do you ban? Tap it.",
     "art": "E-PIN-NIGHT-BLOCK",
     "artNote": "A city street corner at night, no people. Top left: a tall pole with a camera cluster and a glowing green scanning lens. Center: an unmarked dark van with tinted windows, side door ajar, parked at the curb. Top right: a small police drone hovering with a searchlight cone. Bottom right: a steel crowd barricade with hand-painted protest placards leaning on it (placards blank or abstract). Bottom left: a lit street lamp over an empty bench.",
     "regions": [
       {
         "id": "camera",
-        "label": "The camera pole (ban face scanning)",
+        "label": "The camera pole — ban face scanning",
         "where": "top left, the pole with the green lens",
         "effects": {
           "liberty": 1.5,
@@ -1874,7 +1874,7 @@
       },
       {
         "id": "van",
-        "label": "The unmarked van (ban anonymous arrests)",
+        "label": "The unmarked van — ban anonymous arrests",
         "where": "center, the dark van at the curb",
         "effects": {
           "liberty": 1.5,
@@ -1884,7 +1884,7 @@
       },
       {
         "id": "drone",
-        "label": "The drone (ban police drones)",
+        "label": "The drone — ban police drones",
         "where": "top right, the hovering drone and its light",
         "effects": {
           "liberty": 1,
@@ -1894,7 +1894,7 @@
       },
       {
         "id": "placards",
-        "label": "The placards (ban protests after dark)",
+        "label": "The placards — ban protests after dark",
         "where": "bottom right, the barricade and placards",
         "effects": {
           "liberty": -1.5,
@@ -1904,7 +1904,7 @@
       },
       {
         "id": "lamp",
-        "label": "The lamp (ban nothing: it all keeps us safe)",
+        "label": "The lamp — ban nothing: it all keeps us safe",
         "where": "bottom left, the street lamp and bench",
         "effects": {
           "liberty": -1.5,
@@ -1926,7 +1926,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "election-night-count",
-    "context": "A rumor about the count is racing across every platform. Your officials want to call the companies and ask for it to come down.",
+    "context": "A rumor about the vote count is racing across every platform. Your officials want to call the companies and ask for it to come down.",
     "prompt": "Do they make the call?",
     "options": [
       {
@@ -1973,7 +1973,7 @@
     "tier": "core",
     "topic": "dirt-on-rival",
     "context": "Your intelligence chief slides a folder across the desk. Swept up by accident, he says, and perfectly legal: three months of your opponent's phone locations.",
-    "prompt": "The folder is closed. For now.",
+    "prompt": "The folder is closed, for now. What do you do with it?",
     "options": [
       {
         "id": "a",
@@ -2084,7 +2084,7 @@
     "tier": "core",
     "topic": "allies",
     "context": "An ally owns a vast, icy, mineral-rich island your generals would love. The ally says it is not for sale.",
-    "prompt": "Hold for how far you go.",
+    "prompt": "How far do you go to get it?",
     "options": [
       {
         "id": "a",
@@ -2139,7 +2139,7 @@
       "A-035"
     ],
     "context": "The joint chiefs slide a trillion-dollar budget across the desk. Clipped to it: a list of the towns each base keeps alive, and how they voted.",
-    "prompt": "The scissors are in your hand. The military should be:",
+    "prompt": "The scissors are in your hand. How big should the military be?",
     "slider": {
       "left": "Half the size, and home",
       "right": "Bigger. Peace through fear.",
@@ -2168,7 +2168,7 @@
     "tier": "core",
     "topic": "use-of-force",
     "context": "A real war. The volunteers have run out.",
-    "prompt": "No middle. Pick.",
+    "prompt": "No middle. Do you bring back the draft?",
     "options": [
       {
         "id": "a",
@@ -2263,13 +2263,13 @@
     "tier": "core",
     "topic": "use-of-force",
     "context": "A hostile regime has seized an American ship. The table is set with everything a President can reach for.",
-    "prompt": "Tap the first thing you pick up.",
+    "prompt": "How do you respond? Tap the first thing you pick up.",
     "art": "E-PIN-SITROOM-TABLE",
     "artNote": "A situation room table seen from above, no people, chairs pushed back. Center: a sea chart with a small brass aircraft carrier model on it. Top left: a gray drone model on a stand beside a single red key. Top right: a red desk telephone with a coiled cord. Bottom left: a thick folder stamped SANCTIONS with a fountain pen on top. Bottom right: the room's heavy door standing open onto a lit corridor.",
     "regions": [
       {
         "id": "carrier",
-        "label": "The carrier (send the fleet)",
+        "label": "The carrier — send the fleet",
         "where": "center, the brass carrier on the sea chart",
         "effects": {
           "world": 1.5,
@@ -2279,7 +2279,7 @@
       },
       {
         "id": "drone",
-        "label": "The drone (quiet strike, no speeches)",
+        "label": "The drone — quiet strike, no speeches",
         "where": "top left, the drone model and red key",
         "effects": {
           "world": 1,
@@ -2290,7 +2290,7 @@
       },
       {
         "id": "phone",
-        "label": "The red phone (talk first)",
+        "label": "The red phone — talk first",
         "where": "top right, the red telephone",
         "effects": {
           "world": 0.5,
@@ -2301,7 +2301,7 @@
       },
       {
         "id": "folder",
-        "label": "The folder (sanctions, and patience)",
+        "label": "The folder — sanctions, and patience",
         "where": "bottom left, the SANCTIONS folder and pen",
         "effects": {
           "world": 0.5,
@@ -2312,7 +2312,7 @@
       },
       {
         "id": "door",
-        "label": "The door (bring everyone home)",
+        "label": "The door — bring everyone home",
         "where": "bottom right, the open door to the corridor",
         "effects": {
           "world": -2,
@@ -2332,7 +2332,7 @@
     "tier": "core",
     "topic": "allies",
     "context": "An ally that underpays for its own defense is invaded on a Tuesday.",
-    "prompt": "America's answer:",
+    "prompt": "Does America come to its defense?",
     "slider": {
       "left": "They pay up or they're alone",
       "right": "We come. That's the promise.",
@@ -2362,7 +2362,7 @@
     "tier": "core",
     "topic": "use-of-force",
     "context": "The man who planned the attack is in a house tonight. So is his family. The pilot is waiting on you.",
-    "prompt": "Hold for your order.",
+    "prompt": "What is your order?",
     "options": [
       {
         "id": "a",

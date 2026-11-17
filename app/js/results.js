@@ -6,8 +6,9 @@ import { reasonFor } from './scoring.js';
 import { zoneLabel } from './leviathan.js';
 import { encodeLVQ1 } from './export.js';
 import { portraitEl } from './art.js';
-import { silhouetteSVG } from './hud.js';
+import { silhouetteEl } from './hud.js';
 import { haptic, sleep, reducedMotion } from './feel.js';
+import { sfx } from './sound.js';
 import { renderShareSheet, copyText } from './sharesheet.js';
 import { normalizeShareConfig } from './share.js';
 
@@ -66,7 +67,7 @@ export function renderResults(root, R) {
     const slot = h('div', `pod pod-${i + 1}`);
     const card = h('div', 'pod-card');
     const sil = h('div', 'pod-sil');
-    sil.innerHTML = silhouetteSVG(m.id);
+    sil.appendChild(silhouetteEl(m.id, 'pod-sil-img'));
     card.append(sil, portraitEl(c, 'pod-portrait'));
     slot.append(card, h('div', 'pod-rank', String(i + 1)), h('div', 'pod-name', c.name), h('div', 'pod-pct', `${m.pct}%`));
     pod.appendChild(slot);
@@ -74,6 +75,7 @@ export function renderResults(root, R) {
   screen.appendChild(pod);
   (async () => {
     await sleep(reducedMotion() ? 50 : 500);
+    sfx('swell');
     for (const p of pod.querySelectorAll('.pod')) { p.classList.add('revealed'); haptic('select'); await sleep(reducedMotion() ? 0 : 260); }
   })();
 

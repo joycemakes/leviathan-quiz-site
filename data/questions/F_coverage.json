@@ -10,7 +10,7 @@
       "F-006"
     ],
     "context": "December 2022. A Senate subcommittee finds staff sexually abused women in at least two-thirds of the federal prisons that held them. No pollster has ever asked a voter about it.",
-    "prompt": "You hold the gavel and the subpoena. Next?",
+    "prompt": "You chair that subcommittee: you hold the gavel and the subpoena. What do you do next?",
     "options": [
       {
         "id": "a",
@@ -63,12 +63,12 @@
     "type": "pin",
     "tier": "core",
     "topic": "launch-film",
-    "context": "Before politics he ran a company that made investigative documentaries: war crimes, crooked officials, bribes on hidden camera. Now the film is about you.",
-    "prompt": "The edit suite, 3 a.m. Tap what your launch film opens on.",
+    "context": "Before politics a candidate ran a company that made investigative documentaries: war crimes, crooked officials, bribes on hidden camera. Now the film is about you.",
+    "prompt": "The edit suite, 3 a.m. What does your campaign launch film open on? Tap it.",
     "regions": [
       {
         "id": "ledger",
-        "label": "The ledger (follow the money, name the names)",
+        "label": "The ledger — follow the money, name the names",
         "where": "center, an open ledger under a brass lamp on the editing desk",
         "effects": {
           "style": 1,
@@ -81,7 +81,7 @@
       },
       {
         "id": "photos",
-        "label": "The snapshots (the porch, the dog, the modest start)",
+        "label": "The snapshots — the porch, the dog, the modest start",
         "where": "left wall, a corkboard of pinned snapshots",
         "effects": {
           "style": -1,
@@ -94,7 +94,7 @@
       },
       {
         "id": "jacket",
-        "label": "The flight jacket (service, no adjectives)",
+        "label": "The flight jacket — your service, no adjectives",
         "where": "right, a worn flight jacket over the back of a swivel chair",
         "effects": {
           "world": 0.5,
@@ -107,7 +107,7 @@
       },
       {
         "id": "ringlight",
-        "label": "The ring light (no film; talk straight down the lens)",
+        "label": "The ring light — no film; talk straight down the lens",
         "where": "far right, a lit ring light on a tripod facing an empty stool",
         "effects": {
           "online": 1.5,
@@ -120,7 +120,7 @@
       },
       {
         "id": "monitor",
-        "label": "The big monitor (a padlocked factory, and who locked it)",
+        "label": "The big monitor — a padlocked factory, and who locked it",
         "where": "back wall, the largest monitor, showing a padlocked factory gate",
         "effects": {
           "trade": -1,
@@ -148,7 +148,7 @@
     "tier": "core",
     "topic": "swing-state-defiance",
     "context": "March 2025. A politician with an election coming, in a state the President has just carried, ends a twenty-minute speech on one line.",
-    "prompt": "Who said it?",
+    "prompt": "A politician ends a twenty-minute speech on one line. Who said it?",
     "quote": "Georgia will bow to no king.",
     "answer": "ossoff",
     "options": [
@@ -211,7 +211,7 @@
       "hesitation"
     ],
     "context": "April 2025. The President's meme coin promises its biggest buyers a private dinner with him. At a town hall in a state he carried, a voter asks her senator what he plans to do about it.",
-    "prompt": "The room wants one word. So does the other side's ad team.",
+    "prompt": "The room wants one word. Do you say impeachment?",
     "options": [
       {
         "id": "a",
@@ -256,7 +256,7 @@
       "hesitation"
     ],
     "context": "August 2025. A senator's staff count 510 credible reports of abuse in immigration detention, children and pregnant women among them. His state voted for the President who runs it.",
-    "prompt": "The report is on your desk. Hold to commit.",
+    "prompt": "The report is on your desk. What do you do with it?",
     "options": [
       {
         "id": "a",
@@ -317,7 +317,7 @@
       "speed"
     ],
     "context": "You chair the Senate's investigations panel. One gavel, one year, and a stack of files no pollster has ever asked about.",
-    "prompt": "Swipe right to open the file. Four seconds each.",
+    "prompt": "Do you investigate? Swipe right to open the file, left to leave it shut. Four seconds each.",
     "cards": [
       {
         "id": "housing",
@@ -418,7 +418,7 @@
     "tier": "bombshell",
     "topic": "election-night-count",
     "context": "5 November 2020. The count is still running, and it is running the wrong way. One post goes up before the lawyers have finished their coffee.",
-    "prompt": "Who posted it?",
+    "prompt": "The 2020 count is still running, and running the wrong way for his side. Who posted it?",
     "quote": "Go to total war over this election.",
     "answer": "trumpjr",
     "options": [
@@ -482,7 +482,7 @@
     "tier": "core",
     "topic": "vanity-bestseller",
     "context": "November 2019. A president's son publishes Triggered. It debuts at number one with a dagger beside it, the mark for bulk orders. His father's party had just spent $94,800 on copies.",
-    "prompt": "A number one bought by the crate is...",
+    "prompt": "What is a number one bought by the crate?",
     "slider": {
       "left": "A participation trophy with a dust jacket.",
       "right": "A number one. Winners don't audit the receipt.",
@@ -514,7 +514,7 @@
     "tier": "core",
     "topic": "trophy-photos",
     "context": "A candidate co-founded a hunting magazine for, in its own words, the unapologetic man. His feed is trophies, memes and feuds. The consultants would like a quieter one by Super Tuesday.",
-    "prompt": "The feed.",
+    "prompt": "What do you do with the feed?",
     "options": [
       {
         "id": "a",
@@ -584,7 +584,7 @@
       "hesitation"
     ],
     "context": "November 2024. Your father has just won the White House back. You could have nearly any office in it. A venture fund for conservative-friendly companies offers a partnership instead.",
-    "prompt": "Inside or outside?",
+    "prompt": "Do you take an office inside the White House, or the money outside it?",
     "options": [
       {
         "id": "a",
@@ -625,7 +625,7 @@
       "holdStrength"
     ],
     "context": "July 2024. The nominee's eldest son has spent months pushing one name for the ticket. The donors and the old guard have other names.",
-    "prompt": "You are the son. Hold to commit.",
+    "prompt": "You are the son. Do you fight for your man?",
     "options": [
       {
         "id": "a",
@@ -672,7 +672,7 @@
     "tier": "core",
     "topic": "prosecutor-record",
     "context": "April 2004. A new district attorney who ran on never seeking the death penalty gets her first killing of a police officer. At the funeral a senator from her own party calls for death, from the pulpit.",
-    "prompt": "The promise was easy in the campaign. Now?",
+    "prompt": "You are the district attorney. The promise was easy in the campaign. Do you keep it now?",
     "options": [
       {
         "id": "a",
@@ -733,7 +733,7 @@
       "D-005"
     ],
     "context": "September 2025. The losing nominee's memoir is named for the length of her campaign. The argument is in the title: 107 days were not enough.",
-    "prompt": "She lost because of...",
+    "prompt": "Why did she lose?",
     "slider": {
       "left": "The candidate. A year wouldn't have saved her.",
       "right": "The calendar. Nobody builds a presidency in 107 days.",
@@ -773,7 +773,7 @@
       "hesitation"
     ],
     "context": "6 January 2025. The Constitution has the Vice President preside over the count. This year the count makes her opponent President.",
-    "prompt": "You lost. The gavel is yours for one more afternoon. Hold to commit.",
+    "prompt": "You lost. The gavel is yours for one more afternoon. What do you do with it?",
     "options": [
       {
         "id": "a",

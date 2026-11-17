@@ -6,12 +6,12 @@
     "type": "envelope",
     "tier": "core",
     "topic": "donor-pressure",
-    "prompt": "After the fundraiser a donor slides an envelope across the table. Not a check: a list of forty friends who will max out, if one line about his industry leaves your stump speech.",
-    "context": "The line polls well. Nobody would notice it had gone.",
+    "prompt": "His price: one line attacking his industry leaves your stump speech. The line polls well, and nobody would notice it had gone. Do you take the list?",
+    "context": "After the fundraiser a donor slides an envelope across the table. Inside is not a check but a list of forty friends who will each give the legal maximum.",
     "options": [
       {
         "id": "a",
-        "label": "Take the list. The line was never that good.",
+        "label": "Take the list and cut the line. It was never that good.",
         "effects": {
           "mach": 1.5,
           "econ": 0.5
@@ -48,7 +48,7 @@
     "type": "envelope",
     "tier": "bombshell",
     "topic": "dirt-on-rival",
-    "prompt": "A thumb drive arrives by courier, no return address. On it: your rival's sealed medical records. They are real, and they are bad.",
+    "prompt": "A thumb drive arrives by courier, no return address. On it: your rival's sealed medical records. They are real, and they are bad. What do you do with it?",
     "fx": [
       "breaking",
       "night",
@@ -101,7 +101,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "dirty-tricks",
-    "prompt": "Final debate. You have a number that would end your rival's night. You know it is wrong. The fact-check will land after the polls close.",
+    "prompt": "Final debate. You have a number that would end your rival's night. You know it is wrong. The fact-check will land after the polls close. Do you use it?",
     "options": [
       {
         "id": "a",
@@ -128,8 +128,8 @@
     "type": "hold",
     "tier": "core",
     "topic": "staff-loyalty",
-    "prompt": "Your deputy campaign manager quits in a rage. She knows where every body is buried, and she dug several of them. What happens next?",
-    "context": "Hold to commit. The longer you hold, the more you mean it.",
+    "prompt": "What do you do about her?",
+    "context": "Your deputy campaign manager quits in a rage. She knows where every body is buried, and she dug several of them.",
     "options": [
       {
         "id": "a",
@@ -172,10 +172,10 @@
     "type": "slider",
     "tier": "core",
     "topic": "deals-and-promises",
-    "prompt": "A promise made to a delegate at midnight is:",
+    "prompt": "You promise a delegate something at midnight to win her vote. What is that promise worth?",
     "slider": {
-      "left": "A debt",
-      "right": "An opening bid",
+      "left": "A debt I must pay",
+      "right": "An opening bid, nothing more",
       "centre": "A debt, unless something changes",
       "effects": {
         "mach": 2
@@ -191,7 +191,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "dirty-tricks",
-    "prompt": "Your team can spend money in the other party's primary to help them nominate the candidate you would most like to face. He is also the one you call a danger to the country.",
+    "prompt": "Your team can spend money in the other party's primary to help them nominate the candidate you would most like to face. He is also the one you call a danger to the country. Do you?",
     "options": [
       {
         "id": "a",
@@ -233,7 +233,7 @@
     "type": "swipe",
     "tier": "core",
     "topic": "dirty-tricks",
-    "prompt": "Fair game or foul? Four seconds each.",
+    "prompt": "Campaign tricks. Would you do each one? Yes for fair game, no for foul. Four seconds each.",
     "cards": [
       {
         "id": "1",
@@ -321,7 +321,7 @@
     "type": "envelope",
     "tier": "core",
     "topic": "deals-and-promises",
-    "prompt": "The state party chair will endorse you on Friday. In the elevator he hands you a folded card with one word on it: Lisbon. He would like to be an ambassador.",
+    "prompt": "The state party chair will endorse you on Friday. In the elevator he hands you a folded card with one word on it: Lisbon. He wants to be ambassador to Portugal. Do you promise it?",
     "options": [
       {
         "id": "a",
@@ -362,7 +362,7 @@
     "type": "rank",
     "tier": "core",
     "topic": "drafts-chief-of-staff",
-    "prompt": "Rank what you want most from a chief of staff.",
+    "prompt": "Rank what you want most from a chief of staff, most important at the top.",
     "options": [
       {
         "id": "a",
@@ -411,7 +411,7 @@
     "type": "envelope",
     "tier": "core",
     "topic": "press-ethics",
-    "prompt": "A national reporter reads you her story before it runs. She has a fact wrong, and the error flatters you. Her deadline is in ten minutes.",
+    "prompt": "A national reporter reads you her story before it runs. She has a fact wrong, and the error flatters you. Her deadline is in ten minutes. What do you say?",
     "options": [
       {
         "id": "a",
@@ -450,7 +450,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "kingmaker",
-    "prompt": "The kingmaker at the head of the table loves flattery. You think he is a fool. He has just finished a long story about his own genius and is looking at you.",
+    "prompt": "The kingmaker at the head of the table loves flattery. You think he is a fool. He has just finished a long story about his own genius and is looking at you. How do you respond?",
     "options": [
       {
         "id": "a",
@@ -495,12 +495,12 @@
     "type": "pin",
     "tier": "core",
     "topic": "kingmaker",
-    "prompt": "The hotel suite, the night before the endorsement vote. Five people, one hour. Tap who you go to first.",
+    "prompt": "The hotel suite, the night before the endorsement vote. Five people, one hour. Who do you go to first? Tap them.",
     "art": "C-PIN-SUITE",
     "regions": [
       {
         "id": "kingmaker",
-        "label": "The kingmaker by the window (go straight to the power)",
+        "label": "The kingmaker by the window — go straight to the power",
         "where": "right third, an older man in a dark suit standing at the tall window with a glass",
         "effects": {
           "mach": 1,
@@ -510,7 +510,7 @@
       },
       {
         "id": "delegate",
-        "label": "The nervous young delegate (nobody else has spoken to her)",
+        "label": "The nervous young delegate — nobody else has spoken to her",
         "where": "left edge, a young woman alone by the door holding her lanyard",
         "effects": {
           "mach": -0.5,
@@ -520,7 +520,7 @@
       },
       {
         "id": "aide",
-        "label": "Your rival's aide at the drinks tray (find out what they know)",
+        "label": "Your rival's aide — find out what they know",
         "where": "center back, a man in rolled shirtsleeves pouring a drink at a sideboard",
         "effects": {
           "mach": 2
@@ -529,7 +529,7 @@
       },
       {
         "id": "phone",
-        "label": "Your phone on the table (call home first)",
+        "label": "Your phone on the table — call home first",
         "where": "center foreground, a phone lit up on a low coffee table",
         "effects": {
           "mach": -1,
@@ -539,7 +539,7 @@
       },
       {
         "id": "press",
-        "label": "The reporter in the corridor (be seen arriving)",
+        "label": "The reporter in the corridor — be seen arriving",
         "where": "far left, visible through the half-open door, a figure with a press badge and notebook",
         "effects": {
           "narc": 1.5,
@@ -558,7 +558,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "dirty-tricks",
-    "prompt": "A whisper campaign about your rival is spreading. It is false. You did not start it. It is working.",
+    "prompt": "A whisper campaign about your rival is spreading. It is false. You did not start it. It is working. Do you stop it?",
     "options": [
       {
         "id": "a",
@@ -586,9 +586,9 @@
     "type": "slider",
     "tier": "core",
     "topic": "friendship",
-    "prompt": "A friend in this town is:",
+    "prompt": "What is a friend in politics?",
     "slider": {
-      "left": "A friend",
+      "left": "A friend, full stop",
       "right": "An asset with a shelf life",
       "centre": "A friend, for as long as it lasts",
       "effects": {
@@ -611,7 +611,7 @@
       "C-080",
       "D-084"
     ],
-    "prompt": "You have lost, narrowly. The lawyers say a recount will change nothing. The fundraisers say a fight would bring in millions and keep your list warm for next time.",
+    "prompt": "You have lost, narrowly. The lawyers say a recount will change nothing. The fundraisers say a fight would bring in millions and keep your list warm for next time. What do you do?",
     "options": [
       {
         "id": "a",
@@ -718,7 +718,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "taking-credit",
-    "prompt": "Your speechwriter's best line gets a standing ovation. Afterwards a reporter asks who wrote it.",
+    "prompt": "Your speechwriter's best line gets a standing ovation. Afterwards a reporter asks who wrote it. What do you say?",
     "options": [
       {
         "id": "a",
@@ -763,7 +763,7 @@
     "excludes": [
       "B-065"
     ],
-    "prompt": "A glossy magazine offers you the cover. The shoot is Thursday. On Wednesday, half your state goes under water.",
+    "prompt": "A glossy magazine offers you the cover. The shoot is Thursday. On Wednesday, half your state goes under water. What happens to the shoot?",
     "options": [
       {
         "id": "a",
@@ -804,7 +804,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "final-week",
-    "prompt": "The last Saturday. The polls are tied and you can do one thing.",
+    "prompt": "The last Saturday. The polls are tied and you can do one thing. Which?",
     "options": [
       {
         "id": "a",
@@ -832,7 +832,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "legacy",
-    "prompt": "A rival's memoir gives you one line. Which would sting most?",
+    "prompt": "Your rival's memoir sums you up in one word. Which would sting most?",
     "options": [
       {
         "id": "a",
@@ -872,7 +872,7 @@
     "type": "swipe",
     "tier": "core",
     "topic": "main-character",
-    "prompt": "Main character check. Yes or no, four seconds each.",
+    "prompt": "Main character check. Is each one true of you? Yes or no, four seconds each.",
     "cards": [
       {
         "id": "1",
@@ -959,12 +959,12 @@
     "type": "pin",
     "tier": "core",
     "topic": "victory-night",
-    "prompt": "You have won. The stage is lit and the confetti is loaded. Tap where you stand.",
+    "prompt": "You have won. The stage is lit and the confetti is loaded. Where do you stand for the victory picture? Tap your place.",
     "art": "C-PIN-VICTORY-STAGE",
     "regions": [
       {
         "id": "podium",
-        "label": "Alone at the podium, center stage",
+        "label": "The podium — alone, center stage",
         "where": "dead center, the lit podium under the main spotlight",
         "effects": {
           "narc": 2
@@ -973,7 +973,7 @@
       },
       {
         "id": "family",
-        "label": "In the family line, hand in hand",
+        "label": "The family line — hand in hand with them",
         "where": "right of center, a row of invented family members of different ages",
         "effects": {
           "dynasty": 1.5,
@@ -983,7 +983,7 @@
       },
       {
         "id": "staff",
-        "label": "Behind the staff, pushing them forward",
+        "label": "The staff — behind them, pushing them forward",
         "where": "left of center, a cluster of exhausted young staffers in lanyards",
         "effects": {
           "narc": -1.5,
@@ -993,7 +993,7 @@
       },
       {
         "id": "crowd",
-        "label": "Down in the crowd at the barrier",
+        "label": "The crowd — down at the barrier with the voters",
         "where": "bottom foreground, the crowd barrier and raised hands",
         "effects": {
           "narc": -1,
@@ -1003,7 +1003,7 @@
       },
       {
         "id": "wings",
-        "label": "In the wings, watching who claps",
+        "label": "The wings — out of the light, watching who claps",
         "where": "far left, dark stage wings with a curtain rope",
         "effects": {
           "mach": 1.5,
@@ -1023,7 +1023,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "main-character",
-    "prompt": "The photos are clear: your rival's crowd was bigger. A reporter asks about it live.",
+    "prompt": "The photos are clear: your rival's crowd was bigger. A reporter asks about it live. What do you say?",
     "options": [
       {
         "id": "a",
@@ -1066,7 +1066,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "main-character",
-    "prompt": "A junior staffer points out, carefully, that you have started referring to yourself in the third person in meetings.",
+    "prompt": "A junior staffer points out, carefully, that you have started referring to yourself in the third person in meetings. How do you take it?",
     "options": [
       {
         "id": "a",
@@ -1128,7 +1128,7 @@
     "type": "envelope",
     "tier": "bombshell",
     "topic": "dropping-out",
-    "prompt": "The party elders make their offer in a sealed letter: drop out tonight, endorse the front-runner, and a safe Senate seat is yours for life.",
+    "prompt": "The party elders make their offer in a sealed letter: drop out tonight, endorse the front-runner, and a safe Senate seat is yours for life. What is your answer?",
     "fx": [
       "breaking",
       "candles",
@@ -1176,7 +1176,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "taking-credit",
-    "prompt": "Your signature bill can pass this week, on one condition: your rival's name goes on it and yours comes off.",
+    "prompt": "Your signature bill can pass this week, on one condition: your rival's name goes on it and yours comes off. Do you let it pass?",
     "options": [
       {
         "id": "a",
@@ -1203,7 +1203,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "being-number-two",
-    "prompt": "The nominee offers you the second slot on the ticket. You privately think you are the better politician.",
+    "prompt": "The nominee offers you the second slot on the ticket. You privately think you are the better politician. Do you accept?",
     "options": [
       {
         "id": "a",
@@ -1248,7 +1248,7 @@
     "type": "rank",
     "tier": "core",
     "topic": "legacy",
-    "prompt": "They are carving one word under your statue. Rank them.",
+    "prompt": "They are carving one word under your statue. Rank the words, the one you want most at the top.",
     "options": [
       {
         "id": "a",
@@ -1297,7 +1297,7 @@
     "type": "envelope",
     "tier": "bombshell",
     "topic": "staff-loyalty",
-    "prompt": "Your aide of twelve years made the mistake that is about to lead the six o'clock news. He is waiting outside your door with his resignation in an envelope. He has not been asked for it.",
+    "prompt": "Your aide of twelve years made the mistake that is about to lead the six o'clock news. He is outside your door with his resignation in an envelope. Nobody asked him for it. Do you take it?",
     "fx": [
       "breaking",
       "shake",
@@ -1351,7 +1351,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "ruthless-ads",
-    "prompt": "Your rival breaks down in tears at a town hall. It is on camera. Your ad team has a thirty-second cut ready within the hour.",
+    "prompt": "Your rival breaks down in tears at a town hall. It is on camera. Your ad team has a thirty-second cut ready within the hour. Do you run it?",
     "options": [
       {
         "id": "a",
@@ -1381,7 +1381,7 @@
     "excludes": [
       "C-040"
     ],
-    "prompt": "The campaign is out of money. Forty field organizers have to go, a week before Christmas.",
+    "prompt": "The campaign is out of money. Forty field organizers have to go, a week before Christmas. How do you do it?",
     "options": [
       {
         "id": "a",
@@ -1423,7 +1423,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "friendship",
-    "prompt": "Your oldest friend is indicted. The photo of the two of you at his wedding is on every site by lunch.",
+    "prompt": "Your oldest friend is indicted. The photo of the two of you at his wedding is on every site by lunch. What do you do?",
     "options": [
       {
         "id": "a",
@@ -1466,10 +1466,10 @@
     "type": "slider",
     "tier": "core",
     "topic": "conscience",
-    "prompt": "Guilt is:",
+    "prompt": "What is guilt to you?",
     "slider": {
-      "left": "A compass",
-      "right": "A luxury",
+      "left": "A compass I steer by",
+      "right": "A luxury I cannot afford",
       "centre": "A compass I check after the vote",
       "effects": {
         "psych": 2
@@ -1485,7 +1485,7 @@
     "type": "envelope",
     "tier": "core",
     "topic": "conscience",
-    "prompt": "A handwritten note reaches you at breakfast. Your first ever volunteer is dying and would like to see you. The hospice is two hours away. The debate is tonight.",
+    "prompt": "A handwritten note reaches you at breakfast. Your first ever volunteer is dying and would like to see you. The hospice is two hours away. The debate is tonight. Do you go?",
     "options": [
       {
         "id": "a",
@@ -1525,7 +1525,7 @@
     "type": "swipe",
     "tier": "core",
     "topic": "ruthless-ads",
-    "prompt": "Could you? Yes or no, four seconds each.",
+    "prompt": "Could you do each of these? Yes or no, four seconds each.",
     "cards": [
       {
         "id": "1",
@@ -1614,7 +1614,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "ruthless-ads",
-    "prompt": "One ad wins you the race. Every word of it is true, and it will end a decent opponent's marriage.",
+    "prompt": "One ad wins you the race. Every word of it is true, and it will end a decent opponent's marriage. Do you air it?",
     "options": [
       {
         "id": "a",
@@ -1642,7 +1642,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "concession",
-    "prompt": "Election night. You have won. The loser calls to concede, and their voice is breaking.",
+    "prompt": "Election night. You have won. The loser calls to concede, and their voice is breaking. How do you take the call?",
     "options": [
       {
         "id": "a",
@@ -1688,12 +1688,12 @@
     "excludes": [
       "C-033"
     ],
-    "prompt": "The war room, 2 a.m. The money runs out on Friday and something has to go. Tap what you cut.",
+    "prompt": "The war room, 2 a.m. The money runs out on Friday and something has to go. What do you cut? Tap it.",
     "art": "C-PIN-WAR-ROOM-CUTS",
     "regions": [
       {
         "id": "organizers",
-        "label": "The young field organizers (cheapest to lose, hardest hit)",
+        "label": "The field organizers — lay off the young staff, who feel it most",
         "where": "left third, a row of folding tables with young staff asleep on laptops",
         "effects": {
           "psych": 1.5
@@ -1702,7 +1702,7 @@
       },
       {
         "id": "friend",
-        "label": "The old friend who runs the office (loyal, past his best)",
+        "label": "The old friend — let him go; loyal, but past his best",
         "where": "center, an older man in a cardigan at a desk with a framed photo",
         "effects": {
           "psych": 1,
@@ -1712,7 +1712,7 @@
       },
       {
         "id": "ads",
-        "label": "The TV ad schedule (my face on air)",
+        "label": "The TV ad schedule — pull my own face off the air",
         "where": "right third, a wall board covered in ad schedules and a screen",
         "effects": {
           "psych": -1,
@@ -1722,7 +1722,7 @@
       },
       {
         "id": "jet",
-        "label": "The charter plane booking (my comfort)",
+        "label": "The charter plane — give up my own comfort",
         "where": "top right, a model airplane and itinerary pinned on a corkboard",
         "effects": {
           "narc": -1.5,
@@ -1741,7 +1741,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "hecklers",
-    "prompt": "Mid-speech, a heckler is dragged out by security, harder than they needed to be. Every phone in the room is filming.",
+    "prompt": "Mid-speech, a heckler is dragged out by security, harder than they needed to be. Every phone in the room is filming. What do you do?",
     "options": [
       {
         "id": "a",
@@ -1786,7 +1786,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "candidates-children",
-    "prompt": "Your opponent's sixteen-year-old posts something stupid. It is trending by lunch.",
+    "prompt": "Your opponent's sixteen-year-old posts something stupid. It is trending by lunch. What do you do?",
     "options": [
       {
         "id": "a",
@@ -1850,7 +1850,7 @@
     "type": "budget",
     "tier": "core",
     "topic": "final-week",
-    "prompt": "The final week. You have 100 hours awake. Split them.",
+    "prompt": "The final week. You have 100 hours awake. How do you spend them?",
     "options": [
       {
         "id": "a",
@@ -1893,7 +1893,7 @@
     "type": "envelope",
     "tier": "core",
     "topic": "staff-loyalty",
-    "prompt": "A junior staffer shows you the complaint she is about to file against your finance director. He raises half your money. It is in a sealed envelope, addressed to the board.",
+    "prompt": "A junior staffer shows you the complaint she is about to file against your finance director. He raises half your money. It is in a sealed envelope, addressed to the board. What do you do?",
     "options": [
       {
         "id": "a",
@@ -1939,7 +1939,7 @@
       "D-039",
       "D-041"
     ],
-    "prompt": "His father's face is on the banner, bigger than his own. The crowd chants the surname; it saves time. A president's son on the ballot is:",
+    "prompt": "His father's face is on the banner, bigger than his own. The crowd chants the surname; it saves time. What is a president's son on the ballot?",
     "slider": {
       "left": "A coronation with extra paperwork",
       "right": "A candidate. Voters can read a ballot.",
@@ -2042,7 +2042,7 @@
     "excludes": [
       "C-056"
     ],
-    "prompt": "You are retiring from the House. Your daughter is 34, qualified, and wants the seat.",
+    "prompt": "You are retiring from the House. Your daughter is 34, qualified, and wants the seat. How much do you help her?",
     "options": [
       {
         "id": "a",
@@ -2184,7 +2184,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "fathers-shadow",
-    "prompt": "Your father ran for president three times and never won, but he built a movement and a mailing list. Now it is your turn.",
+    "prompt": "Your father ran for president three times and never won, but he built a movement and a mailing list. Now it is your turn. How do you run?",
     "options": [
       {
         "id": "a",
@@ -2238,7 +2238,7 @@
     "excludes": [
       "C-054"
     ],
-    "prompt": "The family business. Fine or not fine? Four seconds each.",
+    "prompt": "Politics as a family business. Is each of these fine? Yes or no, four seconds each.",
     "cards": [
       {
         "id": "1",
@@ -2303,7 +2303,7 @@
       },
       {
         "id": "7",
-        "text": "Legacy places at top universities.",
+        "text": "College places reserved for the children of alumni.",
         "yes": {
           "dynasty": 1.5
         },
@@ -2370,7 +2370,7 @@
     "excludes": [
       "C-052"
     ],
-    "prompt": "Your brother ran your first campaign from his garage. Tonight he hands you an envelope: his application to be White House chief of staff. He is not up to it.",
+    "prompt": "Your brother ran your first campaign from his garage. Tonight he hands you an envelope: his application to be White House chief of staff. He is not up to it. What do you tell him?",
     "options": [
       {
         "id": "a",
@@ -2465,7 +2465,7 @@
     "excludes": [
       "C-048"
     ],
-    "prompt": "You are term-limited. Your spouse wants to run for your office.",
+    "prompt": "You are term-limited. Your spouse wants to run for your office. What do you do?",
     "options": [
       {
         "id": "a",
@@ -2507,7 +2507,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "dynasty-family",
-    "prompt": "The heir to your party's most storied family challenges a hard-working incumbent in a primary. The surname still fills rooms. Both want your endorsement.",
+    "prompt": "The heir to your party's most storied family challenges a hard-working incumbent in a primary. The surname still fills rooms. Both want your endorsement. Who gets it?",
     "options": [
       {
         "id": "a",
@@ -2554,7 +2554,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "candidates-children",
-    "prompt": "Your children are fourteen and sixteen. Election night, the cameras are waiting.",
+    "prompt": "Your children are fourteen and sixteen. Election night, the cameras are waiting. Where are the children?",
     "options": [
       {
         "id": "a",
@@ -2582,12 +2582,12 @@
     "type": "pin",
     "tier": "core",
     "topic": "fathers-shadow",
-    "prompt": "Picture the day you win the office your father once held. His portrait hangs in the mansion hall. Tap where yours goes.",
+    "prompt": "Picture the day you win the office your father once held. His portrait hangs in the mansion hall. Where does yours go? Tap the spot.",
     "art": "C-PIN-PORTRAIT-HALL",
     "regions": [
       {
         "id": "beside",
-        "label": "Beside his, same size, same frame",
+        "label": "Beside his — same size, same frame",
         "where": "center, the empty space next to a gilt-framed portrait of an older man",
         "effects": {
           "dynasty": 2
@@ -2596,7 +2596,7 @@
       },
       {
         "id": "opposite",
-        "label": "The far wall, alone, under its own light",
+        "label": "The far wall — alone, under its own light",
         "where": "right third, a bare wall with a single picture light",
         "effects": {
           "narc": 1.5,
@@ -2606,7 +2606,7 @@
       },
       {
         "id": "replace",
-        "label": "Where his hangs now. His goes to storage.",
+        "label": "His spot — mine hangs there; his goes to storage",
         "where": "center left, the father's portrait itself",
         "effects": {
           "psych": 1.5,
@@ -2617,7 +2617,7 @@
       },
       {
         "id": "none",
-        "label": "Nowhere. Leave the hook empty.",
+        "label": "The empty hook — no portrait of me at all",
         "where": "far left, an empty brass hook beside a doorway",
         "effects": {
           "narc": -1.5,
@@ -2636,7 +2636,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "inherited-money",
-    "prompt": "An estate worth more than $50 million passes to the next generation. The state should:",
+    "prompt": "An estate worth more than $50 million passes to the next generation. What should the state do?",
     "options": [
       {
         "id": "a",
@@ -2767,7 +2767,7 @@
     "type": "hold",
     "tier": "bombshell",
     "topic": "affairs",
-    "prompt": "Photos land at 11 p.m.: your married running mate leaving a hotel with a junior staffer. The convention is in nine days.",
+    "prompt": "Photos land at 11 p.m.: your married running mate leaving a hotel with a junior staffer. The convention is in nine days. What do you do?",
     "fx": [
       "breaking",
       "shake",
@@ -2819,7 +2819,7 @@
     "excludes": [
       "C-062"
     ],
-    "prompt": "In 1987 a front-runner was out of the race within a week of an affair story. Today he would probably ride it out. That change is:",
+    "prompt": "In 1987 a front-runner was out of the race within a week of an affair story. Today he would probably ride it out. Is that change progress or decline?",
     "options": [
       {
         "id": "a",
@@ -2850,7 +2850,7 @@
     "excludes": [
       "C-062"
     ],
-    "prompt": "Should it end a career? Yes or no, four seconds each.",
+    "prompt": "Should each of these end a political career? Yes or no, four seconds each.",
     "cards": [
       {
         "id": "1",
@@ -2943,7 +2943,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "private-lives",
-    "prompt": "Power is attractive. Anyone who has worked a campaign knows the candidate gets looked at differently by month three. So?",
+    "prompt": "Power is attractive. Anyone who has worked a campaign knows the candidate gets looked at differently by month three. What follows from that?",
     "options": [
       {
         "id": "a",
@@ -2986,7 +2986,7 @@
     "type": "envelope",
     "tier": "core",
     "topic": "office-romance",
-    "prompt": "An unsigned note under your door: your campaign manager and your communications director are sleeping together. Both are single. Both are essential.",
+    "prompt": "An unsigned note under your door: your campaign manager and your communications director are sleeping together. Both are single. Both are essential. What do you do?",
     "options": [
       {
         "id": "a",
@@ -3026,12 +3026,12 @@
     "type": "pin",
     "tier": "core",
     "topic": "scandal-night",
-    "prompt": "The story about your marriage broke this morning. The press conference is in five minutes. Tap where your spouse will be.",
+    "prompt": "The story about your marriage broke this morning. The press conference is in five minutes. Where should your spouse be? Tap the place.",
     "art": "C-PIN-PRESS-CONFERENCE",
     "regions": [
       {
         "id": "beside",
-        "label": "Beside me, holding my hand",
+        "label": "Beside the podium — next to me, holding my hand",
         "where": "center, the space right next to the podium",
         "effects": {
           "libertine": -1,
@@ -3041,7 +3041,7 @@
       },
       {
         "id": "behind",
-        "label": "A step behind, eyes on the floor",
+        "label": "By the flags — a step behind me, eyes on the floor",
         "where": "center back, in front of the flags",
         "effects": {
           "psych": 1.5,
@@ -3051,7 +3051,7 @@
       },
       {
         "id": "row",
-        "label": "Front row, among the press, their own choice of seat",
+        "label": "The front row — among the press, their own choice of seat",
         "where": "bottom left, the first row of folding chairs",
         "effects": {
           "libertine": 0.5,
@@ -3061,7 +3061,7 @@
       },
       {
         "id": "home",
-        "label": "At home. They are not a prop.",
+        "label": "The television — at home. They are not a prop.",
         "where": "top right, a television in the corner showing a quiet house",
         "effects": {
           "libertine": 1.5,
@@ -3071,7 +3071,7 @@
       },
       {
         "id": "podium",
-        "label": "At the podium, instead of me",
+        "label": "The podium — they speak instead of me",
         "where": "center, the podium microphones themselves",
         "effects": {
           "mach": 1.5,
@@ -3090,7 +3090,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "private-lives",
-    "prompt": "A candidate and their spouse have, by every account, an arrangement. They are discreet and they are happy. A reporter has the story.",
+    "prompt": "A candidate and their spouse have, by every account, an arrangement. They are discreet and they are happy. A reporter has the story. Should it run?",
     "options": [
       {
         "id": "a",
@@ -3116,7 +3116,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "character-curve",
-    "prompt": "A politician with thirty years in public life and not one scandal is:",
+    "prompt": "What do you make of a politician with thirty years in public life and not one scandal?",
     "slider": {
       "left": "Trustworthy",
       "right": "Untested, or good at hiding",
@@ -3136,7 +3136,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "character-curve",
-    "prompt": "Your party's values voters have backed a nominee whose private life they would once have ruled out. Looking back, that was:",
+    "prompt": "Your party's values voters have backed a nominee whose private life they would once have ruled out. Looking back, what was that?",
     "options": [
       {
         "id": "a",
@@ -3232,7 +3232,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "dirt-on-rival",
-    "prompt": "A tabloid editor offers you proof of your rival's affair. He wants nothing for it. Yet.",
+    "prompt": "A tabloid editor offers you proof of your rival's affair. He wants nothing for it. Yet. What do you do with it?",
     "options": [
       {
         "id": "a",
@@ -3276,7 +3276,7 @@
     "type": "envelope",
     "tier": "bombshell",
     "topic": "office-romance",
-    "prompt": "Your communications director closes the door and confesses: for six months she has been seeing the reporter who covers your campaign. Her resignation letter is on your desk.",
+    "prompt": "Your communications director closes the door and confesses: for six months she has been seeing the reporter who covers your campaign. Her resignation letter is on your desk. Do you accept it?",
     "fx": [
       "breaking",
       "night",
@@ -3322,7 +3322,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "private-lives",
-    "prompt": "A candidate is 45, single, and dating openly during the campaign.",
+    "prompt": "A candidate is 45, single, and dating openly during the campaign. What do you think?",
     "options": [
       {
         "id": "a",
@@ -3369,7 +3369,7 @@
     "excludes": [
       "D-052"
     ],
-    "prompt": "The man who made your career asks you for one thing. You have read the law and you believe the Constitution does not let you do it.",
+    "prompt": "The man who made your career asks you for one thing. You have read the law and you believe the Constitution does not let you do it. What do you do?",
     "fx": [
       "breaking",
       "typewriter",
@@ -3436,7 +3436,7 @@
     "excludes": [
       "C-088"
     ],
-    "prompt": "Eight years ago he humiliated you on a debate stage. Now he hands out the jobs, and he is offering you one.",
+    "prompt": "Eight years ago he humiliated you on a debate stage. Now he hands out the jobs, and he is offering you one. Do you take it?",
     "options": [
       {
         "id": "a",
@@ -3499,7 +3499,7 @@
     "excludes": [
       "D-004"
     ],
-    "prompt": "Your party's president is visibly slowing down. The election is a year away. You sit in his cabinet and you have seen it up close.",
+    "prompt": "Your party's president is visibly slowing down. The election is a year away. You sit in his cabinet and you have seen it up close. What do you do?",
     "fx": [
       "breaking",
       "buzz_heavy"
@@ -3554,7 +3554,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "fight-or-fold",
-    "prompt": "An unfair attack lands at 9 a.m. By noon you have:",
+    "prompt": "An unfair attack on you lands at 9 a.m. What have you done by noon?",
     "slider": {
       "left": "Risen above it",
       "right": "Hit back twice as hard",
@@ -3587,7 +3587,7 @@
       "C-015",
       "D-084"
     ],
-    "prompt": "You have lost the primary. The winner called you a fraud on live television in March. Their people are on the phone asking for your endorsement.",
+    "prompt": "You have lost the primary. The winner called you a fraud on live television in March. Their people are on the phone asking for your endorsement. Do you give it?",
     "options": [
       {
         "id": "a",
@@ -3621,7 +3621,7 @@
     "type": "envelope",
     "tier": "core",
     "topic": "friendship",
-    "prompt": "A courier from the leader's office: a statement attacking a colleague, with a line for your signature. The colleague is your friend. They want it back by noon.",
+    "prompt": "A courier from your party leader's office: a statement attacking a colleague, with a line for your signature. The colleague is your friend. They want it back by noon. Do you sign?",
     "options": [
       {
         "id": "a",
@@ -3662,7 +3662,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "big-bill",
-    "prompt": "Your party's signature bill is on the floor. You think it is a bad bill. The leader needs every vote and has said so by name.",
+    "prompt": "Your party's signature bill is on the floor. You think it is a bad bill. The leader needs every vote and has said so by name. How do you vote?",
     "options": [
       {
         "id": "a",
@@ -3718,7 +3718,7 @@
     "excludes": [
       "B-079"
     ],
-    "prompt": "A member of the other party offers to co-sponsor something your voters want and your leadership hates.",
+    "prompt": "A member of the other party offers to co-sponsor something your voters want and your leadership hates. Do you take the offer?",
     "options": [
       {
         "id": "a",
@@ -3867,7 +3867,7 @@
       "B-019",
       "D-033"
     ],
-    "prompt": "The network your base cannot stand invites you on for a full hour, live, with their toughest host.",
+    "prompt": "The network your base cannot stand invites you on for a full hour, live, with their toughest host. Do you go?",
     "options": [
       {
         "id": "a",
@@ -3926,7 +3926,7 @@
     "excludes": [
       "B-092"
     ],
-    "prompt": "The party's most polarizing figure offers to fly in and rally for you in the suburbs you need. His base loves him. The suburbs do not.",
+    "prompt": "The party's most polarizing figure offers to fly in and rally for you in the suburbs you need. His base loves him. The suburbs do not. Do you share the stage?",
     "options": [
       {
         "id": "a",
@@ -3962,7 +3962,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "loyalty-to-the-leader",
-    "prompt": "In politics, loyalty is owed:",
+    "prompt": "In politics, who is loyalty owed to?",
     "slider": {
       "left": "To principles. People come and go.",
       "right": "To the person who made you.",
@@ -3991,7 +3991,7 @@
     "excludes": [
       "C-077"
     ],
-    "prompt": "Years ago you called your party's leader unfit for office. It is on tape. Now he is offering you a place on the ticket.",
+    "prompt": "Years ago you called your party's leader unfit for office. It is on tape. Now he is offering you a place on the ticket. What do you do?",
     "options": [
       {
         "id": "a",
@@ -4096,7 +4096,7 @@
     "type": "envelope",
     "tier": "core",
     "topic": "being-number-two",
-    "prompt": "The nominee's lawyers are vetting you for vice president. The last page of the questionnaire has one line: Would you ever disagree with the nominee in public?",
+    "prompt": "The nominee's lawyers are vetting you for vice president. The last page of the questionnaire has one line: Would you ever disagree with the nominee in public? What do you write?",
     "options": [
       {
         "id": "a",
@@ -4140,7 +4140,7 @@
     "excludes": [
       "D-025"
     ],
-    "prompt": "A Republican legislature will pass your roads and bridges bill tomorrow, if you give them the school voucher program your own base hates.",
+    "prompt": "A Republican legislature will pass your roads and bridges bill tomorrow, if you give them the school voucher program your own base hates. Do you take the deal?",
     "options": [
       {
         "id": "a",
@@ -4176,12 +4176,12 @@
     "type": "pin",
     "tier": "core",
     "topic": "back-room-table",
-    "prompt": "The back room, after midnight. Everything you need is on the table. Tap what you reach for.",
+    "prompt": "The back room, after midnight. The nomination is not settled and everything you need is on the table. What is your next move? Tap what you reach for.",
     "art": "C-PIN-BACKROOM-TABLE",
     "regions": [
       {
         "id": "folder",
-        "label": "The sealed folder on your rival",
+        "label": "The sealed folder — use the dirt on my rival",
         "where": "left third of the table, a thick folder tied with red string",
         "effects": {
           "mach": 1.5,
@@ -4191,7 +4191,7 @@
       },
       {
         "id": "phone",
-        "label": "The phone, to call the leader",
+        "label": "The phone — call the leader",
         "where": "center of the table, an old desk telephone",
         "effects": {
           "loyalty": 1.5
@@ -4200,7 +4200,7 @@
       },
       {
         "id": "decanter",
-        "label": "The decanter, to pour one for the other side",
+        "label": "The decanter — pour one for the other side and deal",
         "where": "right third of the table, a cut-glass decanter and two glasses",
         "effects": {
           "style": -1.5,
@@ -4210,7 +4210,7 @@
       },
       {
         "id": "mirror",
-        "label": "The mirror, to check how I look",
+        "label": "The mirror — check how I look",
         "where": "back wall, top center, a tarnished gilt mirror",
         "effects": {
           "narc": 1.5
@@ -4219,7 +4219,7 @@
       },
       {
         "id": "door",
-        "label": "The door. None of this is for me.",
+        "label": "The door — leave. None of this is for me.",
         "where": "far right, a heavy door standing slightly open",
         "effects": {
           "mach": -1.5,
@@ -4238,7 +4238,7 @@
     "type": "budget",
     "tier": "core",
     "topic": "campaign-money",
-    "prompt": "The war chest: 100 points. Split it.",
+    "prompt": "Your campaign war chest is 100 points. How do you spend it?",
     "options": [
       {
         "id": "a",
@@ -4287,7 +4287,7 @@
     "type": "budget",
     "tier": "core",
     "topic": "who-you-owe",
-    "prompt": "You won. One hundred appointments to hand out. Split them.",
+    "prompt": "You won. One hundred appointments to hand out. Who gets them?",
     "options": [
       {
         "id": "a",
@@ -4337,7 +4337,7 @@
     "type": "budget",
     "tier": "core",
     "topic": "scandal-night",
-    "prompt": "The scandal breaks at 9 p.m. You have 100 minutes before the late news. Split them.",
+    "prompt": "The scandal breaks at 9 p.m. You have 100 minutes before the late news. How do you spend them?",
     "options": [
       {
         "id": "a",
@@ -4388,7 +4388,7 @@
     "type": "envelope",
     "tier": "bombshell",
     "topic": "loyalty-test",
-    "prompt": "The president's political office sends every hopeful the same envelope: a pledge to back whoever he names as successor, before a single vote. Sign, or lose his donor list.",
+    "prompt": "The president's political office sends every hopeful the same envelope: a pledge to back whoever he names as successor, before a single vote. Sign, or lose his donor list. Do you sign?",
     "fx": [
       "breaking",
       "candles",
@@ -4441,7 +4441,7 @@
     "excludes": [
       "A-083"
     ],
-    "prompt": "A tech billionaire's fixer leaves a term sheet in your hotel room: $50 million to an outside group backing you. One understanding, unwritten: you go quiet on breaking up his industry.",
+    "prompt": "A tech billionaire's fixer leaves an offer in your hotel room: $50 million to an outside group backing you. One unwritten condition: you go quiet on breaking up his industry. What do you do?",
     "options": [
       {
         "id": "a",
@@ -4493,7 +4493,7 @@
       "B-061",
       "D-030"
     ],
-    "prompt": "A colleague in your own caucus has made a fortune trading stocks, with timing that looks a lot like committee knowledge. Leadership would like everyone to keep quiet.",
+    "prompt": "A colleague in your own caucus has made a fortune trading stocks, with timing that looks a lot like committee knowledge. Leadership would like everyone to keep quiet. What do you do?",
     "options": [
       {
         "id": "a",
@@ -4547,7 +4547,7 @@
     "type": "hold",
     "tier": "bombshell",
     "topic": "illegal-orders",
-    "prompt": "A serving general tells you privately he has been given an order he believes is unlawful. He asks what you are prepared to say in public.",
+    "prompt": "A serving general tells you privately he has been given an order he believes is unlawful. He asks what you are prepared to say in public. What do you do?",
     "fx": [
       "breaking",
       "typewriter",
@@ -4606,7 +4606,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "loyalty-to-the-leader",
-    "prompt": "The leader's endorsement made you a governor. Six years on, the polls say you could beat him.",
+    "prompt": "The leader's endorsement made you a governor. Six years on, the polls say you could beat him. What do you do?",
     "options": [
       {
         "id": "a",

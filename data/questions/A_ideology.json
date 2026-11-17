@@ -6,7 +6,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "health-care",
-    "prompt": "Launch week. A nurse at your first town hall asks what you will do about her premiums. Your first health care line?",
+    "prompt": "Launch week. A nurse at your first town hall asks what you will do about her insurance premiums. What is your first line on health care?",
     "context": "The extra Obamacare subsidies lapsed at the end of 2025, after the longest shutdown on record.",
     "options": [
       {
@@ -143,7 +143,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "credit-card-cap",
-    "prompt": "Credit card interest is running above 20 percent. A cap at 10 percent has fans on the left and the populist right. Hold to commit.",
+    "prompt": "Credit card interest is running above 20 percent. A cap at 10 percent has fans on the left and the populist right. Should the law cap it?",
     "options": [
       {
         "id": "a",
@@ -174,7 +174,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "big-bill",
-    "prompt": "The 2025 tax law kept the tax cuts and paid for part of them with Medicaid. You get one stroke of the pen.",
+    "prompt": "The 2025 tax law kept the tax cuts and paid for part of them by cutting Medicaid, the health cover for the poor. You get one stroke of the pen. Which do you protect?",
     "options": [
       {
         "id": "a",
@@ -204,7 +204,7 @@
     "excludes": [
       "A-108"
     ],
-    "prompt": "The platform committee hands you 100 points of new money. Spend it.",
+    "prompt": "The platform committee hands you 100 points of new money. How do you split it?",
     "options": [
       {
         "id": "a",
@@ -306,13 +306,13 @@
     "type": "pin",
     "tier": "core",
     "topic": "cost-of-living",
-    "prompt": "A kitchen table, late. The month's mail is spread across it. Tap the one you would fix first.",
+    "prompt": "A family's kitchen table, late. The month's bills are spread across it. Which cost would you fix first? Tap the bill.",
     "art": "SC-KITCHEN-BILLS",
     "artNote": "Pixel-art kitchen table seen from above and slightly behind an empty chair, one lamp, night outside the window. No people. Six paper items laid out clearly apart: rent notice top left, long grocery receipt curling at center left, electricity bill top right, hospital bill at center, pay stub bottom left, day-care invoice bottom right with a crayon drawing beside it.",
     "regions": [
       {
         "id": "rent",
-        "label": "The rent notice (cap rent rises)",
+        "label": "The rent notice — cap rent rises",
         "where": "top left of the table, a notice with a red stripe",
         "effects": {
           "econ": -1
@@ -321,7 +321,7 @@
       },
       {
         "id": "grocery",
-        "label": "The grocery receipt (drop the tariffs on food)",
+        "label": "The grocery receipt — drop the tariffs on food",
         "where": "center left, a long curling till receipt",
         "effects": {
           "trade": 1.2
@@ -330,7 +330,7 @@
       },
       {
         "id": "power",
-        "label": "The electricity bill (build more power, fast)",
+        "label": "The electricity bill — build more power, fast",
         "where": "top right, a bill with a lightning-bolt logo",
         "effects": {
           "tech": 1,
@@ -340,7 +340,7 @@
       },
       {
         "id": "hospital",
-        "label": "The hospital bill (public insurance for all)",
+        "label": "The hospital bill — public insurance for all",
         "where": "dead center, the thickest envelope, stamped overdue",
         "effects": {
           "econ": -1.3
@@ -349,7 +349,7 @@
       },
       {
         "id": "paystub",
-        "label": "The pay stub (cut the taxes taken out)",
+        "label": "The pay stub — cut the taxes taken out",
         "where": "bottom left, a pay stub with the deductions column circled",
         "effects": {
           "econ": 1.3
@@ -358,7 +358,7 @@
       },
       {
         "id": "daycare",
-        "label": "The day-care invoice (subsidize child care)",
+        "label": "The day-care invoice — subsidize child care",
         "where": "bottom right, an invoice beside a child's crayon drawing",
         "effects": {
           "econ": -0.8,
@@ -409,7 +409,7 @@
     "excludes": [
       "D-006"
     ],
-    "prompt": "Two tents at the Democratic picnic: the abundance people and the fighting-oligarchy people. Where do you put your plate down?",
+    "prompt": "Two tents at the Democratic picnic. The abundance people say build more of everything. The fighting-oligarchy people say billionaires are the problem. Which tent do you sit in?",
     "options": [
       {
         "id": "a",
@@ -462,7 +462,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "gop-and-unions",
-    "prompt": "A union president wants a speaking slot at your biggest rally. The donors on your finance call are not pleased.",
+    "prompt": "A union president wants a speaking slot at your biggest rally. The donors on your finance call are not pleased. Does he get it?",
     "options": [
       {
         "id": "a",
@@ -477,7 +477,7 @@
       },
       {
         "id": "b",
-        "label": "He is welcome, but right-to-work stays",
+        "label": "He can speak, but the laws that let workers skip dues stay",
         "effects": {
           "econ": 0.6
         }
@@ -546,7 +546,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "abortion",
-    "prompt": "Since Dobbs, abortion law changes at the state line. What should Washington do?",
+    "prompt": "Since Dobbs, the ruling that overturned Roe, abortion law changes at the state line. What should Washington do?",
     "slider": {
       "left": "A national ban, few exceptions",
       "right": "A federal right in every state",
@@ -566,7 +566,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "abortion",
-    "prompt": "Pro-life groups want your pledge: no abortion pills by mail, starting day one. The suburbs are listening.",
+    "prompt": "Pro-life groups want your pledge: no abortion pills by mail, starting day one. The suburbs are listening. Do you sign it?",
     "options": [
       {
         "id": "a",
@@ -616,7 +616,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "trans-minors-care",
-    "prompt": "Puberty blockers and hormones for under-18s. The Court has said states may ban them. Hold to commit.",
+    "prompt": "Puberty blockers and hormones for under-18s. The Supreme Court has said states may ban them. Should they be banned for minors?",
     "options": [
       {
         "id": "a",
@@ -649,7 +649,7 @@
     "excludes": [
       "D-010"
     ],
-    "prompt": "A Democratic governor says on his own podcast that trans athletes in girls' sports is deeply unfair. Activists want you to condemn him.",
+    "prompt": "A Democratic governor says on his own podcast that trans athletes in girls' sports is deeply unfair. Activists want you to condemn him. What do you say?",
     "options": [
       {
         "id": "a",
@@ -752,7 +752,7 @@
       },
       {
         "id": "c3",
-        "text": "Close the DEI offices",
+        "text": "Close diversity, equity and inclusion offices",
         "yes": {
           "social": -1
         },
@@ -899,7 +899,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "guns",
-    "prompt": "Guns come up at your very first town hall. Set the dial.",
+    "prompt": "Guns come up at your very first town hall. How far should gun laws go?",
     "slider": {
       "left": "The Second Amendment is not negotiable",
       "right": "Ban assault weapons and buy them back",
@@ -947,7 +947,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "same-sex-marriage",
-    "prompt": "A delegate moves a plank on marriage. The Court has just declined to reopen the question. The hall is watching you.",
+    "prompt": "A convention delegate wants the platform to take a line on same-sex marriage. The Supreme Court has just declined to reopen it. Which plank do you back?",
     "options": [
       {
         "id": "a",
@@ -1041,7 +1041,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "americas-role",
-    "prompt": "What is America for, out there?",
+    "prompt": "What is America's job in the world?",
     "slider": {
       "left": "Come home and fix our own country",
       "right": "Lead the free world, whatever it costs",
@@ -1064,7 +1064,7 @@
     "excludes": [
       "D-008"
     ],
-    "prompt": "The Gaza ceasefire is holding, more or less. The next arms package for Israel lands on your desk as a candidate question.",
+    "prompt": "The Gaza ceasefire is holding, more or less. A reporter asks what you would do with the next arms package for Israel.",
     "options": [
       {
         "id": "a",
@@ -1117,7 +1117,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "use-of-force",
-    "prompt": "Three in the morning. China has blockaded Taiwan. Hold to commit.",
+    "prompt": "Three in the morning. China has blockaded Taiwan. Do you send American forces?",
     "options": [
       {
         "id": "a",
@@ -1283,7 +1283,7 @@
     "type": "swipe",
     "tier": "core",
     "topic": "americas-role",
-    "prompt": "Foreign policy, speed round. Four seconds each.",
+    "prompt": "Foreign policy, speed round. Yes or no to each, four seconds apiece.",
     "cards": [
       {
         "id": "c1",
@@ -1308,7 +1308,7 @@
       },
       {
         "id": "c3",
-        "text": "Bring back USAID",
+        "text": "Bring back USAID, the foreign aid agency",
         "yes": {
           "world": 0.8,
           "econ": -0.5
@@ -1524,7 +1524,7 @@
     "excludes": [
       "D-042"
     ],
-    "prompt": "Since Liberation Day everything in the store has a tariff story. Where is your dial?",
+    "prompt": "Since Liberation Day, the April 2025 day tariffs went on nearly everything, every price in the store has a tariff story. How much tariff do you want?",
     "slider": {
       "left": "A tariff wall around American industry",
       "right": "Zero tariffs, free trade",
@@ -1544,7 +1544,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "tariff-power",
-    "prompt": "The Supreme Court struck down the emergency tariffs in February 2026, and the fight over who sets tariffs goes on. Who should?",
+    "prompt": "The Supreme Court struck down the President's emergency tariffs in February 2026, and the fight over who sets tariffs goes on. Who should?",
     "options": [
       {
         "id": "a",
@@ -1637,7 +1637,7 @@
     "excludes": [
       "A-045"
     ],
-    "prompt": "The pitch: a $2,000 check to most households, paid out of tariff money. Hold to commit.",
+    "prompt": "The pitch: a $2,000 check to most households, paid out of tariff money. Do you mail the checks?",
     "options": [
       {
         "id": "a",
@@ -1668,7 +1668,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "tariffs",
-    "prompt": "A 50 percent steel tariff reopens a mill: 600 jobs. The truck plant downriver, paying more for steel, lays off 800. Same district.",
+    "prompt": "A 50 percent steel tariff reopens a mill: 600 jobs. The truck plant downriver, paying more for steel, lays off 800. Same district. Do you keep the tariff?",
     "options": [
       {
         "id": "a",
@@ -1695,13 +1695,13 @@
     "type": "pin",
     "tier": "core",
     "topic": "factory-jobs",
-    "prompt": "A factory floor, half the lights off. Tap what brings the second shift back.",
+    "prompt": "A factory floor, half the lights off. How do you bring the second shift back? Tap your answer.",
     "art": "SC-FACTORY-FLOOR",
     "artNote": "Pixel-art factory interior, wide, one production line lit and one dark. No people; hard hats on hooks. Left: an open loading dock with stacked import crates. Center: an idle orange robot arm over the dark line. Right wall: a cork union noticeboard. Upper right mezzanine: a glass manager's office with shelves of fat rule binders. Far back: a classroom door with a training sign.",
     "regions": [
       {
         "id": "dock",
-        "label": "The import crates (tariff the competition)",
+        "label": "The import crates — tariff the competition",
         "where": "left third, open loading dock with stacked crates",
         "effects": {
           "trade": -1.5
@@ -1710,7 +1710,7 @@
       },
       {
         "id": "robot",
-        "label": "The robot arm (automate and out-compete)",
+        "label": "The robot arm — automate and out-compete",
         "where": "center, idle orange robot arm over the dark line",
         "effects": {
           "tech": 1.2,
@@ -1720,7 +1720,7 @@
       },
       {
         "id": "union",
-        "label": "The union board (Buy American, union contracts)",
+        "label": "The union board — Buy American, union contracts",
         "where": "right wall, cork noticeboard with pinned papers",
         "effects": {
           "trade": -1,
@@ -1730,7 +1730,7 @@
       },
       {
         "id": "office",
-        "label": "The binders (cut the taxes and the rules)",
+        "label": "The binders — cut the taxes and the rules",
         "where": "upper right mezzanine office, shelves of binders",
         "effects": {
           "econ": 1.3
@@ -1739,7 +1739,7 @@
       },
       {
         "id": "classroom",
-        "label": "The training room (retrain, then sell abroad)",
+        "label": "The training room — retrain, then sell abroad",
         "where": "far back, a door with a training sign",
         "effects": {
           "trade": 1,
@@ -1809,7 +1809,7 @@
     "type": "swipe",
     "tier": "core",
     "topic": "trade-policy",
-    "prompt": "Trade, speed round. Agree or disagree.",
+    "prompt": "Trade, speed round. Agree or disagree with each, four seconds apiece.",
     "cards": [
       {
         "id": "c1",
@@ -1855,7 +1855,7 @@
       },
       {
         "id": "c5",
-        "text": "Renew the deal with Canada and Mexico as it is",
+        "text": "Renew the trade deal with Canada and Mexico as it is",
         "yes": {
           "trade": 0.8,
           "system": -0.3
@@ -1943,7 +1943,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "tariff-power",
-    "prompt": "The Senate votes on ending the emergency behind the tariffs. You are a Republican who wants the next nomination. Your vote?",
+    "prompt": "The Senate votes on ending the national emergency the President declared to impose his tariffs. You are a Republican who wants the next nomination. How do you vote?",
     "options": [
       {
         "id": "a",
@@ -2037,7 +2037,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "china-decoupling",
-    "prompt": "China makes the phone, the pills and the batteries. How far do you pull apart?",
+    "prompt": "China makes the phone, the pills and the batteries. How far should America cut itself off?",
     "slider": {
       "left": "Cut China out of every supply chain",
       "right": "Keep trading: cheap goods, fewer wars",
@@ -2058,7 +2058,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "church-and-state",
-    "prompt": "God and government. Set the distance.",
+    "prompt": "God and government. How far apart should they be?",
     "slider": {
       "left": "Faith is private. Keep it out of the state",
       "right": "The country needs more God in public life",
@@ -2082,7 +2082,7 @@
     "options": [
       {
         "id": "a",
-        "label": "Good. I would have Justice defend it",
+        "label": "Good. My Justice Department would defend it",
         "effects": {
           "faith": 1.5,
           "social": -0.5
@@ -2173,18 +2173,18 @@
     "type": "hold",
     "tier": "core",
     "topic": "church-and-state",
-    "prompt": "The IRS now says a pastor may endorse a candidate from the pulpit and keep the church's tax break. Hold to commit.",
+    "prompt": "The IRS now says a pastor may endorse a candidate from the pulpit and keep the church's tax break. Should that be allowed?",
     "options": [
       {
         "id": "a",
-        "label": "Good. Let them preach politics",
+        "label": "Yes. Let them preach politics",
         "effects": {
           "faith": 1.3
         }
       },
       {
         "id": "b",
-        "label": "Put the wall back up",
+        "label": "No. Put the wall back up",
         "effects": {
           "faith": -1.3
         }
@@ -2203,7 +2203,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "school-vouchers",
-    "prompt": "A Catholic diocese wants to open an online charter school, fully paid for by taxpayers. The Court split four to four on it.",
+    "prompt": "A Catholic diocese wants to open an online charter school, fully paid for by taxpayers. The Supreme Court split four to four on it. Should the public fund it?",
     "options": [
       {
         "id": "a",
@@ -2235,13 +2235,13 @@
     "excludes": [
       "D-065"
     ],
-    "prompt": "Sunday, a church fellowship hall, coffee still warm. Your aide wants one photograph. Tap where you stand.",
+    "prompt": "Sunday, a church fellowship hall, coffee still warm. Your aide wants one photograph of you here. What should it show? Tap where you stand.",
     "art": "SC-FELLOWSHIP-HALL",
     "artNote": "Pixel-art church fellowship hall, folding chairs, noon light through plain windows. No people; coats on chair backs, steam off a coffee urn. Left: a low stage with a lectern and a live microphone. Center: a long potluck table of covered dishes. Back wall: food-pantry shelves of cans and boxes. Right, by the double doors: a card table with clipboards and pens. Through the right-hand window: the parking lot.",
     "regions": [
       {
         "id": "lectern",
-        "label": "The lectern (give your testimony)",
+        "label": "The lectern — give your testimony",
         "where": "left, low stage with lectern and microphone",
         "effects": {
           "faith": 1.5,
@@ -2251,7 +2251,7 @@
       },
       {
         "id": "potluck",
-        "label": "The potluck table (eat, listen, no speech)",
+        "label": "The potluck table — eat, listen, no speech",
         "where": "center, long table of covered dishes",
         "effects": {
           "faith": 0.6,
@@ -2261,7 +2261,7 @@
       },
       {
         "id": "pantry",
-        "label": "The food pantry (talk about feeding the poor)",
+        "label": "The food pantry — talk about feeding the poor",
         "where": "back wall, shelves of cans and boxes",
         "effects": {
           "faith": 0.8,
@@ -2271,7 +2271,7 @@
       },
       {
         "id": "cardtable",
-        "label": "The clipboards (sign up volunteers)",
+        "label": "The clipboards — sign up volunteers",
         "where": "right, card table with clipboards by the doors",
         "effects": {
           "faith": 0.4,
@@ -2281,7 +2281,7 @@
       },
       {
         "id": "carpark",
-        "label": "The parking lot (church is not a campaign stop)",
+        "label": "The parking lot — stay outside; church is no campaign stop",
         "where": "seen through the right-hand window, parked cars",
         "effects": {
           "faith": -1.3
@@ -2299,11 +2299,11 @@
     "type": "swipe",
     "tier": "core",
     "topic": "church-and-state",
-    "prompt": "Church and state, speed round.",
+    "prompt": "Church and state, speed round. Yes or no to each.",
     "cards": [
       {
         "id": "c1",
-        "text": "Teacher-led prayer in public schools",
+        "text": "Allow teacher-led prayer in public schools",
         "yes": {
           "faith": 1.2
         },
@@ -2325,7 +2325,7 @@
       },
       {
         "id": "c3",
-        "text": "Chaplains in public schools",
+        "text": "Put chaplains in public schools",
         "yes": {
           "faith": 1
         },
@@ -2355,7 +2355,7 @@
       },
       {
         "id": "c6",
-        "text": "Creation taught beside evolution",
+        "text": "Teach creation beside evolution",
         "yes": {
           "faith": 1.2,
           "social": -0.5
@@ -2462,7 +2462,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "church-and-state",
-    "prompt": "A rival calls your movement Christian nationalist on the debate stage. The clip is already everywhere.",
+    "prompt": "A rival calls your movement Christian nationalist on the debate stage. The clip is already everywhere. How do you answer?",
     "options": [
       {
         "id": "a",
@@ -2506,7 +2506,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "faith-talk",
-    "prompt": "Democratic strategists are arguing again about whether the party should talk about God. You are on stage in Louisville.",
+    "prompt": "Democratic strategists are arguing again about whether the party should talk about God. You are on stage in Louisville. Should it?",
     "options": [
       {
         "id": "a",
@@ -2574,7 +2574,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "deportations",
-    "prompt": "Roughly fourteen million people are in the country without papers, and ICE has never had more money. What is your policy?",
+    "prompt": "Roughly fourteen million people are in the country without papers, and ICE, the deportation agency, has never had more money. What is your policy?",
     "options": [
       {
         "id": "a",
@@ -2638,7 +2638,7 @@
     "excludes": [
       "D-057"
     ],
-    "prompt": "An H-1B visa now costs an employer $100,000. Tech bosses hate it; plenty of laid-off coders do not. You?",
+    "prompt": "An H-1B visa, the kind that brings in skilled foreign workers, now costs an employer $100,000. Tech bosses hate it; plenty of laid-off coders do not. What do you do with it?",
     "options": [
       {
         "id": "a",
@@ -2658,7 +2658,7 @@
       },
       {
         "id": "c",
-        "label": "Fix it: fewer body shops, more real talent",
+        "label": "Fix it: fewer outsourcing mills, more real talent",
         "effects": {
           "border": 0.3
         }
@@ -2685,7 +2685,7 @@
     "excludes": [
       "E-027"
     ],
-    "prompt": "Immigration agents work in masks and unmarked cars. One state has banned the masks. Hold to commit.",
+    "prompt": "Immigration agents work in masks and unmarked cars. One state has banned the masks. Should agents have to show their faces?",
     "options": [
       {
         "id": "a",
@@ -2748,13 +2748,13 @@
     "type": "pin",
     "tier": "core",
     "topic": "border-security",
-    "prompt": "Main street of a border town, early. The next federal dollar is yours to place. Tap where it goes.",
+    "prompt": "Main street of a border town, early. You decide where the next federal immigration dollar goes. Tap what you fund.",
     "art": "SC-BORDER-TOWN",
     "artNote": "Pixel-art desert border town main street at dawn, looking down the road toward a steel fence on the horizon. No people; vehicles empty. Far end of the street: the border fence with a gap under construction. Right foreground: a port-of-entry booth with a line of trucks. Left midground: a small courthouse with a rope line outside. Left foreground: a white unmarked van. Right midground: a mission church with cots visible through open doors. Far right: a produce packing shed with a help-wanted sign.",
     "regions": [
       {
         "id": "fence",
-        "label": "The fence (finish the wall)",
+        "label": "The fence — finish the wall",
         "where": "far end of the street, steel fence with an unfinished gap",
         "effects": {
           "border": -1.5
@@ -2763,7 +2763,7 @@
       },
       {
         "id": "port",
-        "label": "The port of entry (more lanes and scanners)",
+        "label": "The port of entry — more lanes and scanners",
         "where": "right foreground, inspection booth and line of trucks",
         "effects": {
           "border": 0.3,
@@ -2774,7 +2774,7 @@
       },
       {
         "id": "court",
-        "label": "The courthouse (more asylum judges)",
+        "label": "The courthouse — more asylum judges",
         "where": "left midground, small courthouse with a rope line",
         "effects": {
           "border": 0.5,
@@ -2784,7 +2784,7 @@
       },
       {
         "id": "van",
-        "label": "The unmarked van (more deportation agents)",
+        "label": "The unmarked van — more deportation agents",
         "where": "left foreground, white van with dark windows",
         "effects": {
           "border": -1.2,
@@ -2794,7 +2794,7 @@
       },
       {
         "id": "mission",
-        "label": "The mission (shelter beds and legal aid)",
+        "label": "The mission — shelter beds and legal aid",
         "where": "right midground, church doors open on rows of cots",
         "effects": {
           "border": 1.2,
@@ -2804,7 +2804,7 @@
       },
       {
         "id": "shed",
-        "label": "The packing shed (guest-worker visas)",
+        "label": "The packing shed — more guest-worker visas",
         "where": "far right, produce shed with a help-wanted sign",
         "effects": {
           "border": 0.8,
@@ -2873,11 +2873,11 @@
     "type": "swipe",
     "tier": "core",
     "topic": "border-security",
-    "prompt": "Immigration, speed round. No nuance available.",
+    "prompt": "Immigration, speed round. Yes or no to each. No nuance available.",
     "cards": [
       {
         "id": "c1",
-        "text": "National Guard in cities to back up ICE",
+        "text": "Send the National Guard into cities to back up ICE",
         "yes": {
           "border": -1,
           "system": 0.4,
@@ -2892,7 +2892,7 @@
       },
       {
         "id": "c2",
-        "text": "Citizenship for the Dreamers",
+        "text": "Citizenship for Dreamers, brought here illegally as children",
         "yes": {
           "border": 1
         },
@@ -2902,7 +2902,7 @@
       },
       {
         "id": "c3",
-        "text": "E-Verify for every employer",
+        "text": "Make every employer check workers' legal status",
         "yes": {
           "border": -0.8
         },
@@ -2925,7 +2925,7 @@
       },
       {
         "id": "c5",
-        "text": "Refugee cap back above 100,000",
+        "text": "Raise the refugee cap back above 100,000",
         "yes": {
           "border": 1.2,
           "world": 0.3
@@ -2948,7 +2948,7 @@
       },
       {
         "id": "c7",
-        "text": "English as the official language",
+        "text": "Make English the official language",
         "yes": {
           "border": -0.6,
           "social": -0.4
@@ -2971,7 +2971,7 @@
     "type": "sign",
     "tier": "core",
     "topic": "deportations",
-    "prompt": "On your desk: the Earned Status Act. Legal status, not citizenship, for people here five years who pay a fine. E-Verify for all.",
+    "prompt": "On your desk: the Earned Status Act. Legal status, not citizenship, for people here five years who pay a fine. Every employer must check workers' papers.",
     "options": [
       {
         "id": "sign",
@@ -3000,7 +3000,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "deportations",
-    "prompt": "Your donors who own farms and hotels want the raids kept away from their workers. They ask nicely, then less nicely.",
+    "prompt": "Your donors who own farms and hotels want the immigration raids kept away from their workers. They ask nicely, then less nicely. What do you do?",
     "options": [
       {
         "id": "a",
@@ -3045,7 +3045,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "ice-masks",
-    "prompt": "The chant is back at Democratic rallies: abolish ICE. The microphone is in your hand.",
+    "prompt": "The chant is back at Democratic rallies: abolish ICE, the deportation agency. The microphone is in your hand. What do you say?",
     "options": [
       {
         "id": "a",
@@ -3118,7 +3118,7 @@
     "type": "slider",
     "tier": "core",
     "topic": "ai-speed",
-    "prompt": "Artificial intelligence. One dial, your whole administration.",
+    "prompt": "Artificial intelligence. One dial for your whole administration: how fast should America build it?",
     "slider": {
       "left": "Slow it down until it is proven safe",
       "right": "Build as fast as we can and win",
@@ -3243,7 +3243,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "big-tech",
-    "prompt": "Google, Meta, Amazon, Apple. The courts have mostly let them be. Hold to commit.",
+    "prompt": "Google, Meta, Amazon, Apple. The courts have mostly let them be. Should the government break them up?",
     "options": [
       {
         "id": "a",
@@ -3281,7 +3281,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "data-centers",
-    "prompt": "A data center wants a thousand acres in a swing county. It brings tax money, forty permanent jobs and higher power bills.",
+    "prompt": "A data center wants a thousand acres in a swing county. It brings tax money, forty permanent jobs and higher power bills. Do you let it in?",
     "options": [
       {
         "id": "a",
@@ -3309,13 +3309,13 @@
     "type": "pin",
     "tier": "core",
     "topic": "data-centers",
-    "prompt": "A server farm on the edge of town, humming. You are here to announce something. Tap what it is about.",
+    "prompt": "A server farm on the edge of town, humming. You are here to announce one AI policy. Tap what it is about.",
     "art": "SC-SERVER-FARM",
     "artNote": "Pixel-art cutaway of a data center at dusk, no people. Center: long aisles of server racks with blue status lights. Left exterior: an electrical substation with pylons. Bottom left: fat cooling pipes running to a river. Right: a loading bay with one sealed crate marked as chips under a security camera. Upper right: a glass control room with a single empty chair and many screens.",
     "regions": [
       {
         "id": "racks",
-        "label": "The racks (build ten more of these)",
+        "label": "The racks — build ten more of these",
         "where": "center, aisles of server racks with blue lights",
         "effects": {
           "tech": 1.5
@@ -3324,7 +3324,7 @@
       },
       {
         "id": "substation",
-        "label": "The substation (make them pay for the power)",
+        "label": "The substation — make them pay for the power",
         "where": "left exterior, substation and pylons",
         "effects": {
           "tech": -0.6,
@@ -3334,7 +3334,7 @@
       },
       {
         "id": "pipes",
-        "label": "The cooling pipes (water and climate limits)",
+        "label": "The cooling pipes — water and climate limits",
         "where": "bottom left, pipes running to the river",
         "effects": {
           "tech": -1,
@@ -3344,7 +3344,7 @@
       },
       {
         "id": "crate",
-        "label": "The chip crate (no advanced chips for China)",
+        "label": "The chip crate — no advanced chips for China",
         "where": "right, loading bay with a sealed crate under a camera",
         "effects": {
           "world": 1,
@@ -3354,7 +3354,7 @@
       },
       {
         "id": "chair",
-        "label": "The empty chair (protect the jobs AI replaces)",
+        "label": "The empty chair — protect the jobs AI replaces",
         "where": "upper right, control room with one empty chair",
         "effects": {
           "tech": -1.2,
@@ -3477,7 +3477,7 @@
     "type": "swipe",
     "tier": "core",
     "topic": "big-tech",
-    "prompt": "Tech, speed round. Thumbs ready.",
+    "prompt": "Tech, speed round. Yes or no to each. Thumbs ready.",
     "cards": [
       {
         "id": "c1",
@@ -3513,7 +3513,7 @@
       },
       {
         "id": "c4",
-        "text": "Repeal Section 230",
+        "text": "Repeal Section 230, the platforms' legal shield",
         "yes": {
           "tech": -1
         },
@@ -3595,7 +3595,7 @@
     "excludes": [
       "C-097"
     ],
-    "prompt": "A tech billionaire offers to bankroll your whole AI operation. He voted the other way last time and says he regrets it.",
+    "prompt": "A tech billionaire offers to bankroll your whole AI operation. He voted the other way last time and says he regrets it. Do you take the money?",
     "options": [
       {
         "id": "a",
@@ -3647,7 +3647,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "tech-right",
-    "prompt": "The tech right and the populist right both think the party is theirs. At some point you have to pick a table.",
+    "prompt": "The tech right and the populist right both think the Republican Party is theirs. At some point you have to pick a table. Whose do you sit at?",
     "options": [
       {
         "id": "a",
@@ -3720,7 +3720,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "doge",
-    "prompt": "DOGE promised $2 trillion in cuts, claimed about a tenth of that on math its own website kept correcting, gutted USAID, and left behind a chainsaw and a docket. Your verdict?",
+    "prompt": "DOGE, the White House cost-cutting squad, promised $2 trillion in cuts, claimed about a tenth of that on math its own website kept correcting, gutted USAID, and left a chainsaw and a docket. Your verdict?",
     "options": [
       {
         "id": "a",
@@ -3775,7 +3775,7 @@
     "excludes": [
       "D-050"
     ],
-    "prompt": "The Epstein files law passed almost unanimously, and the pages still arrive covered in black ink. What do you say?",
+    "prompt": "The law ordering the release of the Epstein files passed almost unanimously, and the pages still arrive covered in black ink. What do you say?",
     "options": [
       {
         "id": "a",
@@ -3830,7 +3830,7 @@
       "C-098",
       "D-030"
     ],
-    "prompt": "Members of Congress keep beating the market. Funny, that. Hold to commit.",
+    "prompt": "Members of Congress keep beating the market. Funny, that. Should they be banned from trading stocks?",
     "options": [
       {
         "id": "a",
@@ -3872,7 +3872,7 @@
     "excludes": [
       "E-017"
     ],
-    "prompt": "Say you win, and your party holds 51 Senate seats. The filibuster stands between you and everything you promised.",
+    "prompt": "Say you win, and your party holds 51 Senate seats. The filibuster, which lets 41 senators block a bill, stands between you and everything you promised. Do you scrap it?",
     "options": [
       {
         "id": "a",
@@ -3900,13 +3900,13 @@
     "type": "pin",
     "tier": "core",
     "topic": "state-fair",
-    "prompt": "A state fair at dusk, the week before the convention. Tap where you hold the event.",
+    "prompt": "A state fair at dusk, the week before the convention. You get one campaign event here. What kind? Tap where you hold it.",
     "art": "SC-STATE-FAIR",
     "artNote": "Pixel-art state fair midway at dusk, string lights, no people; empty stalls and parked strollers. Left: a grandstand stage dressed in bunting. Center foreground: a wooden soapbox beside a corn-dog stand. Right: a Ferris wheel, lit. Back left: a livestock barn with open doors and hay. Far right edge: the fairground gate from outside, with hand-painted signs leaning on the fence.",
     "regions": [
       {
         "id": "grandstand",
-        "label": "The grandstand (bunting, band, the classic)",
+        "label": "The grandstand — the classic rally, bunting and band",
         "where": "left, stage dressed in bunting",
         "effects": {
           "system": -1,
@@ -3916,7 +3916,7 @@
       },
       {
         "id": "soapbox",
-        "label": "The soapbox (take hostile questions)",
+        "label": "The soapbox — take hostile questions",
         "where": "center foreground, soapbox by the corn-dog stand",
         "effects": {
           "system": 0.5,
@@ -3926,7 +3926,7 @@
       },
       {
         "id": "wheel",
-        "label": "The Ferris wheel (livestream from the top)",
+        "label": "The Ferris wheel — livestream from the top",
         "where": "right, lit Ferris wheel",
         "effects": {
           "online": 1.2,
@@ -3936,7 +3936,7 @@
       },
       {
         "id": "barn",
-        "label": "The livestock barn (quiet word with farmers)",
+        "label": "The livestock barn — a quiet word with farmers",
         "where": "back left, barn with open doors and hay",
         "effects": {
           "system": -0.5,
@@ -3946,7 +3946,7 @@
       },
       {
         "id": "gate",
-        "label": "Outside the gate (rally against the whole show)",
+        "label": "Outside the gate — rally against the whole show",
         "where": "far right edge, fairground gate with hand-painted signs",
         "effects": {
           "system": 1.5
@@ -4045,7 +4045,7 @@
     "excludes": [
       "D-089"
     ],
-    "prompt": "First hundred days. You have 100 points of political capital and it does not roll over.",
+    "prompt": "First hundred days. You have 100 points of political capital and it does not roll over. How do you spend it?",
     "options": [
       {
         "id": "a",
@@ -4097,7 +4097,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "the-fed",
-    "prompt": "The White House has leaned on the Federal Reserve all year: cut rates, or else. Where are you?",
+    "prompt": "The White House has leaned on the Federal Reserve all year: cut interest rates, or else. Who should be in charge of the Fed?",
     "options": [
       {
         "id": "a",
@@ -4152,7 +4152,7 @@
       "D-013",
       "E-019"
     ],
-    "prompt": "Texas redrew its map mid-decade. California answered. Democrats elsewhere now ask you whether to keep going.",
+    "prompt": "Texas Republicans redrew their House map mid-decade to take seats. California Democrats answered in kind. Democrats elsewhere now ask you whether to keep going.",
     "options": [
       {
         "id": "a",
@@ -4204,7 +4204,7 @@
     "excludes": [
       "B-018"
     ],
-    "prompt": "It never goes away. A voter in Iowa asks: in January 2021, would you have certified the result?",
+    "prompt": "It never goes away. A voter in Iowa asks: in January 2021, would you have certified the 2020 election result?",
     "options": [
       {
         "id": "a",
@@ -4520,7 +4520,7 @@
       },
       {
         "id": "youngkin",
-        "label": "Youngkin: Carlyle discipline. You are the portfolio company",
+        "label": "Youngkin: buyout-firm discipline. You are the portfolio company",
         "effects": {
           "econ": 1.2,
           "system": -0.3
@@ -4664,7 +4664,7 @@
     "type": "choice",
     "tier": "core",
     "topic": "campaign-branding",
-    "prompt": "The banner behind the podium has room for one line. The printer needs it in an hour.",
+    "prompt": "The banner behind your podium has room for one line. The printer needs it in an hour. Which slogan?",
     "options": [
       {
         "id": "a",
@@ -4779,11 +4779,11 @@
       "B-055",
       "D-025"
     ],
-    "prompt": "A child is stuck in a school that fails year after year. A voucher would let her leave, with the money. Hold to commit.",
+    "prompt": "A child is stuck in a school that fails year after year. A voucher would let her leave, with the money. Where should the money go?",
     "options": [
       {
         "id": "a",
-        "label": "Fund the child",
+        "label": "With the child, to any school",
         "effects": {
           "econ": 1,
           "faith": 0.5
@@ -4794,7 +4794,7 @@
       },
       {
         "id": "b",
-        "label": "Fund the school",
+        "label": "To the school, to fix it",
         "effects": {
           "econ": -1,
           "faith": -0.3
@@ -4817,7 +4817,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "housing",
-    "prompt": "A new law lets the state overrule a town's zoning to put apartments near train stations. The neighbors have lawyers. Hold to commit.",
+    "prompt": "A new law lets the state overrule a town's zoning to put apartments near train stations. The neighbors have lawyers. Who should win?",
     "options": [
       {
         "id": "a",
@@ -4850,7 +4850,7 @@
     "type": "hold",
     "tier": "core",
     "topic": "troops-vs-cartels",
-    "prompt": "The cartels are now on the terror list. A rival on the Republican stage dares you to say it: American troops into Mexico. Hold to commit.",
+    "prompt": "The drug cartels are now on the terror list. A rival on the Republican stage dares you to say it: American troops into Mexico. Do you send them?",
     "options": [
       {
         "id": "a",
@@ -4913,7 +4913,7 @@
     "type": "dilemma",
     "tier": "core",
     "topic": "conscience-exemptions",
-    "prompt": "The only hospital for three counties is church-run. It will not perform abortions or gender care. It runs on federal money.",
+    "prompt": "The only hospital for three counties is church-run. It will not perform abortions or gender care. It runs on federal money. What should Washington do?",
     "options": [
       {
         "id": "a",

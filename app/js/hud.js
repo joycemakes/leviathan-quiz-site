@@ -22,6 +22,8 @@ export function createWarMap() {
   el.className = 'warmap';
   const svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('viewBox', '0 0 110 80');
+  svg.setAttribute('width', '92');
+  svg.setAttribute('height', '67');
   svg.setAttribute('aria-hidden', 'true');
   const rects = {};
   for (const [st, [c, r]] of Object.entries(TILES)) {
@@ -71,9 +73,26 @@ export function silhouetteSVG(id) {
   if (hair === 1) hairPath = `<path d="M${20 - headR} ${hy - 1} Q20 ${hy - headR - 5} ${20 + headR} ${hy - 1} Z"/>`;
   if (hair === 2) hairPath = `<path d="M${20 - headR - 1} ${hy + 6} Q${20 - headR - 2} ${hy - headR - 3} 20 ${hy - headR - 1} Q${20 + headR + 2} ${hy - headR - 3} ${20 + headR + 1} ${hy + 6} Z"/>`;
   if (hair === 3) hairPath = `<rect x="${20 - headR}" y="${hy - headR - 2}" width="${headR * 2}" height="4"/>`;
-  return `<svg viewBox="0 0 40 44" aria-hidden="true"><g class="ghost-fill">${hairPath}<circle cx="20" cy="${hy}" r="${headR}"/>` +
+  return `<svg viewBox="0 0 40 44" width="40" height="44" aria-hidden="true"><g class="ghost-fill">${hairPath}<circle cx="20" cy="${hy}" r="${headR}"/>` +
     `<rect x="${20 - neck / 2}" y="${hy + headR - 1}" width="${neck}" height="4"/>` +
     `<path d="M${20 - shoulder} 44 Q${20 - shoulder} ${hy + headR + 4} 20 ${hy + headR + 3} Q${20 + shoulder} ${hy + headR + 4} ${20 + shoulder} 44 Z"/></g></svg>`;
+}
+
+// A blacked-out cut of the candidate's own portrait (art/silhouettes/<id>.png, made by
+// tools/make-silhouettes.py): hair and shoulders hint at who it is without showing a face. Falls back
+// to the drawn bust when the cut is missing.
+export function silhouetteEl(id, cls = 'ghost-img') {
+  const wrap = document.createElement('span');
+  wrap.className = `${cls}-wrap`;
+  const img = document.createElement('img');
+  img.className = cls;
+  img.alt = '';
+  img.width = 44; img.height = 44;
+  img.decoding = 'async';
+  img.onerror = () => { wrap.innerHTML = silhouetteSVG(id).replace('<svg ', '<svg width="44" height="48" '); };
+  img.src = `art/silhouettes/${id}.png`;
+  wrap.appendChild(img);
+  return wrap;
 }
 
 export function createGhosts() {
@@ -83,7 +102,7 @@ export function createGhosts() {
   const slots = [0, 1, 2].map(i => {
     const s = document.createElement('div');
     s.className = `ghost g${i + 1}`;
-    s.innerHTML = `<div class="ghost-sil"></div><span class="ghost-rank">${i + 1}</span>`;
+    s.innerHTML = `<div class="ghost-sil"></div><span class="ghost-plaque"><span class="ghost-rank">${i + 1}</span></span>`;
     el.appendChild(s);
     return s;
   });
@@ -94,7 +113,7 @@ export function createGhosts() {
       top3.forEach((id, i) => {
         if (current[i] === id) return;
         const s = slots[i];
-        s.querySelector('.ghost-sil').innerHTML = silhouetteSVG(id);
+        s.querySelector('.ghost-sil').replaceChildren(silhouetteEl(id));
         if (current.length) { s.classList.remove('shift'); void s.offsetWidth; s.classList.add('shift'); }
       });
       current = top3.slice();

@@ -210,8 +210,7 @@ export function createArtSlot(id, opts = {}) {
       m.className = 'pin-marker';
       m.dataset.region = r.id;
       m.append(Object.assign(document.createElement('b'), { textContent: String(i + 1) }));
-      const short = (r.tag || (r.label || '').split(/[(:]/)[0]).trim();
-      if (short) m.append(Object.assign(document.createElement('span'), { className: 'pin-tag', textContent: short.length > 26 ? short.slice(0, 24) + '\u2026' : short }));
+      // Numbers only: the legend under the picture carries the full labels.
       // Tags point away from the nearer edge and stop short of the next marker on the same row.
       const left = cx > c.fw * 0.6;
       if (left) m.classList.add('tag-left');

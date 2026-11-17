@@ -1,4 +1,5 @@
-// Feel: drawn pressed states, haptics, FX tags and the typewriter.
+// Feel: drawn pressed states, haptics, sound cues, FX tags and the typewriter.
+import { sfx } from './sound.js';
 
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
@@ -34,11 +35,19 @@ function ensureIOS() {
 const PATTERNS = {
   tap: [8], select: [14], light: [18], commit: [24], heavy: [40, 30, 80], fill: [10],
   shake: [30, 40, 30, 40, 60], stamp: [70], error: [20, 40, 20],
+  ratchet: [6], chip: [10], paper: [16], whoosh: [12], pen: [4], rustle: [10], chime: [18],
 };
-const IOS_TICKS = { tap: 1, select: 1, light: 1, commit: 1, heavy: 3, fill: 1, shake: 3, stamp: 2, error: 2 };
+const IOS_TICKS = { tap: 1, select: 1, light: 1, commit: 1, heavy: 3, fill: 1, shake: 3, stamp: 2, error: 2, ratchet: 1, chip: 1, paper: 1, whoosh: 1, rustle: 1, chime: 1 };
+// The sound each kind of feedback makes (sound has its own toggle; see sound.js).
+const SOUND_OF = {
+  tap: 'tick', select: 'tick', commit: 'clunk', heavy: 'thunk', stamp: 'stamp', error: 'buzz', light: 'chime', chime: 'chime',
+  shake: 'rumble', ratchet: 'ratchet', chip: 'chip', paper: 'paper', whoosh: 'whoosh', pen: 'pen', rustle: 'rustle',
+};
 
 export function haptic(kind = 'tap') {
+  if (SOUND_OF[kind]) sfx(SOUND_OF[kind]);
   if (!hapticsOn) return;
+  if (kind === 'pen') return; // the pen scratches by sound only
   try {
     if (canVibrate()) {
       if (navigator.userActivation && !navigator.userActivation.hasBeenActive) return;
@@ -103,7 +112,8 @@ export function runFx(q, { stage, banner }) {
   } else {
     banner.hidden = true;
   }
-  if (fx.has('shake')) setTimeout(() => shake(stage, true), fx.has('breaking') ? 350 : 0);
+  if (fx.has('breaking')) sfx('sting');
+  if (fx.has('shake')) setTimeout(() => { shake(stage, true); sfx('rumble'); }, fx.has('breaking') ? 350 : 0);
   if (fx.has('buzz_heavy')) haptic('heavy');
   else if (fx.has('buzz_light')) haptic('light');
   return wait;
@@ -124,6 +134,7 @@ export function typewriter(el, text, { cps = 48 } = {}) {
   timer = setInterval(() => {
     i = Math.min(text.length, i + 2);
     node.data = text.slice(0, i);
+    if (text[i - 1] && text[i - 1] !== ' ') sfx('type');
     if (i >= text.length) finish();
   }, 2000 / cps);
   el.addEventListener('pointerdown', finish);
