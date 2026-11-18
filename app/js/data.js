@@ -1,7 +1,7 @@
 // Loads candidates, Leviathan's belief model, the personality reading and every question file named in
 // data/questions/index.json. A file that is missing or fails to parse is skipped.
 
-import { normalizeQuestion } from './questions.js?v=55e1c2b-1794987375';
+import { normalizeQuestion } from './questions.js?v=0f64d59-1794988022';
 
 async function getJson(url) {
   const r = await fetch(url, { cache: 'no-cache' });

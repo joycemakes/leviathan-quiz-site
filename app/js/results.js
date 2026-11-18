@@ -1,17 +1,17 @@
 // The result screen (the full dossier): ghost reveal, the personality reading, top five, lane and Leviathan zones, ideology gauges, temperament,
 // dynasty and libertine dials, traits and flags, the share sheet and the LVQ1 code.
 
-import { AXES, AXIS } from './axes.js?v=55e1c2b-1794987375';
-import { reasonFor } from './scoring.js?v=55e1c2b-1794987375';
-import { zoneLabel } from './leviathan.js?v=55e1c2b-1794987375';
-import { encodeLVQ1 } from './export.js?v=55e1c2b-1794987375';
-import { portraitEl } from './art.js?v=55e1c2b-1794987375';
-import { silhouetteEl } from './hud.js?v=55e1c2b-1794987375';
-import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=55e1c2b-1794987375';
-import { sfx } from './sound.js?v=55e1c2b-1794987375';
-import { renderShareSheet, copyText } from './sharesheet.js?v=55e1c2b-1794987375';
-import { normalizeShareConfig } from './share.js?v=55e1c2b-1794987375';
-import { archetypeArt, archName } from './reveal.js?v=55e1c2b-1794987375';
+import { AXES, AXIS } from './axes.js?v=0f64d59-1794988022';
+import { reasonFor } from './scoring.js?v=0f64d59-1794988022';
+import { zoneLabel } from './leviathan.js?v=0f64d59-1794988022';
+import { encodeLVQ1 } from './export.js?v=0f64d59-1794988022';
+import { portraitEl } from './art.js?v=0f64d59-1794988022';
+import { silhouetteEl } from './hud.js?v=0f64d59-1794988022';
+import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=0f64d59-1794988022';
+import { sfx } from './sound.js?v=0f64d59-1794988022';
+import { renderShareSheet, copyText } from './sharesheet.js?v=0f64d59-1794988022';
+import { normalizeShareConfig } from './share.js?v=0f64d59-1794988022';
+import { archetypeArt, archName } from './reveal.js?v=0f64d59-1794988022';
 
 // The words on a dossier someone shared (the only Leviathan-specific copy for shared links).
 export const SHARED_COPY = {
@@ -59,7 +59,8 @@ function dial(label, value, sub) {
 
 // A shared dossier is someone else's file: its headings say their, not your (playtest of shared links).
 let SHARED_VIEW = false;
-const Y = t => (SHARED_VIEW ? t.replace(/\bYour\b/g, 'Their').replace(/\byour\b/g, 'their').replace(/\byou chose\b/g, 'they chose').replace(/\bseats you\b/g, 'seats them') : t);
+const Y = t => (SHARED_VIEW ? t.replace(/\bYour\b/g, 'Their').replace(/\byour\b/g, 'their').replace(/\byou chose\b/g, 'they chose').replace(/\bseats you\b/g, 'seats them')
+  .replace(/\bWhere you contradict yourself\b/g, 'Where they contradict themselves').replace(/\bHow you answered\b/g, 'How they answered') : t);
 
 export function renderResults(root, R) {
   SHARED_VIEW = !!R.shared;
@@ -268,7 +269,7 @@ function readingBlock(reading, onReplay) {
   if (a.text) text.appendChild(h('p', 'rd-lede', a.text));
   const group = (title, items) => {
     if (!items.length) return;
-    text.appendChild(h('h4', 'rd-sub', title));
+    text.appendChild(h('h4', 'rd-sub', Y(title)));
     for (const t of items) text.appendChild(h('p', null, t.text));
   };
   group('Where you contradict yourself', reading.contradictions);

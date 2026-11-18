@@ -1,5 +1,5 @@
 // Feel: drawn pressed states, haptics, sound cues, FX tags and the typewriter.
-import { sfx } from './sound.js?v=55e1c2b-1794987375';
+import { sfx } from './sound.js?v=0f64d59-1794988022';
 
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
