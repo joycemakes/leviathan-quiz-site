@@ -3,11 +3,11 @@
 //
 // ctx: { el, artHost, cands (Map id -> candidate), stage }
 
-import { haptic, shake, sleep, reducedMotion } from './feel.js?v=6e9792e-1794988066';
-import { holdStart, holdLevel, holdStop, sfx } from './sound.js?v=6e9792e-1794988066';
-import { HOLD_TAP } from './howto.js?v=6e9792e-1794988066';
-import { createArtSlot, portraitEl, hasArt } from './art.js?v=6e9792e-1794988066';
-import { HOLD_FULL_MS } from './scoring.js?v=6e9792e-1794988066';
+import { haptic, shake, sleep, reducedMotion } from './feel.js?v=0610fc2-1794988299';
+import { holdStart, holdLevel, holdStop, sfx } from './sound.js?v=0610fc2-1794988299';
+import { HOLD_TAP } from './howto.js?v=0610fc2-1794988299';
+import { createArtSlot, portraitEl, hasArt } from './art.js?v=0610fc2-1794988299';
+import { HOLD_FULL_MS } from './scoring.js?v=0610fc2-1794988299';
 
 const h = (tag, cls, text) => {
   const e = document.createElement(tag);
