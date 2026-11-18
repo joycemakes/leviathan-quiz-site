@@ -34,7 +34,7 @@ export async function loadShareConfig(base = '../data/') {
   } catch { return normalizeShareConfig(null); }
 }
 
-// {name} {pct} {lane} {route} {top2} {verdict} {url}; unknown keys are left out, spacing tidied.
+// {name} {pct} {lane} {route} {top2} {verdict} {archetype} {url}; unknown keys are left out, spacing tidied.
 export function fillTemplate(tpl, vars) {
   return String(tpl)
     .replace(/\{(\w+)\}/g, (_, k) => (vars[k] == null ? '' : String(vars[k])))
@@ -45,7 +45,7 @@ export function fillTemplate(tpl, vars) {
 }
 
 export function shareVars(result, cfg) {
-  const { top, route, laneName, verdict } = result;
+  const { top, route, laneName, verdict, archetype } = result;
   const first = top[0] || {}, second = top[1] || {};
   return {
     name: first.name || '',
@@ -54,6 +54,7 @@ export function shareVars(result, cfg) {
     route: route === 'dem' ? 'Democratic' : route === 'gop' ? 'Republican' : '',
     top2: second.name || '',
     verdict: (cfg.verdicts && cfg.verdicts[first.id]) || verdict || '',
+    archetype: archetype || '', // the reading's archetype name, for templates that use {archetype}
     url: cfg.url,
   };
 }
