@@ -1,17 +1,17 @@
 // The result screen (the full dossier): ghost reveal, the personality reading, top five, lane and Leviathan zones, ideology gauges, temperament,
 // dynasty and libertine dials, traits and flags, the share sheet and the LVQ1 code.
 
-import { AXES, AXIS } from './axes.js';
-import { reasonFor } from './scoring.js';
-import { zoneLabel } from './leviathan.js';
-import { encodeLVQ1 } from './export.js';
-import { portraitEl } from './art.js';
-import { silhouetteEl } from './hud.js';
-import { haptic, sleep, reducedMotion, typewriter } from './feel.js';
-import { sfx } from './sound.js';
-import { renderShareSheet, copyText } from './sharesheet.js';
-import { normalizeShareConfig } from './share.js';
-import { archetypeArt, archName } from './reveal.js';
+import { AXES, AXIS } from './axes.js?v=f62a05c-1794985287';
+import { reasonFor } from './scoring.js?v=f62a05c-1794985287';
+import { zoneLabel } from './leviathan.js?v=f62a05c-1794985287';
+import { encodeLVQ1 } from './export.js?v=f62a05c-1794985287';
+import { portraitEl } from './art.js?v=f62a05c-1794985287';
+import { silhouetteEl } from './hud.js?v=f62a05c-1794985287';
+import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=f62a05c-1794985287';
+import { sfx } from './sound.js?v=f62a05c-1794985287';
+import { renderShareSheet, copyText } from './sharesheet.js?v=f62a05c-1794985287';
+import { normalizeShareConfig } from './share.js?v=f62a05c-1794985287';
+import { archetypeArt, archName } from './reveal.js?v=f62a05c-1794985287';
 
 const h = (tag, cls, text) => {
   const e = document.createElement(tag);
