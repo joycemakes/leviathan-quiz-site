@@ -1,7 +1,7 @@
 // Leviathan link-up (SPEC section 5b): beliefs12, lane, zone labels, traits, flags and the export payload.
 // `lev` is the parsed data/leviathan.json.
 
-import { AXES, AXIS_IDS } from './axes.js?v=3ca1ab6-1795004609';
+import { AXES, AXIS_IDS } from './axes.js?v=e7dba38-1795007768';
 
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 const r1 = v => Math.round(v * 10) / 10;

@@ -5,13 +5,13 @@
 // playReveal(R) resolves when the player asks for the full dossier.
 // R: { reading, matches, cands, profile, scores, route, shareCfg, replay }
 
-import { AXIS } from './axes.js?v=3ca1ab6-1795004609';
-import { portraitEl, artUrl, artVersion } from './art.js?v=3ca1ab6-1795004609';
-import { haptic, sleep, reducedMotion, typewriter, finishTyping, typingSkippedAt } from './feel.js?v=3ca1ab6-1795004609';
-import { sfx } from './sound.js?v=3ca1ab6-1795004609';
-import { renderShareSheet } from './sharesheet.js?v=3ca1ab6-1795004609';
-import { ticketEl } from './endgame-ui.js?v=3ca1ab6-1795004609';
-import { handoffBlock } from './handoff.js?v=3ca1ab6-1795004609';
+import { AXIS } from './axes.js?v=e7dba38-1795007768';
+import { portraitEl, artUrl, artVersion } from './art.js?v=e7dba38-1795007768';
+import { haptic, sleep, reducedMotion, typewriter, finishTyping, typingSkippedAt } from './feel.js?v=e7dba38-1795007768';
+import { sfx } from './sound.js?v=e7dba38-1795007768';
+import { renderShareSheet } from './sharesheet.js?v=e7dba38-1795007768';
+import { ticketEl } from './endgame-ui.js?v=e7dba38-1795007768';
+import { handoffBlock } from './handoff.js?v=e7dba38-1795007768';
 
 const h = (tag, cls, text) => {
   const e = document.createElement(tag);

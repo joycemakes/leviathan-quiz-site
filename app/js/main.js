@@ -1,28 +1,28 @@
 // THE 2028 QUIZ: boot, title screen, the run loop, chapter cards and the hand-off to results.
 
-import { loadData } from './data.js?v=3ca1ab6-1795004609';
-import { createSelector, QUICK_LENGTH, FULL_LENGTH } from './selector.js?v=3ca1ab6-1795004609';
-import { createScorer, applyAnswer, axisScores, matchCandidates } from './scoring.js?v=3ca1ab6-1795004609';
-import { buildProfile } from './leviathan.js?v=3ca1ab6-1795004609';
-import { CHAPTERS, CHAPTER_TITLE, CHAPTER_LINE } from './axes.js?v=3ca1ab6-1795004609';
-import { routeOk } from './questions.js?v=3ca1ab6-1795004609';
-import { installPress, haptic, setHaptics, getHaptics, runFx, typewriter, sleep, store, reducedMotion } from './feel.js?v=3ca1ab6-1795004609';
-import { loadArtManifest, createArtSlot, artUrl, artVersion } from './art.js?v=3ca1ab6-1795004609';
-import { billTitle } from './types.js?v=3ca1ab6-1795004609';
-import { createWarMap, createGhosts } from './hud.js?v=3ca1ab6-1795004609';
-import { renderAnswer } from './types.js?v=3ca1ab6-1795004609';
-import { howFor, showCue, watchIdle } from './howto.js?v=3ca1ab6-1795004609';
-import { swipeEnds } from './types.js?v=3ca1ab6-1795004609';
-import { renderResults } from './results.js?v=3ca1ab6-1795004609';
-import { newSeed } from './rng.js?v=3ca1ab6-1795004609';
-import { loadShareConfig } from './share.js?v=3ca1ab6-1795004609';
-import { getSound, setSound, sfx } from './sound.js?v=3ca1ab6-1795004609';
-import { readingContext, buildReading } from './reading.js?v=3ca1ab6-1795004609';
-import { playReveal } from './reveal.js?v=3ca1ab6-1795004609';
-import { dossierFromRun, encodeDossier, decodeDossier, rebuildDossier, dossierLink, codeFromHash, fileNumber, minuteOf, tidyScores, tidyReads } from './dossier.js?v=3ca1ab6-1795004609';
-import { pickTicket, pickExhibits, ticketView } from './endgame.js?v=3ca1ab6-1795004609';
-import { encodeLVQ1 } from './export.js?v=3ca1ab6-1795004609';
-import { renderVersus } from './versus.js?v=3ca1ab6-1795004609';
+import { loadData } from './data.js?v=e7dba38-1795007768';
+import { createSelector, QUICK_LENGTH, FULL_LENGTH } from './selector.js?v=e7dba38-1795007768';
+import { createScorer, applyAnswer, axisScores, matchCandidates } from './scoring.js?v=e7dba38-1795007768';
+import { buildProfile } from './leviathan.js?v=e7dba38-1795007768';
+import { CHAPTERS, CHAPTER_TITLE, CHAPTER_LINE } from './axes.js?v=e7dba38-1795007768';
+import { routeOk } from './questions.js?v=e7dba38-1795007768';
+import { installPress, haptic, setHaptics, getHaptics, runFx, typewriter, sleep, store, reducedMotion } from './feel.js?v=e7dba38-1795007768';
+import { loadArtManifest, createArtSlot, artUrl, artVersion } from './art.js?v=e7dba38-1795007768';
+import { billTitle } from './types.js?v=e7dba38-1795007768';
+import { createWarMap, createGhosts } from './hud.js?v=e7dba38-1795007768';
+import { renderAnswer } from './types.js?v=e7dba38-1795007768';
+import { howFor, showCue, watchIdle } from './howto.js?v=e7dba38-1795007768';
+import { swipeEnds } from './types.js?v=e7dba38-1795007768';
+import { renderResults } from './results.js?v=e7dba38-1795007768';
+import { newSeed } from './rng.js?v=e7dba38-1795007768';
+import { loadShareConfig } from './share.js?v=e7dba38-1795007768';
+import { getSound, setSound, sfx } from './sound.js?v=e7dba38-1795007768';
+import { readingContext, buildReading } from './reading.js?v=e7dba38-1795007768';
+import { playReveal } from './reveal.js?v=e7dba38-1795007768';
+import { dossierFromRun, encodeDossier, decodeDossier, rebuildDossier, dossierLink, codeFromHash, fileNumber, minuteOf, tidyScores, tidyReads } from './dossier.js?v=e7dba38-1795007768';
+import { pickTicket, pickExhibits, ticketView } from './endgame.js?v=e7dba38-1795007768';
+import { encodeLVQ1 } from './export.js?v=e7dba38-1795007768';
+import { renderVersus } from './versus.js?v=e7dba38-1795007768';
 
 // Versus: this device's own finished file (its dossier code), and a file someone sent that is waiting to be
 // compared once the player has one of their own ({ code, pending }).
@@ -252,7 +252,9 @@ async function startRun(saved = null) {
   S.run = run;
   const live = () => S.run === run;
   // revealSeen: the win reveal has been watched to the end, so See your result opens the dossier.
-  const save = { v: 1, seed, route, length: runLength, seen: seenList, answers: [], done: false, revealSeen: !!(saved && saved.revealSeen) };
+  const save = { v: 1, seed, route, length: runLength, seen: seenList, answers: [], done: false, revealSeen: !!(saved && saved.revealSeen),
+    // The file someone sent that this run will be compared with (moved here from lvq.versus at its end).
+    ...(saved && saved.versus ? { versus: saved.versus } : {}) };
   const persist = () => { if (!devBank && live()) store.set(SAVE_KEY, save); };
   const replay = saved ? saved.answers : [];
   run.save = save;
@@ -486,7 +488,14 @@ function fitToScreen(wrap, artHost) {
     slot.style.removeProperty('--scene-h');
     const over = document.documentElement.scrollHeight - window.innerHeight;
     const fh = slot.querySelector('.art-frame')?.getBoundingClientRect().height || 0;
-    if (over > 0 && fh > 0) slot.style.setProperty('--scene-h', `${Math.max(120, Math.floor(fh - over - 4))}px`);
+    // Phones: the picture keeps at least 60% of the width (live playtest: envelopes at 93x139); past
+    // that the page scrolls. Desktop keeps the old floor of 120 px tall.
+    const narrow = window.innerWidth < 900;
+    const w = artHost.getBoundingClientRect().width || window.innerWidth;
+    const ar = slot.dataset.version === 'tall' ? 2 / 3 : 3 / 2;
+    const floor = narrow ? Math.round((0.6 * w) / ar) : 120;
+    if (narrow) slot.style.setProperty('--scene-h', `${Math.max(floor, Math.floor(over > 0 && fh > 0 ? fh - over - 4 : fh))}px`);
+    else if (over > 0 && fh > 0) slot.style.setProperty('--scene-h', `${Math.max(floor, Math.floor(fh - over - 4))}px`);
   };
   setTimeout(fit, 60);
   setTimeout(fit, 400);
@@ -530,13 +539,21 @@ async function finish(run) {
     const bd = h('div', 'backdrop');
     bd.dataset.bg = 'election_night';
     app.appendChild(bd);
-    // A file someone sent, waiting for this one: offer the compare (it stays offered on the dossier).
+    // A file someone sent, waiting for a run of your own: this run takes it (saved with the run) and the
+    // device forgets it, so only this run's dossier offers the compare (live playtest: every later
+    // dossier kept offering Compare again).
     const waiting = store.get(VERSUS_KEY, null);
-    const theirs = waiting && waiting.code && dossier && waiting.code !== dossier.code && decodeDossier(waiting.code, { candidates }).ok ? waiting.code : null;
+    if (waiting && waiting.code && !run.save.versus) {
+      run.save.versus = waiting.code;
+      run.persist();
+      try { localStorage.removeItem(VERSUS_KEY); } catch { /* private mode */ }
+    }
+    const fresh = !!(waiting && waiting.code && waiting.code === run.save.versus);
+    const theirs = run.save.versus && dossier && run.save.versus !== dossier.code && decodeDossier(run.save.versus, { candidates }).ok ? run.save.versus : null;
     const versus = theirs ? {
       label: 'Compare with their file',
-      text: waiting.pending ? `Your file is done. Lay it beside the one you were sent, File No. ${fileNumber(theirs)}.` : `Compare again with File No. ${fileNumber(theirs)}.`,
-      onClick: () => { store.set(VERSUS_KEY, { code: theirs, pending: false }); showVersus(dossier.code, theirs); },
+      text: fresh ? `Your file is done. Lay it beside the one you were sent, File No. ${fileNumber(theirs)}.` : `Compare with the file you were sent, File No. ${fileNumber(theirs)}.`,
+      onClick: () => showVersus(dossier.code, theirs),
     } : null;
     const out = renderResults(app, {
       profile, matches, scores, cands: S.cands, lev, route: run.route, length: run.sel.history.length, signals: run.sc.signals, shareCfg: S.shareCfg, reading, dossier,

@@ -1,19 +1,19 @@
 // The result screen (the full dossier): ghost reveal, the personality reading, top five, lane and Leviathan zones, ideology gauges, temperament,
 // dynasty and libertine dials, traits and flags, the share sheet and the LVQ1 code.
 
-import { AXES, AXIS } from './axes.js?v=3ca1ab6-1795004609';
-import { reasonFor } from './scoring.js?v=3ca1ab6-1795004609';
-import { zoneLabel } from './leviathan.js?v=3ca1ab6-1795004609';
-import { encodeLVQ1 } from './export.js?v=3ca1ab6-1795004609';
-import { portraitEl } from './art.js?v=3ca1ab6-1795004609';
-import { silhouetteEl } from './hud.js?v=3ca1ab6-1795004609';
-import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=3ca1ab6-1795004609';
-import { sfx } from './sound.js?v=3ca1ab6-1795004609';
-import { renderShareSheet, copyText } from './sharesheet.js?v=3ca1ab6-1795004609';
-import { normalizeShareConfig } from './share.js?v=3ca1ab6-1795004609';
-import { archetypeArt, archName } from './reveal.js?v=3ca1ab6-1795004609';
-import { exhibitsEl, ticketEl } from './endgame-ui.js?v=3ca1ab6-1795004609';
-import { handoffBlock } from './handoff.js?v=3ca1ab6-1795004609';
+import { AXES, AXIS } from './axes.js?v=e7dba38-1795007768';
+import { reasonFor } from './scoring.js?v=e7dba38-1795007768';
+import { zoneLabel } from './leviathan.js?v=e7dba38-1795007768';
+import { encodeLVQ1 } from './export.js?v=e7dba38-1795007768';
+import { portraitEl } from './art.js?v=e7dba38-1795007768';
+import { silhouetteEl } from './hud.js?v=e7dba38-1795007768';
+import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=e7dba38-1795007768';
+import { sfx } from './sound.js?v=e7dba38-1795007768';
+import { renderShareSheet, copyText } from './sharesheet.js?v=e7dba38-1795007768';
+import { normalizeShareConfig } from './share.js?v=e7dba38-1795007768';
+import { archetypeArt, archName } from './reveal.js?v=e7dba38-1795007768';
+import { exhibitsEl, ticketEl } from './endgame-ui.js?v=e7dba38-1795007768';
+import { handoffBlock } from './handoff.js?v=e7dba38-1795007768';
 
 // The words on a dossier someone shared (the only Leviathan-specific copy for shared links).
 export const SHARED_COPY = {
@@ -122,7 +122,7 @@ export function renderResults(root, R) {
   // ---- the ticket and the knife ----
   if (R.ticketView && R.ticketView.length) {
     const tk = section(SH('The ticket and the knife', 'Their ticket and their knife'), 'ticket-block');
-    const el = ticketEl(R.ticketView, cands, { title: '', cap: SH('Who runs with you, who turns on you, and who you destroy.', 'Who runs with them, who turns on them, and who they destroy.'), their: !!R.shared });
+    const el = ticketEl(R.ticketView, cands, { title: '', cap: SH('Who runs with you, who turns on you, and who you destroy.', 'Who runs with them, who turns on them, and who they destroy. The lines are read to them, not to you.'), their: !!R.shared });
     el.querySelector('.ticket-title')?.remove();
     tk.appendChild(el);
     screen.appendChild(tk);
