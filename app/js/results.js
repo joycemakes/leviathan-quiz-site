@@ -1,21 +1,21 @@
 // The result screen (the full dossier): ghost reveal, the personality reading, top five, lane and Leviathan zones, ideology gauges, temperament,
 // dynasty and libertine dials, traits and flags, the share sheet and the LVQ1 code.
 
-import { AXES, AXIS } from './axes.js?v=dd3217a-1794987286';
-import { reasonFor } from './scoring.js?v=dd3217a-1794987286';
-import { zoneLabel } from './leviathan.js?v=dd3217a-1794987286';
-import { encodeLVQ1 } from './export.js?v=dd3217a-1794987286';
-import { portraitEl } from './art.js?v=dd3217a-1794987286';
-import { silhouetteEl } from './hud.js?v=dd3217a-1794987286';
-import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=dd3217a-1794987286';
-import { sfx } from './sound.js?v=dd3217a-1794987286';
-import { renderShareSheet, copyText } from './sharesheet.js?v=dd3217a-1794987286';
-import { normalizeShareConfig } from './share.js?v=dd3217a-1794987286';
-import { archetypeArt, archName } from './reveal.js?v=dd3217a-1794987286';
+import { AXES, AXIS } from './axes.js?v=55e1c2b-1794987375';
+import { reasonFor } from './scoring.js?v=55e1c2b-1794987375';
+import { zoneLabel } from './leviathan.js?v=55e1c2b-1794987375';
+import { encodeLVQ1 } from './export.js?v=55e1c2b-1794987375';
+import { portraitEl } from './art.js?v=55e1c2b-1794987375';
+import { silhouetteEl } from './hud.js?v=55e1c2b-1794987375';
+import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=55e1c2b-1794987375';
+import { sfx } from './sound.js?v=55e1c2b-1794987375';
+import { renderShareSheet, copyText } from './sharesheet.js?v=55e1c2b-1794987375';
+import { normalizeShareConfig } from './share.js?v=55e1c2b-1794987375';
+import { archetypeArt, archName } from './reveal.js?v=55e1c2b-1794987375';
 
 // The words on a dossier someone shared (the only Leviathan-specific copy for shared links).
 export const SHARED_COPY = {
-  banner: 'Someone’s 2028 dossier. Their answers stay private; this is what they add up to.',
+  banner: "Someone's 2028 dossier. Their answers stay private; this is what they add up to.",
   cta: 'Take the quiz yourself',
 };
 

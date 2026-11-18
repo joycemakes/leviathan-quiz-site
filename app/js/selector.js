@@ -13,10 +13,10 @@
 //  - Election night: `phase` count first, then one outcome (loss or victory, never both); `finale` last.
 //  - A per-device seen-list (passed in) makes unseen questions preferred on replays.
 
-import { CHAPTERS, CHAPTER_SHARE } from './axes.js?v=dd3217a-1794987286';
-import { routeOk, optionVectors, prepareQuestion } from './questions.js?v=dd3217a-1794987286';
-import { makeRng } from './rng.js?v=dd3217a-1794987286';
-import { predictAnswer } from './scoring.js?v=dd3217a-1794987286';
+import { CHAPTERS, CHAPTER_SHARE } from './axes.js?v=55e1c2b-1794987375';
+import { routeOk, optionVectors, prepareQuestion } from './questions.js?v=55e1c2b-1794987375';
+import { makeRng } from './rng.js?v=55e1c2b-1794987375';
+import { predictAnswer } from './scoring.js?v=55e1c2b-1794987375';
 
 // Run lengths, in one place (Chris, 18 Nov 2026): Quick 38, Full Dossier 48 (was 45 and 60). Both meet the matching
 // bar (like-candidate bots first for 22+ of 23, random play's best match under 75%; app/tests/run.mjs).
