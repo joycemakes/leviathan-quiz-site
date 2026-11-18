@@ -1,17 +1,17 @@
 // The result screen (the full dossier): ghost reveal, the personality reading, top five, lane and Leviathan zones, ideology gauges, temperament,
 // dynasty and libertine dials, traits and flags, the share sheet and the LVQ1 code.
 
-import { AXES, AXIS } from './axes.js?v=2fbba9f-1794988321';
-import { reasonFor } from './scoring.js?v=2fbba9f-1794988321';
-import { zoneLabel } from './leviathan.js?v=2fbba9f-1794988321';
-import { encodeLVQ1 } from './export.js?v=2fbba9f-1794988321';
-import { portraitEl } from './art.js?v=2fbba9f-1794988321';
-import { silhouetteEl } from './hud.js?v=2fbba9f-1794988321';
-import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=2fbba9f-1794988321';
-import { sfx } from './sound.js?v=2fbba9f-1794988321';
-import { renderShareSheet, copyText } from './sharesheet.js?v=2fbba9f-1794988321';
-import { normalizeShareConfig } from './share.js?v=2fbba9f-1794988321';
-import { archetypeArt, archName } from './reveal.js?v=2fbba9f-1794988321';
+import { AXES, AXIS } from './axes.js?v=afb54d4-1794988546';
+import { reasonFor } from './scoring.js?v=afb54d4-1794988546';
+import { zoneLabel } from './leviathan.js?v=afb54d4-1794988546';
+import { encodeLVQ1 } from './export.js?v=afb54d4-1794988546';
+import { portraitEl } from './art.js?v=afb54d4-1794988546';
+import { silhouetteEl } from './hud.js?v=afb54d4-1794988546';
+import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=afb54d4-1794988546';
+import { sfx } from './sound.js?v=afb54d4-1794988546';
+import { renderShareSheet, copyText } from './sharesheet.js?v=afb54d4-1794988546';
+import { normalizeShareConfig } from './share.js?v=afb54d4-1794988546';
+import { archetypeArt, archName } from './reveal.js?v=afb54d4-1794988546';
 
 // The words on a dossier someone shared (the only Leviathan-specific copy for shared links).
 export const SHARED_COPY = {
@@ -213,7 +213,7 @@ export function renderResults(root, R) {
   screen.appendChild(sheet);
 
   // ---- share ----
-  const share = section('Share your result', 'share-block');
+  const share = section(SH('Share your result', 'Share this result'), 'share-block');
   renderShareSheet(share, { profile, matches, cands, route, scores, shareCfg: R.shareCfg || normalizeShareConfig(null), reading: R.reading, link: R.dossier?.link });
   screen.appendChild(share);
 

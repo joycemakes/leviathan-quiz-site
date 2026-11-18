@@ -11,8 +11,8 @@
 // canonical policy (predictAnswer), and the player is compared with that predicted profile. A consistent
 // AOC player shrinks exactly as predicted-AOC shrinks, so they land on AOC.
 
-import { AXIS, AXIS_IDS, AXES, GROUP_WEIGHT } from './axes.js?v=2fbba9f-1794988321';
-import { rankFactors, textLength, normalizeFaithFlag } from './questions.js?v=2fbba9f-1794988321';
+import { AXIS, AXIS_IDS, AXES, GROUP_WEIGHT } from './axes.js?v=afb54d4-1794988546';
+import { rankFactors, textLength, normalizeFaithFlag } from './questions.js?v=afb54d4-1794988546';
 
 export const HOLD_FULL_MS = 1500;
 export const FAST_SWIPE_MS = 1500;
