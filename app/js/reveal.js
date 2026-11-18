@@ -5,11 +5,11 @@
 // playReveal(R) resolves when the player asks for the full dossier.
 // R: { reading, matches, cands, profile, scores, route, shareCfg, replay }
 
-import { AXIS } from './axes.js?v=0f64d59-1794988022';
-import { portraitEl, artUrl, artVersion } from './art.js?v=0f64d59-1794988022';
-import { haptic, sleep, reducedMotion, typewriter, finishTyping, typingSkippedAt } from './feel.js?v=0f64d59-1794988022';
-import { sfx } from './sound.js?v=0f64d59-1794988022';
-import { renderShareSheet } from './sharesheet.js?v=0f64d59-1794988022';
+import { AXIS } from './axes.js?v=6e9792e-1794988066';
+import { portraitEl, artUrl, artVersion } from './art.js?v=6e9792e-1794988066';
+import { haptic, sleep, reducedMotion, typewriter, finishTyping, typingSkippedAt } from './feel.js?v=6e9792e-1794988066';
+import { sfx } from './sound.js?v=6e9792e-1794988066';
+import { renderShareSheet } from './sharesheet.js?v=6e9792e-1794988066';
 
 const h = (tag, cls, text) => {
   const e = document.createElement(tag);

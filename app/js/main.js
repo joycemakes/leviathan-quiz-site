@@ -1,25 +1,25 @@
 // THE 2028 QUIZ: boot, title screen, the run loop, chapter cards and the hand-off to results.
 
-import { loadData } from './data.js?v=0f64d59-1794988022';
-import { createSelector, QUICK_LENGTH, FULL_LENGTH } from './selector.js?v=0f64d59-1794988022';
-import { createScorer, applyAnswer, axisScores, matchCandidates } from './scoring.js?v=0f64d59-1794988022';
-import { buildProfile } from './leviathan.js?v=0f64d59-1794988022';
-import { CHAPTERS, CHAPTER_TITLE, CHAPTER_LINE } from './axes.js?v=0f64d59-1794988022';
-import { routeOk } from './questions.js?v=0f64d59-1794988022';
-import { installPress, haptic, setHaptics, getHaptics, runFx, typewriter, sleep, store, reducedMotion } from './feel.js?v=0f64d59-1794988022';
-import { loadArtManifest, createArtSlot, artUrl, artVersion } from './art.js?v=0f64d59-1794988022';
-import { billTitle } from './types.js?v=0f64d59-1794988022';
-import { createWarMap, createGhosts } from './hud.js?v=0f64d59-1794988022';
-import { renderAnswer } from './types.js?v=0f64d59-1794988022';
-import { howFor, showCue, watchIdle } from './howto.js?v=0f64d59-1794988022';
-import { swipeEnds } from './types.js?v=0f64d59-1794988022';
-import { renderResults } from './results.js?v=0f64d59-1794988022';
-import { newSeed } from './rng.js?v=0f64d59-1794988022';
-import { loadShareConfig } from './share.js?v=0f64d59-1794988022';
-import { getSound, setSound, sfx } from './sound.js?v=0f64d59-1794988022';
-import { readingContext, buildReading } from './reading.js?v=0f64d59-1794988022';
-import { playReveal } from './reveal.js?v=0f64d59-1794988022';
-import { dossierFromRun, encodeDossier, decodeDossier, rebuildDossier, dossierLink, codeFromHash, fileNumber, minuteOf, tidyScores, tidyReads } from './dossier.js?v=0f64d59-1794988022';
+import { loadData } from './data.js?v=6e9792e-1794988066';
+import { createSelector, QUICK_LENGTH, FULL_LENGTH } from './selector.js?v=6e9792e-1794988066';
+import { createScorer, applyAnswer, axisScores, matchCandidates } from './scoring.js?v=6e9792e-1794988066';
+import { buildProfile } from './leviathan.js?v=6e9792e-1794988066';
+import { CHAPTERS, CHAPTER_TITLE, CHAPTER_LINE } from './axes.js?v=6e9792e-1794988066';
+import { routeOk } from './questions.js?v=6e9792e-1794988066';
+import { installPress, haptic, setHaptics, getHaptics, runFx, typewriter, sleep, store, reducedMotion } from './feel.js?v=6e9792e-1794988066';
+import { loadArtManifest, createArtSlot, artUrl, artVersion } from './art.js?v=6e9792e-1794988066';
+import { billTitle } from './types.js?v=6e9792e-1794988066';
+import { createWarMap, createGhosts } from './hud.js?v=6e9792e-1794988066';
+import { renderAnswer } from './types.js?v=6e9792e-1794988066';
+import { howFor, showCue, watchIdle } from './howto.js?v=6e9792e-1794988066';
+import { swipeEnds } from './types.js?v=6e9792e-1794988066';
+import { renderResults } from './results.js?v=6e9792e-1794988066';
+import { newSeed } from './rng.js?v=6e9792e-1794988066';
+import { loadShareConfig } from './share.js?v=6e9792e-1794988066';
+import { getSound, setSound, sfx } from './sound.js?v=6e9792e-1794988066';
+import { readingContext, buildReading } from './reading.js?v=6e9792e-1794988066';
+import { playReveal } from './reveal.js?v=6e9792e-1794988066';
+import { dossierFromRun, encodeDossier, decodeDossier, rebuildDossier, dossierLink, codeFromHash, fileNumber, minuteOf, tidyScores, tidyReads } from './dossier.js?v=6e9792e-1794988066';
 
 const app = document.getElementById('app');
 const h = (tag, cls, text) => {
