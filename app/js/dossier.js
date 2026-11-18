@@ -16,10 +16,10 @@
 // Rounding never moves a value across a line the dossier draws (band edges, the reading's conditions,
 // one-decimal rounding for the LVQ1 code), and the encoder checks that the rebuilt dossier matches.
 
-import { AXIS_IDS } from './axes.js?v=0610fc2-1794988299';
-import { checksum4 } from './export.js?v=0610fc2-1794988299';
-import { buildProfile } from './leviathan.js?v=0610fc2-1794988299';
-import { readingContext, buildReading, normalizeReading, parseCond, READS_TAGS, READS_MIN } from './reading.js?v=0610fc2-1794988299';
+import { AXIS_IDS } from './axes.js?v=2fbba9f-1794988321';
+import { checksum4 } from './export.js?v=2fbba9f-1794988321';
+import { buildProfile } from './leviathan.js?v=2fbba9f-1794988321';
+import { readingContext, buildReading, normalizeReading, parseCond, READS_TAGS, READS_MIN } from './reading.js?v=2fbba9f-1794988321';
 
 export const DOSSIER_PREFIX = 'LVD1-';
 export const DOSSIER_BITS = 416;

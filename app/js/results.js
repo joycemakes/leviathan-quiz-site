@@ -1,17 +1,17 @@
 // The result screen (the full dossier): ghost reveal, the personality reading, top five, lane and Leviathan zones, ideology gauges, temperament,
 // dynasty and libertine dials, traits and flags, the share sheet and the LVQ1 code.
 
-import { AXES, AXIS } from './axes.js?v=0610fc2-1794988299';
-import { reasonFor } from './scoring.js?v=0610fc2-1794988299';
-import { zoneLabel } from './leviathan.js?v=0610fc2-1794988299';
-import { encodeLVQ1 } from './export.js?v=0610fc2-1794988299';
-import { portraitEl } from './art.js?v=0610fc2-1794988299';
-import { silhouetteEl } from './hud.js?v=0610fc2-1794988299';
-import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=0610fc2-1794988299';
-import { sfx } from './sound.js?v=0610fc2-1794988299';
-import { renderShareSheet, copyText } from './sharesheet.js?v=0610fc2-1794988299';
-import { normalizeShareConfig } from './share.js?v=0610fc2-1794988299';
-import { archetypeArt, archName } from './reveal.js?v=0610fc2-1794988299';
+import { AXES, AXIS } from './axes.js?v=2fbba9f-1794988321';
+import { reasonFor } from './scoring.js?v=2fbba9f-1794988321';
+import { zoneLabel } from './leviathan.js?v=2fbba9f-1794988321';
+import { encodeLVQ1 } from './export.js?v=2fbba9f-1794988321';
+import { portraitEl } from './art.js?v=2fbba9f-1794988321';
+import { silhouetteEl } from './hud.js?v=2fbba9f-1794988321';
+import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=2fbba9f-1794988321';
+import { sfx } from './sound.js?v=2fbba9f-1794988321';
+import { renderShareSheet, copyText } from './sharesheet.js?v=2fbba9f-1794988321';
+import { normalizeShareConfig } from './share.js?v=2fbba9f-1794988321';
+import { archetypeArt, archName } from './reveal.js?v=2fbba9f-1794988321';
 
 // The words on a dossier someone shared (the only Leviathan-specific copy for shared links).
 export const SHARED_COPY = {
@@ -195,7 +195,7 @@ export function renderResults(root, R) {
 
   // ---- traits and flags ----
   const sheet = section('For your character sheet');
-  sheet.appendChild(h('p', 'res-cap', "Suggestions for Leviathan's character sheet. The sex appeal hint follows how scandal-proof you are; tells are how long you took and how hard you held."));
+  sheet.appendChild(h('p', 'res-cap', SH("Suggestions for Leviathan's character sheet. The sex appeal hint follows how scandal-proof you are; tells are how long you took and how hard you held.", "Suggestions for Leviathan's character sheet. The sex appeal hint follows how scandal-proof they are; tells are how long they took and how hard they held.")));
   const tr = h('div', 'traits');
   for (const t of profile.traits) tr.appendChild(h('span', 'trait', t));
   const fl = h('dl', 'flags');
