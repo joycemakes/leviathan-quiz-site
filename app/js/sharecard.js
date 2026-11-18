@@ -3,7 +3,7 @@
 //   square 1080x1080 (feed posts), story 1080x1920 (stories), link 1200x630 (X, Facebook, LinkedIn)
 // Missing art or portraits fall back to drawn panels, so a card always renders.
 
-import { initials } from './art.js?v=f62a05c-1794985287';
+import { initials } from './art.js?v=dd3217a-1794987286';
 
 export const SIZES = {
   square: { w: 1080, h: 1080, label: 'Square', note: 'Feed posts' },
