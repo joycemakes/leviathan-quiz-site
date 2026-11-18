@@ -1,19 +1,19 @@
 // The result screen (the full dossier): ghost reveal, the personality reading, top five, lane and Leviathan zones, ideology gauges, temperament,
 // dynasty and libertine dials, traits and flags, the share sheet and the LVQ1 code.
 
-import { AXES, AXIS } from './axes.js?v=72ae772-1795003266';
-import { reasonFor } from './scoring.js?v=72ae772-1795003266';
-import { zoneLabel } from './leviathan.js?v=72ae772-1795003266';
-import { encodeLVQ1 } from './export.js?v=72ae772-1795003266';
-import { portraitEl } from './art.js?v=72ae772-1795003266';
-import { silhouetteEl } from './hud.js?v=72ae772-1795003266';
-import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=72ae772-1795003266';
-import { sfx } from './sound.js?v=72ae772-1795003266';
-import { renderShareSheet, copyText } from './sharesheet.js?v=72ae772-1795003266';
-import { normalizeShareConfig } from './share.js?v=72ae772-1795003266';
-import { archetypeArt, archName } from './reveal.js?v=72ae772-1795003266';
-import { exhibitsEl, ticketEl } from './endgame-ui.js?v=72ae772-1795003266';
-import { handoffBlock } from './handoff.js?v=72ae772-1795003266';
+import { AXES, AXIS } from './axes.js?v=3ca1ab6-1795004609';
+import { reasonFor } from './scoring.js?v=3ca1ab6-1795004609';
+import { zoneLabel } from './leviathan.js?v=3ca1ab6-1795004609';
+import { encodeLVQ1 } from './export.js?v=3ca1ab6-1795004609';
+import { portraitEl } from './art.js?v=3ca1ab6-1795004609';
+import { silhouetteEl } from './hud.js?v=3ca1ab6-1795004609';
+import { haptic, sleep, reducedMotion, typewriter } from './feel.js?v=3ca1ab6-1795004609';
+import { sfx } from './sound.js?v=3ca1ab6-1795004609';
+import { renderShareSheet, copyText } from './sharesheet.js?v=3ca1ab6-1795004609';
+import { normalizeShareConfig } from './share.js?v=3ca1ab6-1795004609';
+import { archetypeArt, archName } from './reveal.js?v=3ca1ab6-1795004609';
+import { exhibitsEl, ticketEl } from './endgame-ui.js?v=3ca1ab6-1795004609';
+import { handoffBlock } from './handoff.js?v=3ca1ab6-1795004609';
 
 // The words on a dossier someone shared (the only Leviathan-specific copy for shared links).
 export const SHARED_COPY = {

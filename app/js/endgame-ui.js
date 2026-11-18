@@ -1,6 +1,6 @@
 // Exhibits and the ticket, as blocks for the reveal, the dossier and the versus view.
 
-import { portraitEl } from './art.js?v=72ae772-1795003266';
+import { portraitEl } from './art.js?v=3ca1ab6-1795004609';
 
 const h = (tag, cls, text) => {
   const e = document.createElement(tag);

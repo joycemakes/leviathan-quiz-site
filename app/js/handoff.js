@@ -2,9 +2,9 @@
 // it copies the player's LVQ1 code and says so, then opens Leviathan in a new tab. Everything about the
 // hand-off lives in this module, so the unbranded copy can drop it in one place.
 
-import { handoffView } from './endgame.js?v=72ae772-1795003266';
-import { copyText } from './sharesheet.js?v=72ae772-1795003266';
-import { haptic } from './feel.js?v=72ae772-1795003266';
+import { handoffView } from './endgame.js?v=3ca1ab6-1795004609';
+import { copyText } from './sharesheet.js?v=3ca1ab6-1795004609';
+import { haptic } from './feel.js?v=3ca1ab6-1795004609';
 
 const h = (tag, cls, text) => {
   const e = document.createElement(tag);

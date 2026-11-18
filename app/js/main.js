@@ -1,28 +1,28 @@
 // THE 2028 QUIZ: boot, title screen, the run loop, chapter cards and the hand-off to results.
 
-import { loadData } from './data.js?v=72ae772-1795003266';
-import { createSelector, QUICK_LENGTH, FULL_LENGTH } from './selector.js?v=72ae772-1795003266';
-import { createScorer, applyAnswer, axisScores, matchCandidates } from './scoring.js?v=72ae772-1795003266';
-import { buildProfile } from './leviathan.js?v=72ae772-1795003266';
-import { CHAPTERS, CHAPTER_TITLE, CHAPTER_LINE } from './axes.js?v=72ae772-1795003266';
-import { routeOk } from './questions.js?v=72ae772-1795003266';
-import { installPress, haptic, setHaptics, getHaptics, runFx, typewriter, sleep, store, reducedMotion } from './feel.js?v=72ae772-1795003266';
-import { loadArtManifest, createArtSlot, artUrl, artVersion } from './art.js?v=72ae772-1795003266';
-import { billTitle } from './types.js?v=72ae772-1795003266';
-import { createWarMap, createGhosts } from './hud.js?v=72ae772-1795003266';
-import { renderAnswer } from './types.js?v=72ae772-1795003266';
-import { howFor, showCue, watchIdle } from './howto.js?v=72ae772-1795003266';
-import { swipeEnds } from './types.js?v=72ae772-1795003266';
-import { renderResults } from './results.js?v=72ae772-1795003266';
-import { newSeed } from './rng.js?v=72ae772-1795003266';
-import { loadShareConfig } from './share.js?v=72ae772-1795003266';
-import { getSound, setSound, sfx } from './sound.js?v=72ae772-1795003266';
-import { readingContext, buildReading } from './reading.js?v=72ae772-1795003266';
-import { playReveal } from './reveal.js?v=72ae772-1795003266';
-import { dossierFromRun, encodeDossier, decodeDossier, rebuildDossier, dossierLink, codeFromHash, fileNumber, minuteOf, tidyScores, tidyReads } from './dossier.js?v=72ae772-1795003266';
-import { pickTicket, pickExhibits, ticketView } from './endgame.js?v=72ae772-1795003266';
-import { encodeLVQ1 } from './export.js?v=72ae772-1795003266';
-import { renderVersus } from './versus.js?v=72ae772-1795003266';
+import { loadData } from './data.js?v=3ca1ab6-1795004609';
+import { createSelector, QUICK_LENGTH, FULL_LENGTH } from './selector.js?v=3ca1ab6-1795004609';
+import { createScorer, applyAnswer, axisScores, matchCandidates } from './scoring.js?v=3ca1ab6-1795004609';
+import { buildProfile } from './leviathan.js?v=3ca1ab6-1795004609';
+import { CHAPTERS, CHAPTER_TITLE, CHAPTER_LINE } from './axes.js?v=3ca1ab6-1795004609';
+import { routeOk } from './questions.js?v=3ca1ab6-1795004609';
+import { installPress, haptic, setHaptics, getHaptics, runFx, typewriter, sleep, store, reducedMotion } from './feel.js?v=3ca1ab6-1795004609';
+import { loadArtManifest, createArtSlot, artUrl, artVersion } from './art.js?v=3ca1ab6-1795004609';
+import { billTitle } from './types.js?v=3ca1ab6-1795004609';
+import { createWarMap, createGhosts } from './hud.js?v=3ca1ab6-1795004609';
+import { renderAnswer } from './types.js?v=3ca1ab6-1795004609';
+import { howFor, showCue, watchIdle } from './howto.js?v=3ca1ab6-1795004609';
+import { swipeEnds } from './types.js?v=3ca1ab6-1795004609';
+import { renderResults } from './results.js?v=3ca1ab6-1795004609';
+import { newSeed } from './rng.js?v=3ca1ab6-1795004609';
+import { loadShareConfig } from './share.js?v=3ca1ab6-1795004609';
+import { getSound, setSound, sfx } from './sound.js?v=3ca1ab6-1795004609';
+import { readingContext, buildReading } from './reading.js?v=3ca1ab6-1795004609';
+import { playReveal } from './reveal.js?v=3ca1ab6-1795004609';
+import { dossierFromRun, encodeDossier, decodeDossier, rebuildDossier, dossierLink, codeFromHash, fileNumber, minuteOf, tidyScores, tidyReads } from './dossier.js?v=3ca1ab6-1795004609';
+import { pickTicket, pickExhibits, ticketView } from './endgame.js?v=3ca1ab6-1795004609';
+import { encodeLVQ1 } from './export.js?v=3ca1ab6-1795004609';
+import { renderVersus } from './versus.js?v=3ca1ab6-1795004609';
 
 // Versus: this device's own finished file (its dossier code), and a file someone sent that is waiting to be
 // compared once the player has one of their own ({ code, pending }).
@@ -340,6 +340,10 @@ async function startRun(saved = null) {
   if (!live()) return;
   map.set(total, total);
   save.done = true;
+  // The finish time is fixed once and saved, so reopening your own result rebuilds the same dossier code
+  // and File No. (re-stamping it with the current time broke links already shared).
+  save.t = (saved && Number.isFinite(saved.t)) ? saved.t : Math.floor(Date.now() / 1000);
+  run.finishedAt = save.t;
   persist();
   finish(run);
 }
@@ -498,7 +502,7 @@ async function finish(run) {
   const scores = tidyScores(axisScores(run.sc));
   const matches = matchCandidates(run.sc, candidates, run.route);
   // The time is kept to the minute, the same as in the dossier code, so a shared link rebuilds the same LVQ1 code.
-  const t = minuteOf(Math.floor(Date.now() / 1000));
+  const t = minuteOf(run.finishedAt || Math.floor(Date.now() / 1000));
   const profile = buildProfile({ scores, matches, candidates, lev, route: run.route, length: run.sel.history.length, scorerFlags: run.sc.flags, t });
   const reading = buildReading(S.data.reading, readingContext({ scores, signals: run.sc.signals, reads: tidyReads(run.sc.reads), matches, route: run.route }));
   // The endgame: Exhibits A, B, C from the receipts the answers fired, and the ticket from the match list.

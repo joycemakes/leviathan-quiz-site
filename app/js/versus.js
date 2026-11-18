@@ -1,12 +1,12 @@
 // Versus (ENDGAME_CONTRACT section 4): two files side by side. Both types and their pictures, the dark
 // triad both ways, the two best-fitting versus lines from endgame.json, and both tickets.
 
-import { AXIS_IDS } from './axes.js?v=72ae772-1795003266';
-import { archetypeArt, archName } from './reveal.js?v=72ae772-1795003266';
-import { ticketEl } from './endgame-ui.js?v=72ae772-1795003266';
-import { pickVersus } from './endgame.js?v=72ae772-1795003266';
-import { bandWord, bandOf } from './reading.js?v=72ae772-1795003266';
-import { haptic } from './feel.js?v=72ae772-1795003266';
+import { AXIS_IDS } from './axes.js?v=3ca1ab6-1795004609';
+import { archetypeArt, archName } from './reveal.js?v=3ca1ab6-1795004609';
+import { ticketEl } from './endgame-ui.js?v=3ca1ab6-1795004609';
+import { pickVersus } from './endgame.js?v=3ca1ab6-1795004609';
+import { bandWord, bandOf } from './reading.js?v=3ca1ab6-1795004609';
+import { haptic } from './feel.js?v=3ca1ab6-1795004609';
 
 const h = (tag, cls, text) => {
   const e = document.createElement(tag);
