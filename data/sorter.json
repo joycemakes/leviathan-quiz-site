@@ -1,0 +1,131 @@
+{
+  "_note": "Undecided sorting round. lean: negative = Democratic side, positive = Republican side. Written by Fable, 20 Nov 2026.",
+  "intro": {
+    "title": "Find Your Primary",
+    "text": "Answer nine straight questions on the issues that divide the two parties. Your answers will place you in the primary you belong in."
+  },
+  "questions": [
+    {
+      "id": "S-01",
+      "topic": "abortion",
+      "context": "Roe v. Wade was overturned in June 2022, and each state now sets its own abortion law.",
+      "prompt": "What should the law on abortion be?",
+      "options": [
+        { "id": "a", "label": "Legal nationwide; the decision belongs to a woman and her doctor", "lean": -2 },
+        { "id": "b", "label": "Legal in most cases, with some limits later in pregnancy", "lean": -1 },
+        { "id": "c", "label": "Illegal in most cases, except rape, incest or danger to the mother's life", "lean": 1 },
+        { "id": "d", "label": "Unborn life should be protected by law from conception", "lean": 2 }
+      ]
+    },
+    {
+      "id": "S-02",
+      "topic": "guns",
+      "prompt": "What should the country do about guns?",
+      "options": [
+        { "id": "a", "label": "Ban assault weapons and require a license to own any gun", "lean": -2 },
+        { "id": "b", "label": "Respect gun ownership, but require a background check on every sale", "lean": -1 },
+        { "id": "c", "label": "Enforce the gun laws already on the books instead of passing new ones", "lean": 1 },
+        { "id": "d", "label": "Protect the Second Amendment; the right to bear arms must not be infringed", "lean": 2 }
+      ]
+    },
+    {
+      "id": "S-03",
+      "topic": "immigration",
+      "prompt": "What should happen to immigrants who are living in the country illegally?",
+      "options": [
+        { "id": "a", "label": "Offer them a path to citizenship and end mass deportations", "lean": -2 },
+        { "id": "b", "label": "Legal status for those who work and obey the law, alongside a secure border", "lean": -1 },
+        { "id": "c", "label": "Secure the border first and deport those who commit crimes", "lean": 1 },
+        { "id": "d", "label": "Deport everyone who is here illegally and finish the border wall", "lean": 2 }
+      ]
+    },
+    {
+      "id": "S-04",
+      "topic": "health care",
+      "prompt": "How should Americans get their health insurance?",
+      "options": [
+        { "id": "a", "label": "The government should cover everyone under a single public plan", "lean": -2 },
+        { "id": "b", "label": "Keep private insurance, and add a public plan anyone can choose", "lean": -1 },
+        { "id": "c", "label": "Keep private insurance and bring costs down through competition", "lean": 1 },
+        { "id": "d", "label": "Get government out of health care and let a free market serve patients", "lean": 2 }
+      ]
+    },
+    {
+      "id": "S-05",
+      "topic": "taxes and government",
+      "prompt": "Which direction should taxes and government spending take?",
+      "options": [
+        { "id": "a", "label": "Raise taxes on the wealthy and corporations to fund more public services", "lean": -2 },
+        { "id": "b", "label": "Ask the wealthy to pay somewhat more and protect the programs we have", "lean": -1 },
+        { "id": "c", "label": "Hold taxes where they are and slow the growth of spending", "lean": 1 },
+        { "id": "d", "label": "Cut taxes and cut spending; government should be much smaller", "lean": 2 }
+      ]
+    },
+    {
+      "id": "S-06",
+      "topic": "climate and energy",
+      "prompt": "What should energy policy put first?",
+      "options": [
+        { "id": "a", "label": "Move off fossil fuels as fast as possible; climate change is an emergency", "lean": -2 },
+        { "id": "b", "label": "Shift steadily to clean energy, using incentives rather than bans", "lean": -1 },
+        { "id": "c", "label": "Use every energy source, including oil and gas, and keep prices low", "lean": 1 },
+        { "id": "d", "label": "Expand American oil, gas and coal production and end climate mandates", "lean": 2 }
+      ]
+    },
+    {
+      "id": "S-07",
+      "topic": "policing and crime",
+      "prompt": "What is the best way to make communities safer?",
+      "options": [
+        { "id": "a", "label": "Move money from policing into housing, mental health and social services", "lean": -2 },
+        { "id": "b", "label": "Keep police funded, and hold officers accountable for misconduct", "lean": -1 },
+        { "id": "c", "label": "Hire more police officers and give them the support they need", "lean": 1 },
+        { "id": "d", "label": "Enforce the law strictly and give tougher sentences to those who break it", "lean": 2 }
+      ]
+    },
+    {
+      "id": "S-08",
+      "topic": "transgender policy",
+      "prompt": "What should the rules be for transgender minors in school sports and medical care?",
+      "options": [
+        { "id": "a", "label": "Protect their right to join teams and receive care that match their identity", "lean": -2 },
+        { "id": "b", "label": "Leave these decisions to families, doctors and local sports bodies", "lean": -1 },
+        { "id": "c", "label": "Keep girls' sports for biological females; leave medical care to parents", "lean": 1 },
+        { "id": "d", "label": "Sports by biological sex, and no medical gender transition before 18", "lean": 2 }
+      ]
+    },
+    {
+      "id": "S-09",
+      "topic": "affirmative action and DEI",
+      "context": "In June 2023 the Supreme Court ended the use of race in college admissions.",
+      "prompt": "Should colleges and employers take race into account to increase diversity?",
+      "options": [
+        { "id": "a", "label": "Yes, it is needed to correct past and present discrimination", "lean": -2 },
+        { "id": "b", "label": "Support diversity programs and outreach, but without racial preferences", "lean": -1 },
+        { "id": "c", "label": "No, decisions should rest on merit alone, without regard to race", "lean": 1 },
+        { "id": "d", "label": "No, and diversity, equity and inclusion programs should be ended", "lean": 2 }
+      ]
+    }
+  ],
+  "tiebreak": {
+    "id": "S-TB",
+    "topic": "government",
+    "prompt": "Your answers are evenly split. Which worries you more?",
+    "options": [
+      { "id": "a", "label": "A government that does too little to help people", "lean": -1 },
+      { "id": "b", "label": "A government that does too much and gets in people's way", "lean": 1 }
+    ]
+  },
+  "result": {
+    "dem": {
+      "strong": "Your answers clearly place you in the Democratic primary. On nearly every issue you sided with the positions Democratic voters hold.",
+      "lean": "On balance, your answers place you in the Democratic primary. You agreed with Democratic voters more often than not, though not on everything.",
+      "barely": "This was a near call, and you could have gone either way. Your answers place you, narrowly, in the Democratic primary."
+    },
+    "gop": {
+      "strong": "Your answers clearly place you in the Republican primary. On nearly every issue you sided with the positions Republican voters hold.",
+      "lean": "On balance, your answers place you in the Republican primary. You agreed with Republican voters more often than not, though not on everything.",
+      "barely": "This was a near call, and you could have gone either way. Your answers place you, narrowly, in the Republican primary."
+    }
+  }
+}

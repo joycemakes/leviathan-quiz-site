@@ -1,7 +1,7 @@
 // Loads candidates, Leviathan's belief model, the personality reading and every question file named in
 // data/questions/index.json. A file that is missing or fails to parse is skipped.
 
-import { normalizeQuestion } from './questions.js?v=e7dba38-1795007768';
+import { normalizeQuestion } from './questions.js?v=c9227a9-1795188648';
 
 async function getJson(url) {
   const r = await fetch(url, { cache: 'no-cache' });
@@ -14,7 +14,7 @@ export async function loadData(base = '../data/') {
   // plain built-in copy. Dev aid: ?reading=stub loads the engine's test fixture instead.
   const readingUrl = typeof location !== 'undefined' && new URLSearchParams(location.search).get('reading') === 'stub'
     ? 'tests/reading-stub.json' : `${base}reading.json`;
-  const [cj, lev, manifest, reading, endgame] = await Promise.all([
+  const [cj, lev, manifest, reading, endgame, sorter] = await Promise.all([
     getJson(`${base}candidates.json`),
     getJson(`${base}leviathan.json`).catch(() => null),
     getJson(`${base}questions/index.json`).catch(() => ({ files: ['_sample.json'] })),
@@ -22,6 +22,8 @@ export async function loadData(base = '../data/') {
     // The endgame (research/ENDGAME_CONTRACT.md): hand-off, ticket lines, versus lines. Missing: those
     // blocks stay out (the ticket still shows names and portraits).
     getJson(`${base}endgame.json`).catch(() => null),
+    // Undecided's sorting round (app/js/sorter.js). Missing: the title offers only the two parties.
+    getJson(`${base}sorter.json`).catch(() => null),
   ]);
   const candidates = cj.candidates || [];
   const candIds = new Set(candidates.map(c => c.id));
@@ -51,7 +53,7 @@ export async function loadData(base = '../data/') {
   }
   // Dev aid until the receipts are written: ?receipts=stub gives every answer without one a plain stand-in.
   if (typeof location !== 'undefined' && new URLSearchParams(location.search).get('receipts') === 'stub') stubReceipts(bank);
-  return { candidates, lev, bank, report, reading, endgame };
+  return { candidates, lev, bank, report, reading, endgame, sorter };
 }
 
 function stubReceipts(bank) {
