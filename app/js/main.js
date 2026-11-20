@@ -1,29 +1,29 @@
 // THE 2028 QUIZ: boot, title screen, the run loop, chapter cards and the hand-off to results.
 
-import { loadData } from './data.js?v=c9227a9-1795188648';
-import { createSelector, QUICK_LENGTH, FULL_LENGTH } from './selector.js?v=c9227a9-1795188648';
-import { createScorer, applyAnswer, axisScores, matchCandidates } from './scoring.js?v=c9227a9-1795188648';
-import { buildProfile } from './leviathan.js?v=c9227a9-1795188648';
-import { CHAPTERS, CHAPTER_TITLE, CHAPTER_LINE } from './axes.js?v=c9227a9-1795188648';
-import { routeOk } from './questions.js?v=c9227a9-1795188648';
-import { installPress, haptic, setHaptics, getHaptics, runFx, typewriter, sleep, store, reducedMotion } from './feel.js?v=c9227a9-1795188648';
-import { loadArtManifest, createArtSlot, artUrl, artVersion } from './art.js?v=c9227a9-1795188648';
-import { billTitle } from './types.js?v=c9227a9-1795188648';
-import { createWarMap, createGhosts } from './hud.js?v=c9227a9-1795188648';
-import { renderAnswer } from './types.js?v=c9227a9-1795188648';
-import { howFor, showCue, watchIdle } from './howto.js?v=c9227a9-1795188648';
-import { swipeEnds } from './types.js?v=c9227a9-1795188648';
-import { renderResults } from './results.js?v=c9227a9-1795188648';
-import { newSeed } from './rng.js?v=c9227a9-1795188648';
-import { loadShareConfig } from './share.js?v=c9227a9-1795188648';
-import { getSound, setSound, sfx } from './sound.js?v=c9227a9-1795188648';
-import { readingContext, buildReading } from './reading.js?v=c9227a9-1795188648';
-import { playReveal } from './reveal.js?v=c9227a9-1795188648';
-import { dossierFromRun, encodeDossier, decodeDossier, rebuildDossier, dossierLink, codeFromHash, fileNumber, minuteOf, tidyScores, tidyReads } from './dossier.js?v=c9227a9-1795188648';
-import { pickTicket, pickExhibits, ticketView } from './endgame.js?v=c9227a9-1795188648';
-import { encodeLVQ1 } from './export.js?v=c9227a9-1795188648';
-import { renderVersus } from './versus.js?v=c9227a9-1795188648';
-import { sortQuestions, tiebreakQuestion, sortResult, sortResultText } from './sorter.js?v=c9227a9-1795188648';
+import { loadData } from './data.js?v=7f4622a-1795188870';
+import { createSelector, QUICK_LENGTH, FULL_LENGTH } from './selector.js?v=7f4622a-1795188870';
+import { createScorer, applyAnswer, axisScores, matchCandidates } from './scoring.js?v=7f4622a-1795188870';
+import { buildProfile } from './leviathan.js?v=7f4622a-1795188870';
+import { CHAPTERS, CHAPTER_TITLE, CHAPTER_LINE } from './axes.js?v=7f4622a-1795188870';
+import { routeOk } from './questions.js?v=7f4622a-1795188870';
+import { installPress, haptic, setHaptics, getHaptics, runFx, typewriter, sleep, store, reducedMotion } from './feel.js?v=7f4622a-1795188870';
+import { loadArtManifest, createArtSlot, artUrl, artVersion } from './art.js?v=7f4622a-1795188870';
+import { billTitle } from './types.js?v=7f4622a-1795188870';
+import { createWarMap, createGhosts } from './hud.js?v=7f4622a-1795188870';
+import { renderAnswer } from './types.js?v=7f4622a-1795188870';
+import { howFor, showCue, watchIdle } from './howto.js?v=7f4622a-1795188870';
+import { swipeEnds } from './types.js?v=7f4622a-1795188870';
+import { renderResults } from './results.js?v=7f4622a-1795188870';
+import { newSeed } from './rng.js?v=7f4622a-1795188870';
+import { loadShareConfig } from './share.js?v=7f4622a-1795188870';
+import { getSound, setSound, sfx } from './sound.js?v=7f4622a-1795188870';
+import { readingContext, buildReading } from './reading.js?v=7f4622a-1795188870';
+import { playReveal } from './reveal.js?v=7f4622a-1795188870';
+import { dossierFromRun, encodeDossier, decodeDossier, rebuildDossier, dossierLink, codeFromHash, fileNumber, minuteOf, tidyScores, tidyReads } from './dossier.js?v=7f4622a-1795188870';
+import { pickTicket, pickExhibits, ticketView } from './endgame.js?v=7f4622a-1795188870';
+import { encodeLVQ1 } from './export.js?v=7f4622a-1795188870';
+import { renderVersus } from './versus.js?v=7f4622a-1795188870';
+import { sortQuestions, tiebreakQuestion, sortResult, sortResultText } from './sorter.js?v=7f4622a-1795188870';
 
 // Versus: this device's own finished file (its dossier code), and a file someone sent that is waiting to be
 // compared once the player has one of their own ({ code, pending }).

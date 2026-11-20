@@ -21,11 +21,11 @@
 // Rounding never moves a value across a line the dossier draws (band edges, the reading's conditions,
 // one-decimal rounding for the LVQ1 code), and the encoder checks that the rebuilt dossier matches.
 
-import { AXIS_IDS } from './axes.js?v=c9227a9-1795188648';
-import { checksum4 } from './export.js?v=c9227a9-1795188648';
-import { buildProfile } from './leviathan.js?v=c9227a9-1795188648';
-import { readingContext, buildReading, normalizeReading, parseCond, READS_TAGS, READS_MIN } from './reading.js?v=c9227a9-1795188648';
-import { receiptHash, receiptIndex, pickTicket, matchListFromAxes } from './endgame.js?v=c9227a9-1795188648';
+import { AXIS_IDS } from './axes.js?v=7f4622a-1795188870';
+import { checksum4 } from './export.js?v=7f4622a-1795188870';
+import { buildProfile } from './leviathan.js?v=7f4622a-1795188870';
+import { readingContext, buildReading, normalizeReading, parseCond, READS_TAGS, READS_MIN } from './reading.js?v=7f4622a-1795188870';
+import { receiptHash, receiptIndex, pickTicket, matchListFromAxes } from './endgame.js?v=7f4622a-1795188870';
 
 const BITS = { 1: 416, 2: 416 + 15 + 2 + 3 * 20 };
 const CHARS = { 1: Math.ceil(BITS[1] / 6), 2: Math.ceil(BITS[2] / 6) }; // 70, 83
