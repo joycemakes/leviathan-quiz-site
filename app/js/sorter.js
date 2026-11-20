@@ -3,7 +3,7 @@
 // them in the Democratic or Republican primary; the run then plays exactly as if they had picked it.
 // Content: data/sorter.json (lean: negative = Democratic side, positive = Republican side).
 
-import { makeRng } from './rng.js?v=7f4622a-1795188870';
+import { makeRng } from './rng.js?v=237f287-1795191068';
 
 // Each question becomes a plain choice question the normal renderer can play. Per run (seeded), each
 // question's scale runs either way round, so neither side always sits first.

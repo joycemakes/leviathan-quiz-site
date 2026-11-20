@@ -1,8 +1,8 @@
 // The endgame (research/ENDGAME_CONTRACT.md): receipts and exhibits, the ticket (running mate, knife,
 // mark), versus lines, and the hand-off text. Pure, no DOM, so node can test it.
 
-import { AXES, AXIS_IDS } from './axes.js?v=7f4622a-1795188870';
-import { parseCond } from './reading.js?v=7f4622a-1795188870';
+import { AXES, AXIS_IDS } from './axes.js?v=237f287-1795191068';
+import { parseCond } from './reading.js?v=237f287-1795191068';
 
 const isObj = v => v && typeof v === 'object' && !Array.isArray(v);
 const clampW = w => Math.max(1, Math.min(3, Math.round(Number(w) || 1)));
